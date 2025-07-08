@@ -3,7 +3,17 @@ import clsx from "clsx";
 import { resolveComponent } from "../../../utils/renderBlock";
 import type { ButtonGroupProps } from "./schema";
 
-const { direction, align, button_blocks, ...htmlAttributes } = Astro.props as ButtonGroupProps;
+const {
+  direction,
+  align,
+  button_blocks,
+  class: className,
+  ...restProps
+} = Astro.props as ButtonGroupProps;
+
+const htmlAttributes = Object.fromEntries(
+  Object.entries(restProps).filter(([key]) => !key.startsWith("_"))
+);
 
 const alignClass =
   {
@@ -16,7 +26,7 @@ const classNames = clsx(
   "button-group",
   direction === "column" ? "column" : "row",
   alignClass,
-  htmlAttributes.class
+  className
 );
 ---
 

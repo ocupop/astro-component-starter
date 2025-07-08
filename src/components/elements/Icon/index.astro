@@ -3,9 +3,9 @@ import { Icon as AstroIcon } from "astro-icon/components";
 import clsx from "clsx";
 import { iconSchema } from "./schema";
 
-const { name, size, background, ...restProps } = iconSchema.parse(Astro.props);
+const { name, size, background, class: className, ...restProps } = iconSchema.parse(Astro.props);
 
-const { class: extraClass, ...htmlAttributes } = Object.fromEntries(
+const htmlAttributes = Object.fromEntries(
   Object.entries(restProps).filter(([key]) => !key.startsWith("_"))
 );
 
@@ -14,7 +14,7 @@ const classNames = clsx(
   `size-${size}`,
   `background-${background}`,
   name?.includes("fill/") && "fill",
-  extraClass
+  className
 );
 ---
 

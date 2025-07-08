@@ -3,10 +3,19 @@ import clsx from "clsx";
 import Icon from "../Icon/index.astro";
 import { buttonSchema } from "./schema";
 
-const { label, link, iconName, iconPosition, hideText, variant, size, ...restProps } =
-  buttonSchema.parse(Astro.props);
+const {
+  label,
+  link,
+  iconName,
+  iconPosition,
+  hideText,
+  variant,
+  size,
+  class: className,
+  ...restProps
+} = buttonSchema.parse(Astro.props);
 
-const { class: extraClass, ...htmlAttributes } = Object.fromEntries(
+const htmlAttributes = Object.fromEntries(
   Object.entries(restProps).filter(([key]) => !key.startsWith("_"))
 );
 
@@ -16,7 +25,7 @@ const classNames = clsx(
   `variant-${variant}`,
   hideText && "icon-only",
   iconPosition === "after" && "icon-after",
-  extraClass
+  className
 );
 
 if (hideText && !htmlAttributes["aria-label"]) {
