@@ -1,8 +1,8 @@
 ---
 import clsx from "clsx";
-import { resolveComponent } from "../../../utils/renderBlock";
+import Component from "../../../utils/renderBlock.astro";
 
-const { direction, align, button_blocks, ...htmlAttributes } = Astro.props;
+const { direction, align, button_blocks, className, ...htmlAttributes } = Astro.props;
 
 const alignMap = {
   start: "align-start",
@@ -21,17 +21,7 @@ const classNames = clsx(
 ---
 
 <div {...htmlAttributes} class:list={classNames}>
-  {
-    button_blocks && button_blocks.length > 0 ? (
-      button_blocks.map((block: any) => {
-        const Component = resolveComponent(block._bookshop_name);
-
-        return Component ? <Component {...block} /> : null;
-      })
-    ) : (
-      <slot />
-    )
-  }
+  <Component contentBlocks={button_blocks} />
 </div>
 
 <style>
