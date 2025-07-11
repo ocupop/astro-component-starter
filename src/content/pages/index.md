@@ -24,4 +24,8 @@ content_blocks:
     name: academic-cap
     size: sm
     background: subtle
+  - _bookshop_name: elements/embed
+    src: https://youtu.be/dQw4w9WgXcQ
+    title: test
+    aspect_ratio: widescreen
 ---
