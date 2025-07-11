@@ -28,11 +28,9 @@ _inputs:
         - sm
         - md
         - lg
-      default: none
   background:
     type: select
     options:
       values:
         - none
         - subtle
-      default: none
