@@ -26,47 +26,49 @@ const classNames = clsx(
 {isValidName && <AstroIcon name={name} class:list={classNames} {...htmlAttributes} />}
 
 <style>
-  .icon {
-    all: unset;
-    border: 1px solid transparent;
-    border-radius: var(--radius-xs);
-    color: var(--color-text-on-muted);
-    display: inline-block;
-    height: 1.1em;
-    line-height: 0;
-    vertical-align: middle;
-    width: 1.1em;
-  }
+  @layer components {
+    .icon {
+      all: unset;
+      border: 1px solid transparent;
+      border-radius: var(--radius-xs);
+      color: var(--color-text-on-muted);
+      display: inline-block;
+      height: 1.1em;
+      line-height: 0;
+      vertical-align: middle;
+      width: 1.1em;
+    }
 
-  .flip-rtl {
-    transform: scaleX(-1);
-  }
+    .flip-rtl {
+      transform: scaleX(-1);
+    }
 
-  svg {
-    max-height: 100%;
-  }
+    svg {
+      max-height: 100%;
+    }
 
-  .background-subtle {
-    padding: var(--spacing-em-xs);
-  }
+    .background-subtle {
+      padding: var(--spacing-em-xs);
+    }
 
-  .background-subtle {
-    background-color: var(--color-bg-surface);
-  }
+    .background-subtle {
+      background-color: var(--color-bg-surface);
+    }
 
-  .fill {
-    fill: currentcolor;
-  }
+    .fill {
+      fill: currentcolor;
+    }
 
-  .size-sm {
-    font-size: var(--font-size-sm);
-  }
+    .size-sm {
+      font-size: var(--font-size-sm);
+    }
 
-  .size-md {
-    font-size: var(--font-size-xl);
-  }
+    .size-md {
+      font-size: var(--font-size-xl);
+    }
 
-  .size-lg {
-    font-size: var(--font-size-3xl);
+    .size-lg {
+      font-size: var(--font-size-3xl);
+    }
   }
 </style>

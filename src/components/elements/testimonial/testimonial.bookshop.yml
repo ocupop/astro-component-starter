@@ -1,0 +1,28 @@
+spec:
+  structures:
+    - content_blocks
+  label: Testimonial
+  description: A quote with an author and description
+  icon: format_quote
+  tags:
+
+blueprint:
+  quote:
+  attribution:
+    name:
+    description:
+
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  quote:
+    type: textarea
+  name:
+    comment: The author of the quote.
+    type: text
+  description:
+    comment: The description of the author.
+    type: textarea

@@ -26,7 +26,6 @@ _inputs:
       values:
         - row
         - column
-      default: row
   align:
     comment: Alignment of buttons within the group.
     type: select
@@ -35,4 +34,3 @@ _inputs:
         - start
         - center
         - end
-      default: start

@@ -141,118 +141,130 @@ const renderBackgroundDiv = !!(
 </section>
 
 <style>
-  .section {
-    background-repeat: repeat;
-    isolation: isolate;
-    position: relative;
-    z-index: var(--layer-2);
+  @layer components {
+    .section {
+      background-repeat: repeat;
+      isolation: isolate;
+      position: relative;
+      z-index: var(--layer-2);
 
-    :where(&:has(.image-fixed)) {
-      clip-path: inset(0);
+      :where(&:has(.image-fixed)) {
+        clip-path: inset(0);
+      }
     }
-  }
 
-  .background-link {
-    cursor: pointer;
-    display: block;
-    inset: 0;
-    position: absolute;
-    z-index: var(--layer-3);
-  }
-
-  .section:has(> .background-link) {
-    &:hover {
-      transform: scale(1.05);
-      transition: transform 0.3s ease;
+    .background-link {
+      cursor: pointer;
+      display: block;
+      inset: 0;
+      position: absolute;
+      z-index: var(--layer-3);
     }
-  }
 
-  .outer-content {
-    height: 100%;
-  }
-
-  .background {
-    inset: 0;
-    position: absolute;
-  }
-
-  .content {
-    height: 100%;
-    position: relative;
-    z-index: var(--layer-1);
-  }
-
-  .spacing-between > .outer-content > .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .spacing-center > .outer-content > .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .spacing-top > .outer-content > .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-  }
-
-  .spacing-bottom > .outer-content > .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-  }
-
-  .shape-diagonal-bottom {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - min(5vw, 50px)), 0 100%);
+    .section:has(> .background-link) {
+      &:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+      }
+    }
 
     .outer-content {
-      padding-bottom: 5vw;
+      height: 100%;
     }
 
-    &.reverse {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - min(5vw, 50px)));
-    }
-  }
-
-  .shape-diagonal-top {
-    clip-path: polygon(0 calc(min(5vw, 50px)), 100% 0, 100% 100%, 0 100%);
-
-    .outer-content {
-      padding-top: 5vw;
+    .background {
+      inset: 0;
+      position: absolute;
     }
 
-    &.reverse {
-      clip-path: polygon(0 0, 100% calc(min(5vw, 50px)), 100% 100%, 0 100%);
-    }
-  }
-
-  .shape-diagonal {
-    clip-path: polygon(0 calc(min(5vw, 50px)), 100% 0, 100% calc(100% - min(5vw, 50px)), 0 100%);
-
-    .outer-content {
-      padding-bottom: 5vw;
-      padding-top: 5vw;
+    .content {
+      height: 100%;
+      position: relative;
+      z-index: var(--layer-1);
     }
 
-    &.reverse {
-      clip-path: polygon(0 0, 100% calc(min(5vw, 50px)), 100% 100%, 0 calc(100% - min(5vw, 50px)));
-    }
-  }
-
-  .shape-wedge {
-    clip-path: polygon(0 0, 100% calc(min(5vw, 50px)), 100% calc(100% - min(5vw, 50px)), 0 100%);
-
-    .outer-content {
-      padding-bottom: 5vw;
-      padding-top: 5vw;
+    .spacing-between > .outer-content > .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    &.reverse {
-      clip-path: polygon(0 calc(min(5vw, 50px)), 0 calc(100% - min(5vw, 50px)), 100% 100%, 100% 0);
+    .spacing-center > .outer-content > .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .spacing-top > .outer-content > .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+    }
+
+    .spacing-bottom > .outer-content > .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
+
+    .shape-diagonal-bottom {
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - min(5vw, 50px)), 0 100%);
+
+      .outer-content {
+        padding-bottom: 5vw;
+      }
+
+      &.reverse {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - min(5vw, 50px)));
+      }
+    }
+
+    .shape-diagonal-top {
+      clip-path: polygon(0 calc(min(5vw, 50px)), 100% 0, 100% 100%, 0 100%);
+
+      .outer-content {
+        padding-top: 5vw;
+      }
+
+      &.reverse {
+        clip-path: polygon(0 0, 100% calc(min(5vw, 50px)), 100% 100%, 0 100%);
+      }
+    }
+
+    .shape-diagonal {
+      clip-path: polygon(0 calc(min(5vw, 50px)), 100% 0, 100% calc(100% - min(5vw, 50px)), 0 100%);
+
+      .outer-content {
+        padding-bottom: 5vw;
+        padding-top: 5vw;
+      }
+
+      &.reverse {
+        clip-path: polygon(
+          0 0,
+          100% calc(min(5vw, 50px)),
+          100% 100%,
+          0 calc(100% - min(5vw, 50px))
+        );
+      }
+    }
+
+    .shape-wedge {
+      clip-path: polygon(0 0, 100% calc(min(5vw, 50px)), 100% calc(100% - min(5vw, 50px)), 0 100%);
+
+      .outer-content {
+        padding-bottom: 5vw;
+        padding-top: 5vw;
+      }
+
+      &.reverse {
+        clip-path: polygon(
+          0 calc(min(5vw, 50px)),
+          0 calc(100% - min(5vw, 50px)),
+          100% 100%,
+          100% 0
+        );
+      }
     }
   }
 </style>

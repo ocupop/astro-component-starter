@@ -25,43 +25,45 @@ const classNames = clsx(
 </div>
 
 <style>
-  .button-group {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-    position: relative;
+  @layer components {
+    .button-group {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      position: relative;
 
-    &.column {
-      flex-direction: column;
+      &.column {
+        flex-direction: column;
 
-      &.align-start {
-        align-items: flex-start;
+        &.align-start {
+          align-items: flex-start;
+        }
+
+        &.align-center {
+          align-items: center;
+        }
+
+        &.align-end {
+          align-items: flex-end;
+        }
+      }
+
+      &.row {
+        flex-direction: row;
       }
 
       &.align-center {
-        align-items: center;
+        justify-content: center;
       }
 
       &.align-end {
-        align-items: flex-end;
+        justify-content: flex-end;
       }
-    }
 
-    &.row {
-      flex-direction: row;
-    }
-
-    &.align-center {
-      justify-content: center;
-    }
-
-    &.align-end {
-      justify-content: flex-end;
-    }
-
-    &.align-start {
-      justify-content: flex-start;
+      &.align-start {
+        justify-content: flex-start;
+      }
     }
   }
 </style>
