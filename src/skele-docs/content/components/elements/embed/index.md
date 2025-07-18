@@ -1,6 +1,6 @@
 ---
 title: Embed
-primary_size: xl
+primary_size: lg
 examples:
   - title: Aspect Ratios
     slugs:
@@ -10,5 +10,5 @@ examples:
       - ratio-widescreen
       - ratio-ultrawide
       - ratio-golden
-    size: xl
+    size: lg
 ---
