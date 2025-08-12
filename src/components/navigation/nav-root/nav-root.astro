@@ -1,10 +1,99 @@
 ---
+import Button from "../../elements/button/button.astro";
 import RenderBlock from "../../utils/renderBlock.astro";
 
 const { variant = "sidebar", navBlocks = [] } = Astro.props;
+
+const navId = `nav-${crypto.randomUUID()}`;
 ---
 
-<nav class:list={["nav-root", variant]}>
-  <slot />
-  <RenderBlock contentBlocks={navBlocks} />
+{
+  variant === "mobile" && (
+    <>
+      <input type="checkbox" id={`nav-toggle-${navId}`} class="nav-toggle" autocomplete="off" />
+      <label for={`nav-toggle-${navId}`} class="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <Button variant="tertiary" size="lg" iconName="bars-3" />
+      </label>
+    </>
+  )
+}
+
+<nav class:list={["nav-root", variant]} id={navId} aria-hidden={variant === "mobile" ? "true" : "false"}>
+  {
+    variant === "mobile" && (
+      <div class="nav-header-bar">
+        <div class="nav-header-bar-logo">
+          <slot name="logo" />
+        </div>
+        <label for={`nav-toggle-${navId}`} class="nav-close" aria-label="Close navigation menu">
+          <Button variant="tertiary" size="lg" iconName="x-mark" />
+        </label>
+      </div>
+    )
+  }
+  {
+    variant === "mobile" ? (
+      <div class="nav-content">
+        <slot />
+        <RenderBlock contentBlocks={navBlocks} />
+      </div>
+    ) : (
+      <>
+        <slot />
+        <RenderBlock contentBlocks={navBlocks} />
+      </>
+    )
+  }
 </nav>
+
+{variant === "mobile" && (
+  <script>
+    // Handle mobile navigation toggle changes
+    document.addEventListener('change', function(e) {
+      const toggle = e.target as HTMLInputElement;
+      
+      // Only handle nav-toggle checkboxes
+      if (!toggle || !toggle.classList || !toggle.classList.contains('nav-toggle')) {
+        return;
+      }
+      
+      // Find the nav and hamburger elements
+      const navId = toggle.id.replace('nav-toggle-', '');
+      const nav = document.getElementById(navId);
+      const hamburger = document.querySelector(`label[for="${toggle.id}"]`) as HTMLLabelElement;
+      
+      // Update aria attributes
+      if (nav && hamburger) {
+        const isExpanded = toggle.checked;
+        
+        hamburger.setAttribute('aria-expanded', isExpanded.toString());
+        nav.setAttribute('aria-hidden', (!isExpanded).toString());
+        
+        if (isExpanded) {
+          document.body.style.overflow = 'hidden';
+          // Focus first focusable element when opening
+          const firstFocusable = nav.querySelector('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])') as HTMLElement;
+          if (firstFocusable) firstFocusable.focus();
+        } else {
+          document.body.style.overflow = '';
+          // Return focus to hamburger when closing
+          hamburger.focus();
+        }
+      }
+    });
+    
+    // Close navs with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const openNavs = document.querySelectorAll('.nav-toggle:checked') as NodeListOf<HTMLInputElement>;
+        if (openNavs.length > 0) {
+          openNavs.forEach(toggle => {
+            toggle.checked = false;
+            toggle.dispatchEvent(new Event('change'));
+          });
+          document.body.style.overflow = '';
+        }
+      }
+    });
+  </script>
+)}

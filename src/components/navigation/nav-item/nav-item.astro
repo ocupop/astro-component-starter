@@ -24,6 +24,7 @@ const isCurrentPage = href === Astro.url.pathname;
           class="nav-item-toggle"
           aria-expanded={defaultOpen ? "true" : "false"}
           aria-controls={contentId}
+          autocomplete="off"
           checked={defaultOpen}
         />
         <label
@@ -40,7 +41,7 @@ const isCurrentPage = href === Astro.url.pathname;
             <Icon name="chevron-right" size="none" aria-hidden="true" />
           </span>
         </label>
-        <div id={contentId} role="region" aria-label={`${label} submenu`}>
+        <div id={contentId} class="nav-item-content" role="region" aria-label={`${label} submenu`}>
           <slot />
           <RenderBlock contentBlocks={navBlocks} />
         </div>

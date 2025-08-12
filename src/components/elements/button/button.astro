@@ -9,6 +9,7 @@ const {
   variant = "primary",
   size = "md",
   link,
+  element = "a",
   class: className,
   ...rest
 } = Astro.props;
@@ -21,8 +22,9 @@ if (hideText && !htmlAttributes["aria-label"]) {
   htmlAttributes["aria-label"] = label;
 }
 
-const Tag = link ? "a" : "button";
-const tagProps = link ? { href: link } : { type: "button" };
+const Tag = element as any;
+
+const tagProps = Tag === "a" && link ? { href: link } : Tag === "button" ? { type: "button" } : {};
 ---
 
 <Tag

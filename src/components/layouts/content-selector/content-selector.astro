@@ -25,6 +25,7 @@ const uniqueId = crypto.randomUUID();
         class="input"
         hidden
         checked={index === 0}
+        autocomplete="off"
       />
     ))
   }
@@ -41,7 +42,13 @@ const uniqueId = crypto.randomUUID();
           tabindex="0"
           aria-selected={index === 0}
         >
-          <Heading text={item.title} level="h3" size="h3" align="start" class="tab-heading" />
+          <Heading
+            text={item.title}
+            level="h3"
+            size="h3"
+            align={navigationPosition === "top" ? "center" : "start"}
+            class="tab-heading"
+          />
         </label>
       ))
     }
