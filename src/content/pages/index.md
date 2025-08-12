@@ -1,12 +1,12 @@
 ---
 _schema: default
-title: Skele Library
+title: Your Site
 content_blocks:
   - _bookshop_name: wrappers/button-group
     button_blocks:
       - _bookshop_name: primitives/button
         label: View Components
-        link: /skele/
+        link: /component-library/
         hideText: false
         variant: secondary
         size: lg

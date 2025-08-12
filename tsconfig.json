@@ -3,9 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@skele/components/*": ["src/components/*"],
-      "@skele/styles/*": ["src/styles/*"],
-      "@skele/plugins/*": ["src/plugins/*"]
+      "@components/*": ["src/components/*"]
     }
   },
   "include": ["src/**/*"],

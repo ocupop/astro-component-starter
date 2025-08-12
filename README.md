@@ -64,7 +64,7 @@ skele-astro/
 
 ```astro
 ---
-import Button from "@skele/components/primitives/Button/index.astro";
+import Button from "@components/primitives/Button/index.astro";
 ---
 
 <Button label="Click me!" type="primary" />
@@ -74,7 +74,7 @@ import Button from "@skele/components/primitives/Button/index.astro";
 
 ```astro
 ---
-import Button from "@skele/components/primitives/Button/index.astro";
+import Button from "@components/primitives/Button/index.astro";
 ---
 
 <Button label="Save" type="primary" iconName="hero/check" />
@@ -116,7 +116,7 @@ The component library is available at `/skele/` and includes:
 
 ### Modifying Design Tokens
 
-Edit the CSS variables in `src/styles/skele/variables/` to customize:
+Edit the CSS variables in `src/styles/variables/` to customize:
 
 - Colors in `_colors.pcss`
 - Spacing in `_spacing.pcss`

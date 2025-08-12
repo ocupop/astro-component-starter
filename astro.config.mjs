@@ -36,7 +36,7 @@ export default defineConfig({
         plugins: [
           postcssImport,
           postcssGlobalData({
-            files: [path.resolve(__dirname, "./src/styles/skele/variables/_media.pcss")],
+            files: [path.resolve(__dirname, "./src/styles/variables/_media.pcss")],
           }),
           postcssCustomMedia,
           postcssNested,
@@ -47,9 +47,7 @@ export default defineConfig({
     },
     resolve: {
       alias: {
-        "@skele/components": path.resolve(__dirname, "src/components"),
-        "@skele/styles": path.resolve(__dirname, "src/styles"),
-        "@skele/plugins": path.resolve(__dirname, "src/plugins"),
+        "@components": path.resolve(__dirname, "src/components"),
       },
     },
   },

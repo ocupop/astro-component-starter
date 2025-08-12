@@ -52,12 +52,12 @@ const pagesCollection = defineCollection({
 });
 
 const docsPagesCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/skele-docs/content/pages" }),
+  loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/pages" }),
   schema: docsPageSchema,
 });
 
 const docsComponentsCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/skele-docs/content/components" }),
+  loader: glob({ pattern: "**/*.md", base: "./src/component-library/content/components" }),
   schema: docsComponentSchema,
 });
 

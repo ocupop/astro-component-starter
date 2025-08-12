@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Home",
+    "path": "/component-library/"
+  },
+  {
+    "group": "Blueprints",
+    "items": []
+  },
+  {
+    "group": "Primitives",
+    "items": []
+  },
+  {
+    "group": "Wrappers",
+    "items": []
+  },
+  {
+    "group": "Navigation",
+    "items": []
+  }
+]
