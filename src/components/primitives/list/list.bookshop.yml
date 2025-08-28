@@ -1,6 +1,8 @@
 spec:
-  structures:
+    structures:
     - contentBlocks
+    - firstContentBlocks
+    - secondContentBlocks
   label: List
   description: Displays items in a list with icons as markers
   icon: list

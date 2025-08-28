@@ -1,6 +1,8 @@
 spec:
-  structures:
+    structures:
     - contentBlocks
+    - firstContentBlocks
+    - secondContentBlocks
   label: Icon
   description: Displays an icon from your icon library.
   icon: star

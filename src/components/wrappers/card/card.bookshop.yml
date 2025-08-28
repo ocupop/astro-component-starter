@@ -1,6 +1,8 @@
 spec:
-  structures:
+    structures:
     - contentBlocks
+    - firstContentBlocks
+    - secondContentBlocks
   label: Card
   description: "A container component that provides card layout with background options and padding controls."
   icon: crop_square

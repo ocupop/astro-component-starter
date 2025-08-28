@@ -1,6 +1,8 @@
 spec:
-  structures:
+    structures:
     - contentBlocks
+    - firstContentBlocks
+    - secondContentBlocks
   label: Testimonial
   description: A quote with an author and description
   icon: format_quote

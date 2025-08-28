@@ -1,6 +1,8 @@
 spec:
-  structures:
+    structures:
     - contentBlocks
+    - firstContentBlocks
+    - secondContentBlocks
   label: Rich text
   description: A catch all for all content types. Can contain headings, paragraphs, images, bullets.
   icon: edit_note

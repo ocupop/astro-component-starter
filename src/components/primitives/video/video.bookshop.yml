@@ -1,6 +1,8 @@
 spec:
-  structures:
+    structures:
     - contentBlocks
+    - firstContentBlocks
+    - secondContentBlocks
   label: Video
   description: "Play a video from YouTube or your local files."
   icon: data_object

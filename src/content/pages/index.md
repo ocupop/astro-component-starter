@@ -8,7 +8,7 @@ pageBlocks:
     maxContentWidth: 2xl
     contentBlocks:
       - _bookshop_name: primitives/heading
-        text: Welcome your Skele site
+        text: Welcome to your Skele site
         level: h1
       - _bookshop_name: wrappers/button-group
         buttonBlocks:
