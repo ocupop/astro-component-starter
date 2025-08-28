@@ -36,6 +36,7 @@
     "@types/js-yaml": "^4.0.9",
     "astro": "^5.12.9",
     "astro-icon": "^1.1.5",
+    "astro-seo": "^0.8.4",
     "autoprefixer": "^10.4.21",
     "embla-carousel": "^8.6.0",
     "embla-carousel-auto-scroll": "^8.6.0",

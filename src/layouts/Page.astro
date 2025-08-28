@@ -5,6 +5,10 @@ import Layout from "./BaseLayout.astro";
 type Props = {
   frontmatter: {
     title: string;
+    description?: string;
+    keywords?: string[];
+    image?: string;
+    canonical?: string;
     pageBlocks: any[];
   };
 };
@@ -12,6 +16,12 @@ type Props = {
 const props = Astro.props.frontmatter;
 ---
 
-<Layout {...props}>
+<Layout
+  title={props.title}
+  description={props.description}
+  keywords={props.keywords}
+  image={props.image}
+  canonical={props.canonical}
+>
   <Components bookshop:live contentBlocks={props.pageBlocks} />
 </Layout>

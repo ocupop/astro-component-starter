@@ -1,0 +1,18 @@
+{
+  "defaultSeo": {
+    "titleFormat": "{title} | Skele Astro",
+    "description": "",
+    "image": "/assets/images/skele-light.svg",
+    "siteName": "Skele Astro",
+    "twitterHandle": "@yourusername"
+  },
+  "organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Skele Astro",
+    "url": "https://example.com",
+    "logo": "https://example.com/assets/images/skele-light.svg",
+    "description": "",
+    "sameAs": ["https://x.com/yourusername", "https://github.com/yourusername"]
+  }
+}
