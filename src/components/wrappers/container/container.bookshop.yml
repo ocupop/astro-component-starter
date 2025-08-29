@@ -39,49 +39,77 @@ _inputs:
     type: select
     options:
       values:
-        - xs
-        - sm
-        - md
-        - lg
-        - xl
-        - 2xl
-        - 3xl
+        - name: Extra Small
+          value: xs
+        - name: Small
+          value: sm
+        - name: Medium
+          value: md
+        - name: Large
+          value: lg
+        - name: Extra Large
+          value: xl
+        - name: 2xl
+          value: 2xl
+        - name: 3xl
+          value: 3xl
+      value_key: value
   paddingHorizontal:
     comment: Horizontal padding applied to the container content.
     type: select
     options:
       values: &sizeOptions
-        - xs
-        - sm
-        - md
-        - lg
-        - xl
-        - 2xl
-        - 3xl
-        - 4xl
-        - 5xl
-        - 6xl
+        - name: Extra Small
+          value: xs
+        - name: Small
+          value: sm
+        - name: Medium
+          value: md
+        - name: Large
+          value: lg
+        - name: Extra LArge
+          value: xl
+        - name: 2xl
+          value: 2xl
+        - name: 3xl
+          value: 3xl
+        - name: 4xl
+          value: 4xl
+        - name: 5xl
+          value: 5xl
+        - name: 6xl
+          value: 6xl
+      value_key: value
   paddingVertical:
     comment: Vertical padding applied to the container content.
     type: select
     options:
       values: *sizeOptions
+      value_key: value
   colorScheme:
     comment: Color scheme theme for the container.
     type: select
     options:
       values:
-        - default
-        - contrast
+        - name: Default
+          value: default
+        - name: Contrast
+          value: contrast
+      value_key: value
   backgroundColor:
     comment: Background color for the container.
     type: select
     options:
       values:
-        - base
-        - surface
-        - accent
-        - highlight
+        - name: Base
+          value: base
+        - name: Surface
+          value: surface
+        - name: Accent
+          value: accent
+        - name: Highlight
+          value: highlight
+      value_key: value
   backgroundImage:
     comment: Background image configuration for the container.
     type: object
@@ -107,14 +135,22 @@ _inputs:
     type: select
     options:
       values:
-        - top
-        - center
-        - bottom
+        - name: Top
+          value: top
+        - name: Center
+          value: center
+        - name: Bottom
+          value: bottom
+      value_key: value
   backgroundImage.positionHorizontal:
     comment: Horizontal position of the background image.
     type: select
     options:
       values:
-        - left
-        - center
-        - right
+        - name: Left
+          value: left
+        - name: Center
+          value: center
+        - name: Right
+          value: right
+      value_key: value
