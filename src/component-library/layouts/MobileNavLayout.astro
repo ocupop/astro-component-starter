@@ -2,6 +2,7 @@
 import NavItem from "@components/navigation/nav-item/nav-item.astro";
 import NavList from "@components/navigation/nav-list/nav-list.astro";
 import NavRoot from "@components/navigation/nav-root/nav-root.astro";
+import Icon from "@components/primitives/icon/icon.astro";
 import { getCollection } from "astro:content";
 import navData from "../data/nav.json";
 
@@ -60,13 +61,7 @@ const populatedNavData = navData.map((section) => {
 ---
 
 <div class="library-mobile-nav">
-  <img
-    src="/assets/images/library/logo.svg"
-    alt="Logo"
-    height="32"
-    width="110"
-    class="sidebar-logo"
-  />
+  <Icon name="library/logo" size="none" class="sidebar-logo" />
   <NavRoot variant="mobile">
     <NavList>
       {

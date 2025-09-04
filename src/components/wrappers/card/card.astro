@@ -54,7 +54,10 @@ const Tag = link ? "a" : "div";
   }
   {
     backgroundColor && (
-      <div class:list={["background", backgroundColor && `bg-${backgroundColor}`]} />
+      <div
+        aria-hidden="true"
+        class:list={["background", backgroundColor && `bg-${backgroundColor}`]}
+      />
     )
   }
 
