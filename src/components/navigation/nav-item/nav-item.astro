@@ -11,7 +11,7 @@ const htmlAttributes = Object.fromEntries(
 const hasChildren = Astro.slots.has("default") || navBlocks.length > 0;
 const dropdownId = `dropdown-toggle-${crypto.randomUUID()}`;
 const contentId = `dropdown-content-${crypto.randomUUID()}`;
-const isCurrentPage = href === Astro.url.pathname;
+const isCurrentPage = href === Astro?.url?.pathname;
 ---
 
 <li class:list={["nav-item", className, hasChildren ? "has-children" : null]} {...htmlAttributes}>
