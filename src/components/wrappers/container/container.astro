@@ -11,6 +11,7 @@ const {
   colorScheme,
   backgroundColor,
   backgroundImage,
+  rounded = false,
   class: className,
   ...rest
 } = Astro.props;
@@ -28,7 +29,11 @@ const htmlAttributes = Object.fromEntries(
 );
 ---
 
-<section class:list={["container", className]} data-theme={colorScheme} {...htmlAttributes}>
+<section
+  class:list={["container", rounded && "rounded", className]}
+  data-theme={colorScheme}
+  {...htmlAttributes}
+>
   {
     source && (
       <SmartImage

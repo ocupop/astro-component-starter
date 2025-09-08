@@ -22,6 +22,7 @@ blueprint:
     alt: ""
     positionVertical: top
     positionHorizontal: center
+  rounded: false
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
@@ -118,3 +119,6 @@ _inputs:
             - left
             - center
             - right
+  rounded:
+    comment: Whether to apply rounded corners to the container.
+    type: switch

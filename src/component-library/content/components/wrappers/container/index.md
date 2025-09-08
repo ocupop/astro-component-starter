@@ -36,4 +36,9 @@ examples:
       - scheme-contrast
       - scheme-default
     size: md
+  - title: Rounded Corners
+    slugs:
+      - rounded
+      - rounded-none
+    size: md
 ---
