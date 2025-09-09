@@ -11,9 +11,11 @@ spec:
 blueprint:
   items:
   openFirst: false
+  singleOpen: false
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
+  singleOpen: true
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
@@ -26,6 +28,9 @@ _inputs:
     type: text
   openFirst:
     comment: "If true, the first item will be open by default."
+    type: checkbox
+  singleOpen:
+    comment: "If true, only one item can be open at a time within this accordion."
     type: checkbox
 
 _structures:
