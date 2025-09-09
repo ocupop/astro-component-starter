@@ -4,7 +4,7 @@ spec:
     - firstContentBlocks
     - secondContentBlocks
   label: Video
-  description: "Play a video from YouTube or your local files."
+  description: "Play a video from YouTube, Vimeo, or your local files."
   icon: data_object
   tags: []
 
@@ -23,10 +23,11 @@ _inputs:
     options:
       values:
         - youtube
+        - vimeo
         - native
-      videoId:
-      comment: Enter a video ID from a public video on YouTube
-      hidden: 'videoType != "youtube"'
+    videoId:
+      comment: Enter a video ID from a public video on YouTube or Vimeo
+      hidden: 'videoType == "native"'
     videoSrc:
       type: file
       comment: Must be mp4 as this is supported by all modern browsers

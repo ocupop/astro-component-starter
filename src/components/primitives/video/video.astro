@@ -26,20 +26,33 @@ const htmlAttributes = Object.fromEntries(
       <source src={`${videoSrc}`} type="video/mp4" />
       Your browser does not support the HTML5 video element.
     </video>
+  ) : videoType === "vimeo" ? (
+    <>
+      <script>import '@choctawnationofoklahoma/lite-vimeo';</script>
+      <lite-vimeo
+        class:list={["video", className]}
+        videotitle={`${title}`}
+        videoid={`${videoId}`}
+        {...htmlAttributes}
+      >
+        <a class="lite-vimeo-fallback" href={`https://vimeo.com/${videoId}`}>
+          Watch on Vimeo: "{title}"
+        </a>
+      </lite-vimeo>
+    </>
   ) : (
-    <script>
-      import '@justinribeiro/lite-youtube';
-    </script>
-    <lite-youtube
-      class:list={["video", className]}
-      videotitle={`${title}`}
-      videoid={`${videoId}`}
-      {...htmlAttributes}
-    >
-      <a class="lite-youtube-fallback" href={`https://www.youtube.com/watch?v=${videoId}`}>
-        Watch on YouTube: "{title}"
-      </a>
-    </lite-youtube>
+    <>
+      <script>import '@justinribeiro/lite-youtube';</script>
+      <lite-youtube
+        class:list={["video", className]}
+        videotitle={`${title}`}
+        videoid={`${videoId}`}
+        {...htmlAttributes}
+      >
+        <a class="lite-youtube-fallback" href={`https://www.youtube.com/watch?v=${videoId}`}>
+          Watch on YouTube: "{title}"
+        </a>
+      </lite-youtube>
+    </>
   )
 }
-

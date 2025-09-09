@@ -5,6 +5,7 @@ examples:
   - slugs:
       - local-source
       - youtube
+      - vimeo
     size: xl
     title: Video Types
 ---
