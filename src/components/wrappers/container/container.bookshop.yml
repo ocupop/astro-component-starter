@@ -96,29 +96,28 @@ _inputs:
   backgroundImage:
     comment: Background image configuration for the container.
     type: object
-    _inputs:
-      source:
-        comment: URL or path to the background image.
-        type: text
-      alt:
-        comment: Alt text for the background image.
-        type: text
-      positionVertical:
-        comment: Vertical position of the background image.
-        type: select
-        options:
-          values:
-            - top
-            - center
-            - bottom
-      positionHorizontal:
-        comment: Horizontal position of the background image.
-        type: select
-        options:
-          values:
-            - left
-            - center
-            - right
+  backgroundImage.source:
+    comment: URL or path to the background image.
+    type: image
+  backgroundImage.alt:
+    comment: Alt text for the background image.
+    type: textarea
+  backgroundImage.positionVertical:
+    comment: Vertical position of the background image.
+    type: select
+    options:
+      values:
+        - top
+        - center
+        - bottom
+  backgroundImage.positionHorizontal:
+    comment: Horizontal position of the background image.
+    type: select
+    options:
+      values:
+        - left
+        - center
+        - right
   rounded:
     comment: Whether to apply rounded corners to the container.
     type: switch
