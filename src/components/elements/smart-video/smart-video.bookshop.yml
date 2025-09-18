@@ -63,3 +63,11 @@ _inputs:
     type: image
     comment: The image displayed before the video plays or while it is loading.
     hidden: 'externalVideoHost'
+    options:
+      accepts_mime_types:
+        - image/jpeg
+        - image/png
+        - image/webp
+      paths:
+        uploads: public/assets/images
+        static: public
