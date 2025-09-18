@@ -42,6 +42,7 @@ _inputs:
           name: After
   hideText:
     type: switch
+    hidden: "!iconName"
     comment: Whether to hide the button text and show only the icon.
   variant:
     type: select
