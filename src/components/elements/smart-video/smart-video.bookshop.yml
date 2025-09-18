@@ -33,7 +33,7 @@ _inputs:
     comment: The video is hosted through an external provider.
   videoHost:
     type: select
-    hidden: '!externalVideoProvider'
+    hidden: '!externalVideoHost'
     options:
       values:
         - id: youtube
@@ -43,16 +43,16 @@ _inputs:
   id:
     type: text
     comment: Enter a video ID from a public video on YouTube or Vimeo.
-    hidden: '!externalVideoProvider'
+    hidden: '!externalVideoHost'
   title:
     type: text
     comment: The video title provides accessibility information for assistive technologies (like screen readers) and can display a tooltip when a user hovers over the video.
-    hidden: '!externalVideoProvider'
+    hidden: '!externalVideoHost'
   source:
     type: file
     label: Video Source
     comment: Must be mp4 as this is supported by all modern browsers.
-    hidden: 'externalVideoProvider'
+    hidden: 'externalVideoHost'
     options:
       accepts_mime_types:
         - video/mp4
@@ -62,4 +62,4 @@ _inputs:
   poster:
     type: image
     comment: The image displayed before the video plays or while it is loading.
-    hidden: 'externalVideoProvider'
+    hidden: 'externalVideoHost'
