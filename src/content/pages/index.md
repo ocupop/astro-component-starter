@@ -27,7 +27,9 @@ pageBlocks:
         action:
         formBlocks:
           - _bookshop_name: forms/choice-group
+            title: Subscription
             name: subscription
+            required: false
             options:
               - value: newsletter
                 label: Subscribe to newsletter
@@ -35,9 +37,7 @@ pageBlocks:
               - value: updates
                 label: Get product updates
                 checked: false
-            title: Subscription
             orientation: vertical
-            required: false
             multiple: true
           - _bookshop_name: forms/file-upload
             label: Upload a file
@@ -48,54 +48,56 @@ pageBlocks:
           - _bookshop_name: forms/input
             label: Email Address
             name: email
+            required: true
             type: email
             placeholder: youremail@email.com
-            required: true
             value:
           - _bookshop_name: forms/input
             label: Password
             name: password
+            required: true
             type: password
             placeholder:
-            required: true
             value:
           - _bookshop_name: forms/input
             label: Your message
             name: message
+            required: true
             type: text
             placeholder: Hello, I'd like one form and...
-            required: true
             value:
           - _bookshop_name: forms/input
             label: Telephone number
             name: telephone
+            required: false
             type: tel
             placeholder: '+641234567'
-            required: false
             value:
           - _bookshop_name: forms/input
             label: Url
             name: url
+            required: false
             type: url
             placeholder:
-            required: false
             value:
           - _bookshop_name: forms/input
             label: Age
             name: age
+            required: false
             type: number
             placeholder:
-            required: false
             value:
           - _bookshop_name: forms/input
             label: Birth Date
             name: birthdate
+            required: false
             type: date
             placeholder: 18/03/2025
-            required: false
             value:
           - _bookshop_name: forms/segments
+            title: Which option would you like?
             name: options
+            required: true
             options:
               - value: optionOne
                 label: First Option
@@ -109,14 +111,13 @@ pageBlocks:
                 label: Last Option
                 checked:
                 icon: arrow-up-left
-            title: Which option would you like?
-            required: true
             iconOnly: false
             multiple: false
             keepStateOnRefresh: true
           - _bookshop_name: forms/select
             label: Which do you prefer?
             name: preferred_dinosaur
+            required: true
             options:
               - value: option1
                 label: Option 1
@@ -125,12 +126,18 @@ pageBlocks:
               - value: option3
                 label: Option 3
             placeholder:
-            required: true
+            value:
+          - _bookshop_name: forms/textarea
+            label: The big message
+            name: aBigMessage
+            required: false
+            placeholder: Hello, I'm writing here because...
             value:
     maxContentWidth: 2xl
     paddingHorizontal: lg
     paddingVertical: lg
-    colorScheme: default
+    colorScheme:
+    backgroundColor:
     backgroundImage:
       source: ''
       alt: ''
