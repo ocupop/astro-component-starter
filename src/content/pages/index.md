@@ -91,7 +91,7 @@ pageBlocks:
             label: Birth Date
             name: birthdate
             type: date
-            placeholder:
+            placeholder: 18/03/2025
             required: false
             value:
           - _bookshop_name: forms/segments
