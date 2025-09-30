@@ -1,5 +1,5 @@
 ---
-const { externalVideoHost, videoHost = "youtube", id, source, poster, title, class: className, ...restProps } = Astro.props;
+const { video, class: className, ...restProps } = Astro.props;
 
 const htmlAttributes = Object.fromEntries(
   Object.entries(restProps).filter(([key]) => !key.startsWith("_"))
@@ -7,45 +7,43 @@ const htmlAttributes = Object.fromEntries(
 ---
 
 {
-  externalVideoHost ? (
-    videoHost === "vimeo" ? (
+  video._type === "vimeo" ? (
     <>
       <script>import '@choctawnationofoklahoma/lite-vimeo';</script>
       <lite-vimeo
         class:list={["smart-video", className]}
-        videotitle={`${title}`}
-        videoid={`${id}`}
+        videotitle={`${video.title}`}
+        videoid={`${video.id}`}
         {...htmlAttributes}
       >
-        <a class="lite-vimeo-fallback" href={`https://vimeo.com/${id}`}>
-          Watch on Vimeo: "{title}"
+        <a class="lite-vimeo-fallback" href={`https://vimeo.com/${video.id}`}>
+          Watch on Vimeo: "{video.title}"
         </a>
       </lite-vimeo>
     </>
-  ) : (
+  ) : video._type === "youtube" ? (
     <>
       <script>import '@justinribeiro/lite-youtube';</script>
       <lite-youtube
         class:list={["smart-video", className]}
-        videotitle={`${title}`}
-        videoid={`${id}`}
+        videotitle={`${video.title}`}
+        videoid={`${video.id}`}
         {...htmlAttributes}
       >
-        <a class="lite-youtube-fallback" href={`https://www.youtube.com/watch?v=${id}`}>
-          Watch on YouTube: "{title}"
+        <a class="lite-youtube-fallback" href={`https://www.youtube.com/watch?v=${video.id}`}>
+          Watch on YouTube: "{video.title}"
         </a>
       </lite-youtube>
     </>
-  )
   ) : (
     <video
       preload="none"
       controls
-      poster={poster}
+      poster={video.poster}
       class:list={["smart-video", className]}
       {...htmlAttributes}
     >
-      <source src={`${source}`} type="video/mp4" />
+      <source src={`${video.source}`} type="video/mp4" />
       Your browser does not support the HTML5 video element.
     </video>
   )

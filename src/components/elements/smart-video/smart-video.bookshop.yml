@@ -10,64 +10,69 @@ spec:
   preview:
     icon: videocam
     text:
-      - template: Smart Video - {type}
+      - template: Smart Video - {video._type}
       - Smart Video
     subtext:
-      - key: title
-      - key: source
+      - key: video.title
+      - key: video.source
       - Add video source
 
 blueprint:
-  externalVideoHost: true
-  videoHost: youtube
-  id:
-  title:
-  source:
-  poster:
+  video:
 
 preview:
 
 _inputs:
-  externalVideoHost:
-    type: switch
-    comment: The video is hosted through an external provider.
-  videoHost:
-    type: select
-    hidden: "!externalVideoHost"
-    options:
-      values:
-        - id: youtube
-          name: Youtube
-        - id: vimeo
-          name: Vimeo
-  id:
-    type: text
-    comment: Enter a video ID from a public video on YouTube or Vimeo.
-    hidden: "!externalVideoHost"
   title:
     type: text
     comment: The video title provides accessibility information for assistive technologies (like screen readers) and can display a tooltip when a user hovers over the video.
-    hidden: "!externalVideoHost"
-  source:
-    type: file
-    label: Video Source
-    comment: Must be mp4 as this is supported by all modern browsers.
-    hidden: "externalVideoHost"
+  video:
+    type: object
     options:
-      accepts_mime_types:
-        - video/mp4
-      paths:
-        uploads: public/assets/videos
-        static: public
-  poster:
-    type: image
-    comment: The image displayed before the video plays or while it is loading.
-    hidden: "externalVideoHost"
-    options:
-      accepts_mime_types:
-        - image/jpeg
-        - image/png
-        - image/webp
-      paths:
-        uploads: public/assets/images
-        static: public
+      structures:
+        values:
+          - label: YouTube
+            value:
+              _type: youtube
+              id:
+              title:
+            _inputs:
+              id:
+                type: text
+                comment: Enter a video ID from a public video on YouTube.
+          - label: Vimeo
+            value:
+              _type: vimeo
+              id:
+              title:
+            _inputs:
+              id:
+                type: text
+                comment: Enter a video ID from a public video on Vimeo.
+          - label: Self Hosted
+            value:
+              _type: self-hosted
+              source:
+              poster:
+            _inputs:
+              source:
+                type: file
+                label: Video Source
+                comment: Must be mp4 as this is supported by all modern browsers.
+                options:
+                  accepts_mime_types:
+                    - video/mp4
+                  paths:
+                    uploads: public/assets/videos
+                    static: public
+              poster:
+                type: image
+                comment: The image displayed before the video plays or while it is loading.
+                options:
+                  accepts_mime_types:
+                    - image/jpeg
+                    - image/png
+                    - image/webp
+                  paths:
+                    uploads: public/assets/images
+                    static: public
