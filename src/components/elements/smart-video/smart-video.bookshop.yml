@@ -15,7 +15,7 @@ spec:
     subtext:
       - key: video.title
       - key: video.source
-      - Add video source
+      - Add video
 
 blueprint:
   video:

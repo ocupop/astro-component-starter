@@ -254,12 +254,10 @@ pageBlocks:
         suffix:
         horizontalAlignment: start
       - _bookshop_name: elements/smart-video
-        externalVideoHost: false
-        videoHost: youtube
-        id:
-        title:
-        source: /assets/videos/glass.mp4
-        poster: /assets/images/video-placeholder.jpg
+        video:
+          _type: youtube
+          source: /assets/videos/glass.mp4
+          poster: /assets/images/video-placeholder.jpg
       - _bookshop_name: wrappers/card
         label: ""
         contentBlocks:
@@ -314,26 +312,20 @@ pageBlocks:
                 positionVertical: center
                 positionHorizontal: center
               - _bookshop_name: elements/smart-video
-                externalVideoHost: true
-                videoHost: youtube
-                id: GOejI6c0CMQ
-                title: CC tutorial
-                source:
-                poster:
+                video:
+                  _type: youtube
+                  id: GOejI6c0CMQ
+                  title: CC tutorial
               - _bookshop_name: elements/smart-video
-                externalVideoHost: false
-                videoHost: youtube
-                id:
-                title:
-                source: /assets/videos/glass.mp4
-                poster: /assets/images/video-placeholder.jpg
+                video:
+                  _type: self-hosted
+                  source: /assets/videos/glass.mp4
+                  poster: /assets/images/video-placeholder.jpg
               - _bookshop_name: elements/smart-video
-                externalVideoHost: true
-                videoHost: vimeo
-                id: "1054665455"
-                title: A vimeo test vid
-                source:
-                poster:
+                video:
+                  _type: vimeo
+                  id: "1054665455"
+                  title: A vimeo test vid
         openFirst: false
         singleOpen: false
       - _bookshop_name: forms/form
