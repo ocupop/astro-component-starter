@@ -9,13 +9,7 @@ spec:
 blueprint:
   label:
   name:
-  options:
-    - value: "option1"
-      label: "Option 1"
-    - value: "option2"
-      label: "Option 2"
-    - value: "option3"
-      label: "Option 3"
+  options: []
   placeholder:
   required: false
   value:
@@ -30,8 +24,10 @@ _inputs:
     type: text
     comment: The name attribute for the select field.
   options:
-    type: blocks
+    type: array
     comment: Array of select options with value and label.
+    options:
+      structures: _structures.option
   placeholder:
     type: text
     comment: Placeholder text for the select field.
@@ -41,3 +37,19 @@ _inputs:
   value:
     type: text
     comment: The default selected value.
+
+_structures:
+  option:
+    values:
+      - label: Option
+        icon: list
+        value:
+          value:
+          label:
+        _inputs:
+          value:
+            type: text
+            comment: The value attribute for this option (submitted with the form).
+          label:
+            type: text
+            comment: The display text for this option.

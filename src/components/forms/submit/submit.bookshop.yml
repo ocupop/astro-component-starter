@@ -1,6 +1,6 @@
 spec:
   structures:
-    - submitBlocks
+    - formBlocks
   label: Submit
   description: "A submit button for forms."
   icon: check

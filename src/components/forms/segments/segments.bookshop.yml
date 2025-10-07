@@ -7,7 +7,7 @@ spec:
   tags: []
 
 blueprint:
-  name: segments
+  name:
   options: []
   title:
   required: false

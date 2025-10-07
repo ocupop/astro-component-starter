@@ -30,7 +30,6 @@ Object.entries(componentImports).forEach(([path, obj]) => {
 
 const viewerId = title.toLowerCase().replace(/\s+/g, "-");
 
-// Pre-generate formatted code for all examples
 const formattedCodeCache = await Promise.all(
   component_examples.map(async (example: any) => {
     try {

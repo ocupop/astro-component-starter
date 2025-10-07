@@ -10,12 +10,12 @@ spec:
   preview:
     text: Counter
     subtext:
-      - template: '{prefix}{number}{suffix}'
+      - template: "{prefix}{number}{suffix}"
       - Add counter details
     icon: speed
 
 blueprint:
-  number: 100
+  number:
   prefix:
   suffix:
   horizontalAlignment: start

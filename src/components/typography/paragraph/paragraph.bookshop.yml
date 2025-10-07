@@ -8,7 +8,7 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  text: "This is a sample paragraph with customizable styling options."
+  text: ""
   size: md
   weight: normal
   color: primary

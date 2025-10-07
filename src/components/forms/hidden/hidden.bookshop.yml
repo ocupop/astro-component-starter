@@ -1,6 +1,6 @@
 spec:
   structures:
-    - hiddenBlocks
+    - formBlocks
   label: Hidden
   description: "A hidden form field for storing data that should not be visible to users."
   icon: eye-slash

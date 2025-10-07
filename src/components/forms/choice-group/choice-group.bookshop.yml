@@ -9,12 +9,6 @@ spec:
 blueprint:
   name:
   options:
-    - value: newsletter
-      label: Subscribe to newsletter
-      checked: false
-    - value: updates
-      label: Get product updates
-      checked: false
   title:
   orientation: vertical
   required: false
