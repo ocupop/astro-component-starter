@@ -4,7 +4,7 @@ import markdownit from "markdown-it";
 
 const md = markdownit({ html: true });
 
-const { text = "", align = "start", class: className, ...rest } = Astro.props;
+const { text = "", alignX = "start", class: className, ...rest } = Astro.props;
 
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_bookshop_name")
@@ -13,6 +13,6 @@ const htmlAttributes = Object.fromEntries(
 const markdownContent = text ? md.render(text) : "";
 ---
 
-<div class:list={["rich-text", className, `align-${align}`]} {...htmlAttributes}>
+<div class:list={["rich-text", className, `align-${alignX}`]} {...htmlAttributes}>
   {text ? <Fragment set:html={markdownContent} /> : <slot />}
 </div>

@@ -10,7 +10,7 @@ spec:
 
 blueprint:
   text:
-  align:
+  alignX:
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
@@ -44,7 +44,7 @@ _inputs:
       horizontalrule: true
       image: true
       table: true
-  align:
+  alignX:
     type: select
     options:
       values:

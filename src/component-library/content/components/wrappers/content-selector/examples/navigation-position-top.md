@@ -18,7 +18,7 @@ blocks:
             **Do you offer support?** Yes — email us anytime.
 
             **Can I cancel?** Yes, you can cancel anytime.
-          align: start
+          alignX: start
           size: md
     - title: Shipping
       sub_text: How we deliver

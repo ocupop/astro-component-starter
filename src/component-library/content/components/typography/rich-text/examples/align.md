@@ -4,11 +4,11 @@ spacing: "sides"
 blocks:
   - _bookshop_name: "typography/rich-text"
     text: "**Start** aligned"
-    align: start
+    alignX: start
   - _bookshop_name: "typography/rich-text"
     text: "**Center** aligned"
-    align: center
+    alignX: center
   - _bookshop_name: "typography/rich-text"
     text: "**End** aligned"
-    align: end
+    alignX: end
 ---
