@@ -7,7 +7,7 @@ const {
   text,
   type = "h2",
   size,
-  align = "start",
+  alignX = "start",
   iconName,
   iconPosition = "before",
   class: className,
@@ -32,7 +32,7 @@ const Tag = getTag(type);
 ---
 
 <Tag
-  class:list={["heading", `type-${type}`, size && `size-${size}`, `align-${align}`, className]}
+  class:list={["heading", `type-${type}`, size && `size-${size}`, `align-${alignX}`, className]}
   {...htmlAttributes}
 >
   {

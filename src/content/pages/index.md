@@ -8,7 +8,7 @@ pageBlocks:
       - _bookshop_name: typography/heading
         text: Welcome to your CloudCannon Starter Component site
         level: h1
-        align: center
+        alignX: center
       - _bookshop_name: wrappers/button-group
         buttonBlocks:
           - _bookshop_name: elements/button

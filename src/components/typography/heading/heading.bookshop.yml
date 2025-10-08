@@ -12,7 +12,7 @@ blueprint:
   text:
   type: h2
   size:
-  align: start
+  alignX: start
   iconName: null
   iconPosition: before
 
@@ -81,7 +81,7 @@ _inputs:
           name: 5xl
         - id: 6xl
           name: 6xl
-  align:
+  alignX:
     comment: The alignment of the text.
     type: select
     options:

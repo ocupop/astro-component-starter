@@ -12,7 +12,7 @@ blocks:
         - _bookshop_name: typography/heading
           text: "Frequently asked questions"
           level: h2
-          align: start
+          alignX: start
         - _bookshop_name: typography/rich-text
           text: |
             **Do you offer support?** Yes — email us anytime.

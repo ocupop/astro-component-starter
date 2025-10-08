@@ -9,6 +9,6 @@ blocks:
     - _bookshop_name: "typography/heading"
       text: This container has sm max content width.
       level: h2
-      align: center
+      alignX: center
       style: "border: 1px solid var(--color-border)"
 ---

@@ -12,6 +12,6 @@ blocks:
     positionHorizontal: left
   contentBlocks:
     - _bookshop_name: "typography/heading"
-      align: end
+      alignX: end
       text: Build bold. Launch fast.
 ---
