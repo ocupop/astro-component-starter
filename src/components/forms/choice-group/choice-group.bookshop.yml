@@ -21,7 +21,9 @@ _inputs:
     type: text
     comment: The name attribute for the input group.
   options:
-    type: blocks
+    type: array
+    options:
+      structures: _structures.choice_option
     comment: Array of choice options with value, label, and checked state.
   title:
     type: text
@@ -39,3 +41,22 @@ _inputs:
   multiple:
     type: switch
     comment: When true, uses checkboxes for multiple selection. When false, uses radio buttons for single selection.
+
+_structures:
+  choice_option:
+    values:
+      - label: Option
+        value:
+          value: ""
+          label: ""
+          checked: false
+        _inputs:
+          value:
+            type: text
+            comment: The value submitted when this option is selected.
+          label:
+            type: text
+            comment: The display text shown next to the checkbox/radio button.
+          checked:
+            type: switch
+            comment: Whether this option is selected by default.
