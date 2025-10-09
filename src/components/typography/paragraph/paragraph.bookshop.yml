@@ -38,7 +38,7 @@ _inputs:
         - id: xl
           name: Extra Large
         - id: 2xl
-          name: 2XL
+          name: 2xl
   weight:
     type: select
     comment: "The font weight of the paragraph text."

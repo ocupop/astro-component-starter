@@ -8,7 +8,7 @@ blocks:
   backgroundColor: surface
   contentBlocks:
     - _bookshop_name: "typography/heading"
-      text: "2XL Padding"
+      text: "2xl Padding"
       level: h3
     - _bookshop_name: "typography/simple-text"
       text: "This card uses 2xl padding for maximum spacing and dramatic visual presence."

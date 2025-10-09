@@ -65,7 +65,7 @@ _inputs:
         - id: xl
           name: Extra Large
         - id: 2xl
-          name: 2XL
+          name: 2xL
   paddingVertical:
     comment: Vertical padding applied to the card content.
     type: select

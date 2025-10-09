@@ -60,7 +60,7 @@ _inputs:
         - id: xl
           name: Extra Large
         - id: 2xl
-          name: 2XL
+          name: 2xl
 
 _structures:
   item:

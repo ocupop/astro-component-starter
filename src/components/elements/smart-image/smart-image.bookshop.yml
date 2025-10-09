@@ -45,15 +45,15 @@ _inputs:
     options:
       values:
         - id: square
-          name: Square
+          name: Square (1:1)
         - id: landscape
-          name: Landscape
+          name: Landscape (4:3)
         - id: portrait
-          name: Portrait
+          name: Portrait (3:4)
         - id: widescreen
-          name: Widescreen
+          name: Widescreen (16:9)
         - id: golden
-          name: Golden
+          name: Golden (1.618:1)
   positionVertical:
     type: select
     comment: Vertical positioning of the image within the container.
