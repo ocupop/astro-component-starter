@@ -6,7 +6,7 @@ pageBlocks:
     label: ""
     contentBlocks:
       - _bookshop_name: typography/heading
-        text: Welcome to your CloudCannon Starter Component site
+        textContent: Welcome to your CloudCannon Starter Component site
         type: h1
         alignX: center
       - _bookshop_name: wrappers/button-group
