@@ -15,28 +15,28 @@ Object.entries(componentImports).forEach(([path, obj]) => {
   if (parts.length > 1 && parts[parts.length - 1] === parts[parts.length - 2]) {
     parts.pop();
   }
-  const bookshopName = parts.join("/");
+  const componentName = parts.join("/");
 
-  components[bookshopName] = (obj as any).default;
+  components[componentName] = (obj as any).default;
 });
 
 const { contentBlocks, propName = "contentBlocks" } = Astro.props;
 ---
 
-<editable-array data-editable="array" data-prop={propName} data-id-key="_bookshop_name">
+<editable-array data-editable="array" data-prop={propName} data-id-key="_component">
   {
     contentBlocks?.map((block) => {
-      const Component = components[block._bookshop_name];
+      const Component = components[block._component];
 
-      if (!Component && block._bookshop_name) {
+      if (!Component && block._component) {
         console.warn(
-          `Component not found: ${block._bookshop_name}. Available components:`,
+          `Component not found: ${block._component}. Available components:`,
           Object.keys(components)
         );
       }
 
       return Component ? (
-        <editable-array-item data-id={block._bookshop_name} data-component={block._bookshop_name}>
+        <editable-array-item data-id={block._component} data-component={block._component}>
           <Component {...block} />
         </editable-array-item>
       ) : null;
