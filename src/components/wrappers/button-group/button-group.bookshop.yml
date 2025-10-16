@@ -3,14 +3,21 @@ spec:
     - contentBlocks
     - cardBlocks
     - splitBlocks
+    - gridItemBlocks
+    - accordionBlocks
+    - carouselBlocks
+    - contentSelectorBlocks
   label: Button Group
   description: "Controls the alignment and direction of buttons."
   icon: rectangle
   tags: []
   preview:
-    text: Button Group
+    text:
+      - key: label
+      - Button Group
     subtext:
-      - template: '{buttonBlocks|array_length} {"button"|pluralize=buttonBlocks}'
+      - template: 'A button group containing {buttonBlocks|array_length} {"button"|pluralize=buttonBlocks}'
+      - Add one or more buttons to the button group
 
 blueprint:
   label:

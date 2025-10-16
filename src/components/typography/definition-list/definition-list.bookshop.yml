@@ -3,6 +3,10 @@ spec:
     - contentBlocks
     - cardBlocks
     - splitBlocks
+    - gridItemBlocks
+    - accordionBlocks
+    - carouselBlocks
+    - contentSelectorBlocks
   label: Definition List
   description: "For displaying key-value pairs. Ideal for glossaries, opening times, etc."
   icon: dns
@@ -19,7 +23,7 @@ _inputs:
     type: array
     label: List Items
     options:
-      structures: _structures.item
+      structures: _structures.definitionListItems
   alignX:
     type: select
     comment: The horizontal alignment of the definition list items.
@@ -33,7 +37,7 @@ _inputs:
           name: End
 
 _structures:
-  item:
+  definitionListItems:
     values:
       - label: Definition List Item
         value:

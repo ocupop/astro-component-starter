@@ -3,6 +3,10 @@ spec:
     - contentBlocks
     - cardBlocks
     - splitBlocks
+    - gridItemBlocks
+    - accordionBlocks
+    - carouselBlocks
+    - contentSelectorBlocks
   label: Smart Video
   description: "Play a video from YouTube, Vimeo, or your local files."
   icon: videocam

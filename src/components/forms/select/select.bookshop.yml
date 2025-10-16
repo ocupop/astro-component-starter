@@ -46,7 +46,7 @@ _inputs:
     type: array
     comment: Array of select options with value and label.
     options:
-      structures: _structures.select_option
+      structures: _structures.selectOptions
       min_items: 2
       min_items_message: At least two options are required.
   placeholder:
@@ -57,7 +57,7 @@ _inputs:
     comment: The default selected value.
 
 _structures:
-  select_option:
+  selectOptions:
     values:
       - value:
           value:

@@ -3,6 +3,10 @@ spec:
     - contentBlocks
     - cardBlocks
     - splitBlocks
+    - gridItemBlocks
+    - accordionBlocks
+    - carouselBlocks
+    - contentSelectorBlocks
   label: Rich text
   description: A catch-all for all content types. Can contain headings, paragraphs, images, bullets. Use text prop for Markdown content or slot for HTML content.
   icon: edit_note

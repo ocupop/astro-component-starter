@@ -3,6 +3,10 @@ spec:
     - contentBlocks
     - cardBlocks
     - splitBlocks
+    - gridItemBlocks
+    - accordionBlocks
+    - carouselBlocks
+    - contentSelectorBlocks
   label: Smart Image
   description: Displays an image optimized for performance with smart CDN detection.
   icon: image

@@ -3,6 +3,10 @@ spec:
     - contentBlocks
     - cardBlocks
     - splitBlocks
+    - gridItemBlocks
+    - accordionBlocks
+    - carouselBlocks
+    - contentSelectorBlocks
   label: List
   description: Displays items in a list with icons as markers. (For traditional bulleted or numbered lists, use rich text instead.)
   icon: list
@@ -22,7 +26,7 @@ _inputs:
   items:
     type: array
     options:
-      structures: _structures.item
+      structures: _structures.listItems
     comment: Array of list items.
   direction:
     type: select
@@ -63,7 +67,7 @@ _inputs:
           name: 2xl
 
 _structures:
-  item:
+  listItems:
     values:
       - label: List Item
         value:

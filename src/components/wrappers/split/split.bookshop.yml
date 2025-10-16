@@ -1,6 +1,8 @@
 spec:
   structures:
     - contentBlocks
+    - carouselBlocks
+    - contentSelectorBlocks
   label: Split
   description: Arranges content in two columns.
   icon: vertical_split

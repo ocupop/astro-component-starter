@@ -39,7 +39,7 @@ _inputs:
     type: array
     comment: Array of choice options with value, label, and checked state.
     options:
-      structures: _structures.choice_option
+      structures: _structures.choiceOptions
       min_items: 1
       min_items_message: At least one option is required.
   orientation:
@@ -56,7 +56,7 @@ _inputs:
     comment: When true, uses checkboxes for multiple selection. When false, uses radio buttons for single selection.
 
 _structures:
-  choice_option:
+  choiceOptions:
     values:
       - value:
           value:

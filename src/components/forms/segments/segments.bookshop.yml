@@ -34,7 +34,7 @@ _inputs:
     type: array
     comment: Array of segment options with value, label, icon, and checked state.
     options:
-      structures: _structures.segment_option
+      structures: _structures.segmentOptions
       min_items: 1
       min_items_message: At least one option is required.
   iconOnly:
@@ -48,7 +48,7 @@ _inputs:
     comment: When true, sets autocomplete="on" to allow browser to remember state on page refresh. Defaults to false (autocomplete="off").
 
 _structures:
-  segment_option:
+  segmentOptions:
     values:
       - value:
           value:

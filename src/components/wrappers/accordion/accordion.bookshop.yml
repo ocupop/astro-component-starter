@@ -3,10 +3,19 @@ spec:
     - contentBlocks
     - cardBlocks
     - splitBlocks
+    - gridItemBlocks
+    - carouselBlocks
+    - contentSelectorBlocks
   label: Accordion
   description: Hides content behind an expandable menu.
   icon: expand_all
   tags:
+  preview:
+    text:
+      - key: label
+      - Accordion
+    subtext:
+      - template: An accordion containing {items|array_length} {"item"|pluralize=items}
 
 blueprint:
   label:
@@ -27,7 +36,7 @@ _inputs:
     comment: The items to display in the accordion.
     type: array
     options:
-      structures: _structures.accordion_item
+      structures: _structures.accordionItems
   openFirst:
     comment: Whether the first item will be open by default.
     type: switch
@@ -36,7 +45,7 @@ _inputs:
     type: switch
 
 _structures:
-  accordion_item:
+  accordionItems:
     values:
       - label: Item
         icon: place_item
@@ -50,4 +59,4 @@ _structures:
           contentBlocks:
             type: array
             options:
-              structures: _structures.contentBlocks
+              structures: _structures.accordionBlocks
