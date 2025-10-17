@@ -3,44 +3,6 @@ import { glob } from "glob";
 import yaml from "js-yaml";
 import path from "path";
 
-/**
- * CloudCannon Structures Generator
- *
- * This script aggregates component configurations from *.config.yml files
- * and generates the _structures section in cloudcannon.config.yml.
- *
- * Component Config Format:
- * -----------------------
- * Each component config file should have the following structure:
- *
- *   label: Component Name
- *   icon: icon_name
- *   description: "Component description"
- *   structures:
- *     - contentBlocks
- *   value:
- *     _component: path/to/component
- *     field: default_value
- *   preview:
- *     text: [...]
- *   picker_preview:
- *     text: Component Name
- *   _inputs:
- *     field:
- *       type: text
- *
- * Structure Aliases:
- * -----------------
- * You can define 1:1 relationships between structures in cloudcannon.config.yml:
- *
- *   structure_aliases:
- *     firstContentBlocks: contentBlocks
- *     secondContentBlocks: contentBlocks
- *
- * When a component specifies it belongs to 'contentBlocks', it will automatically
- * be added to 'firstContentBlocks' and 'secondContentBlocks' as well.
- */
-
 const CONFIG_FILE = "cloudcannon.config.yml";
 
 async function generateStructures() {
@@ -178,7 +140,7 @@ async function generateStructures() {
     lineWidth: -1, // Don't wrap lines
     quotingType: '"',
     forceQuotes: false,
-    noRefs: true, // Disable YAML anchors/references - just duplicate code
+    noRefs: false,
   });
 
   fs.writeFileSync(CONFIG_FILE, yamlContent, "utf8");
