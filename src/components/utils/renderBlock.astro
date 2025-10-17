@@ -37,7 +37,7 @@ const { contentBlocks, propName = "contentBlocks" } = Astro.props;
 
       return Component ? (
         <editable-array-item
-          data-component-key="_component"
+          data-component-key={block._component}
           data-id={block._component}
           data-component={block._component}
         >
