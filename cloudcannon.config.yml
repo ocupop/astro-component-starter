@@ -733,7 +733,7 @@ _structures:
         icon: vertical_split
         description: Arranges content in two columns.
         value:
-          _component: wrappers/split/split
+          _component: wrappers/split
           label: ""
           firstColumnContentBlocks: []
           secondColumnContentBlocks: []
@@ -812,7 +812,7 @@ _structures:
         icon: grid_on
         description: Responsive, centered grid with configurable sizing.
         value:
-          _component: wrappers/grid/grid
+          _component: wrappers/grid
           label: ""
           layout: features
           minItemWidth: 280
@@ -860,7 +860,7 @@ _structures:
         icon: view_sidebar
         description: Switches between related content panels using tab buttons.
         value:
-          _component: wrappers/content-selector/content-selector
+          _component: wrappers/content-selector
           label: ""
           items: null
           navigationPosition: start
@@ -895,7 +895,7 @@ _structures:
         icon: width_full
         description: A container component that provides layout structure with background options, padding, and content width controls.
         value:
-          _component: wrappers/container/container
+          _component: wrappers/container
           label: ""
           contentBlocks: []
           maxContentWidth: md
@@ -1077,7 +1077,7 @@ _structures:
         icon: image
         description: A carousel component for displaying slides with navigation controls
         value:
-          _component: wrappers/carousel/carousel
+          _component: wrappers/carousel
           label: ""
           slides: []
           autoPlay: false
@@ -1123,7 +1123,7 @@ _structures:
         icon: crop_square
         description: A container component that provides card layout with background options and padding controls.
         value:
-          _component: wrappers/card/card
+          _component: wrappers/card
           label: null
           contentBlocks: []
           headerContentBlocks: []
@@ -1282,7 +1282,7 @@ _structures:
         icon: rectangle
         description: Controls the alignment and direction of buttons.
         value:
-          _component: wrappers/button-group/button-group
+          _component: wrappers/button-group
           label: null
           buttonBlocks: []
           direction: row
@@ -1331,7 +1331,7 @@ _structures:
         icon: expand_all
         description: Hides content behind an expandable menu.
         value:
-          _component: wrappers/accordion/accordion
+          _component: wrappers/accordion
           label: null
           items: null
           openFirst: false
@@ -1362,6 +1362,59 @@ _structures:
           singleOpen:
             comment: Whether only one item can be open at a time within this accordion.
             type: switch
+      - label: Testimonial
+        icon: format_quote
+        description: A quotation with an author and author description.
+        value:
+          _component: typography/testimonial
+          text: ""
+          authorName: ""
+          authorDescription: ""
+          alignX: start
+        preview:
+          text:
+            - template: Testimonial - {authorName}
+            - Testimonial
+          subtext:
+            - key: text
+            - Add testimonial text
+        picker_preview:
+          text: Testimonial
+          subtext: A quotation with an author and author description.
+          icon: format_quote
+        _inputs:
+          text:
+            type: markdown
+            comment: Quotation marks will be added around the text.
+            options:
+              bold: true
+              italic: true
+              link: true
+              strike: true
+              subscript: true
+              superscript: true
+              underline: true
+              undo: true
+              redo: true
+              removeformat: true
+              copyformatting: true
+          authorName:
+            comment: The person to whom you're attributing the quotation.
+            type: textarea
+          authorDescription:
+            comment: The role or company of the person.
+            type: textarea
+          alignX:
+            comment: The horizontal alignment of the testimonial.
+            type: select
+            options:
+              values:
+                - id: start
+                  name: Start
+                - id: center
+                  name: Center
+                - id: end
+                  name: End
       - label: Simple Text
         icon: view_headline
         description: Displays blocks of text for content sections with options for alignment, size and decoration.
@@ -1431,59 +1484,6 @@ _structures:
                   name: 5xl
                 - id: 6xl
                   name: 6xl
-      - label: Testimonial
-        icon: format_quote
-        description: A quotation with an author and author description.
-        value:
-          _component: typography/testimonial
-          text: ""
-          authorName: ""
-          authorDescription: ""
-          alignX: start
-        preview:
-          text:
-            - template: Testimonial - {authorName}
-            - Testimonial
-          subtext:
-            - key: text
-            - Add testimonial text
-        picker_preview:
-          text: Testimonial
-          subtext: A quotation with an author and author description.
-          icon: format_quote
-        _inputs:
-          text:
-            type: markdown
-            comment: Quotation marks will be added around the text.
-            options:
-              bold: true
-              italic: true
-              link: true
-              strike: true
-              subscript: true
-              superscript: true
-              underline: true
-              undo: true
-              redo: true
-              removeformat: true
-              copyformatting: true
-          authorName:
-            comment: The person to whom you're attributing the quotation.
-            type: textarea
-          authorDescription:
-            comment: The role or company of the person.
-            type: textarea
-          alignX:
-            comment: The horizontal alignment of the testimonial.
-            type: select
-            options:
-              values:
-                - id: start
-                  name: Start
-                - id: center
-                  name: Center
-                - id: end
-                  name: End
       - label: Rich text
         icon: edit_note
         description: A catch-all for all content types. Can contain headings, paragraphs, images, bullets. Use text prop for Markdown content or slot for HTML content.
@@ -1669,30 +1669,6 @@ _structures:
                   name: Center
                 - id: end
                   name: End
-      - label: Form
-        icon: checklist_rtl
-        description: A form element that groups related form controls and handles form submission.
-        value:
-          _component: forms/form/form
-          action: null
-          formBlocks: []
-        preview:
-          subtext:
-            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
-            - Add items to the form
-        picker_preview:
-          text: Form
-          subtext: A form element that groups related form controls and handles form submission.
-          icon: checklist_rtl
-        _inputs:
-          action:
-            type: url
-            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
-          formBlocks:
-            type: array
-            comment: The form blocks to render inside the form.
-            options:
-              structures: _structures.formBlocks
       - label: Spacer
         icon: space_bar
         description: Gives space between content.
@@ -1799,6 +1775,30 @@ _structures:
                   name: Center
                 - id: right
                   name: Right
+      - label: Form
+        icon: checklist_rtl
+        description: A form element that groups related form controls and handles form submission.
+        value:
+          _component: forms/form
+          action: null
+          formBlocks: []
+        preview:
+          subtext:
+            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
+            - Add items to the form
+        picker_preview:
+          text: Form
+          subtext: A form element that groups related form controls and handles form submission.
+          icon: checklist_rtl
+        _inputs:
+          action:
+            type: url
+            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
+          formBlocks:
+            type: array
+            comment: The form blocks to render inside the form.
+            options:
+              structures: _structures.formBlocks
       - label: Smart Video
         icon: videocam
         description: Play a video from YouTube, Vimeo, or your local files.
@@ -1951,7 +1951,7 @@ _structures:
         icon: vertical_split
         description: Arranges content in two columns.
         value:
-          _component: wrappers/split/split
+          _component: wrappers/split
           label: ""
           firstColumnContentBlocks: []
           secondColumnContentBlocks: []
@@ -2030,7 +2030,7 @@ _structures:
         icon: grid_on
         description: Responsive, centered grid with configurable sizing.
         value:
-          _component: wrappers/grid/grid
+          _component: wrappers/grid
           label: ""
           layout: features
           minItemWidth: 280
@@ -2078,7 +2078,7 @@ _structures:
         icon: view_sidebar
         description: Switches between related content panels using tab buttons.
         value:
-          _component: wrappers/content-selector/content-selector
+          _component: wrappers/content-selector
           label: ""
           items: null
           navigationPosition: start
@@ -2113,7 +2113,7 @@ _structures:
         icon: crop_square
         description: A container component that provides card layout with background options and padding controls.
         value:
-          _component: wrappers/card/card
+          _component: wrappers/card
           label: null
           contentBlocks: []
           headerContentBlocks: []
@@ -2272,7 +2272,7 @@ _structures:
         icon: rectangle
         description: Controls the alignment and direction of buttons.
         value:
-          _component: wrappers/button-group/button-group
+          _component: wrappers/button-group
           label: null
           buttonBlocks: []
           direction: row
@@ -2321,7 +2321,7 @@ _structures:
         icon: expand_all
         description: Hides content behind an expandable menu.
         value:
-          _component: wrappers/accordion/accordion
+          _component: wrappers/accordion
           label: null
           items: null
           openFirst: false
@@ -2352,6 +2352,59 @@ _structures:
           singleOpen:
             comment: Whether only one item can be open at a time within this accordion.
             type: switch
+      - label: Testimonial
+        icon: format_quote
+        description: A quotation with an author and author description.
+        value:
+          _component: typography/testimonial
+          text: ""
+          authorName: ""
+          authorDescription: ""
+          alignX: start
+        preview:
+          text:
+            - template: Testimonial - {authorName}
+            - Testimonial
+          subtext:
+            - key: text
+            - Add testimonial text
+        picker_preview:
+          text: Testimonial
+          subtext: A quotation with an author and author description.
+          icon: format_quote
+        _inputs:
+          text:
+            type: markdown
+            comment: Quotation marks will be added around the text.
+            options:
+              bold: true
+              italic: true
+              link: true
+              strike: true
+              subscript: true
+              superscript: true
+              underline: true
+              undo: true
+              redo: true
+              removeformat: true
+              copyformatting: true
+          authorName:
+            comment: The person to whom you're attributing the quotation.
+            type: textarea
+          authorDescription:
+            comment: The role or company of the person.
+            type: textarea
+          alignX:
+            comment: The horizontal alignment of the testimonial.
+            type: select
+            options:
+              values:
+                - id: start
+                  name: Start
+                - id: center
+                  name: Center
+                - id: end
+                  name: End
       - label: Simple Text
         icon: view_headline
         description: Displays blocks of text for content sections with options for alignment, size and decoration.
@@ -2421,59 +2474,6 @@ _structures:
                   name: 5xl
                 - id: 6xl
                   name: 6xl
-      - label: Testimonial
-        icon: format_quote
-        description: A quotation with an author and author description.
-        value:
-          _component: typography/testimonial
-          text: ""
-          authorName: ""
-          authorDescription: ""
-          alignX: start
-        preview:
-          text:
-            - template: Testimonial - {authorName}
-            - Testimonial
-          subtext:
-            - key: text
-            - Add testimonial text
-        picker_preview:
-          text: Testimonial
-          subtext: A quotation with an author and author description.
-          icon: format_quote
-        _inputs:
-          text:
-            type: markdown
-            comment: Quotation marks will be added around the text.
-            options:
-              bold: true
-              italic: true
-              link: true
-              strike: true
-              subscript: true
-              superscript: true
-              underline: true
-              undo: true
-              redo: true
-              removeformat: true
-              copyformatting: true
-          authorName:
-            comment: The person to whom you're attributing the quotation.
-            type: textarea
-          authorDescription:
-            comment: The role or company of the person.
-            type: textarea
-          alignX:
-            comment: The horizontal alignment of the testimonial.
-            type: select
-            options:
-              values:
-                - id: start
-                  name: Start
-                - id: center
-                  name: Center
-                - id: end
-                  name: End
       - label: Rich text
         icon: edit_note
         description: A catch-all for all content types. Can contain headings, paragraphs, images, bullets. Use text prop for Markdown content or slot for HTML content.
@@ -2659,30 +2659,6 @@ _structures:
                   name: Center
                 - id: end
                   name: End
-      - label: Form
-        icon: checklist_rtl
-        description: A form element that groups related form controls and handles form submission.
-        value:
-          _component: forms/form/form
-          action: null
-          formBlocks: []
-        preview:
-          subtext:
-            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
-            - Add items to the form
-        picker_preview:
-          text: Form
-          subtext: A form element that groups related form controls and handles form submission.
-          icon: checklist_rtl
-        _inputs:
-          action:
-            type: url
-            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
-          formBlocks:
-            type: array
-            comment: The form blocks to render inside the form.
-            options:
-              structures: _structures.formBlocks
       - label: Spacer
         icon: space_bar
         description: Gives space between content.
@@ -2789,6 +2765,30 @@ _structures:
                   name: Center
                 - id: right
                   name: Right
+      - label: Form
+        icon: checklist_rtl
+        description: A form element that groups related form controls and handles form submission.
+        value:
+          _component: forms/form
+          action: null
+          formBlocks: []
+        preview:
+          subtext:
+            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
+            - Add items to the form
+        picker_preview:
+          text: Form
+          subtext: A form element that groups related form controls and handles form submission.
+          icon: checklist_rtl
+        _inputs:
+          action:
+            type: url
+            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
+          formBlocks:
+            type: array
+            comment: The form blocks to render inside the form.
+            options:
+              structures: _structures.formBlocks
       - label: Smart Video
         icon: videocam
         description: Play a video from YouTube, Vimeo, or your local files.
@@ -2941,7 +2941,7 @@ _structures:
         icon: vertical_split
         description: Arranges content in two columns.
         value:
-          _component: wrappers/split/split
+          _component: wrappers/split
           label: ""
           firstColumnContentBlocks: []
           secondColumnContentBlocks: []
@@ -3020,7 +3020,7 @@ _structures:
         icon: grid_on
         description: Responsive, centered grid with configurable sizing.
         value:
-          _component: wrappers/grid/grid
+          _component: wrappers/grid
           label: ""
           layout: features
           minItemWidth: 280
@@ -3068,7 +3068,7 @@ _structures:
         icon: image
         description: A carousel component for displaying slides with navigation controls
         value:
-          _component: wrappers/carousel/carousel
+          _component: wrappers/carousel
           label: ""
           slides: []
           autoPlay: false
@@ -3114,7 +3114,7 @@ _structures:
         icon: crop_square
         description: A container component that provides card layout with background options and padding controls.
         value:
-          _component: wrappers/card/card
+          _component: wrappers/card
           label: null
           contentBlocks: []
           headerContentBlocks: []
@@ -3273,7 +3273,7 @@ _structures:
         icon: rectangle
         description: Controls the alignment and direction of buttons.
         value:
-          _component: wrappers/button-group/button-group
+          _component: wrappers/button-group
           label: null
           buttonBlocks: []
           direction: row
@@ -3322,7 +3322,7 @@ _structures:
         icon: expand_all
         description: Hides content behind an expandable menu.
         value:
-          _component: wrappers/accordion/accordion
+          _component: wrappers/accordion
           label: null
           items: null
           openFirst: false
@@ -3353,6 +3353,59 @@ _structures:
           singleOpen:
             comment: Whether only one item can be open at a time within this accordion.
             type: switch
+      - label: Testimonial
+        icon: format_quote
+        description: A quotation with an author and author description.
+        value:
+          _component: typography/testimonial
+          text: ""
+          authorName: ""
+          authorDescription: ""
+          alignX: start
+        preview:
+          text:
+            - template: Testimonial - {authorName}
+            - Testimonial
+          subtext:
+            - key: text
+            - Add testimonial text
+        picker_preview:
+          text: Testimonial
+          subtext: A quotation with an author and author description.
+          icon: format_quote
+        _inputs:
+          text:
+            type: markdown
+            comment: Quotation marks will be added around the text.
+            options:
+              bold: true
+              italic: true
+              link: true
+              strike: true
+              subscript: true
+              superscript: true
+              underline: true
+              undo: true
+              redo: true
+              removeformat: true
+              copyformatting: true
+          authorName:
+            comment: The person to whom you're attributing the quotation.
+            type: textarea
+          authorDescription:
+            comment: The role or company of the person.
+            type: textarea
+          alignX:
+            comment: The horizontal alignment of the testimonial.
+            type: select
+            options:
+              values:
+                - id: start
+                  name: Start
+                - id: center
+                  name: Center
+                - id: end
+                  name: End
       - label: Simple Text
         icon: view_headline
         description: Displays blocks of text for content sections with options for alignment, size and decoration.
@@ -3422,59 +3475,6 @@ _structures:
                   name: 5xl
                 - id: 6xl
                   name: 6xl
-      - label: Testimonial
-        icon: format_quote
-        description: A quotation with an author and author description.
-        value:
-          _component: typography/testimonial
-          text: ""
-          authorName: ""
-          authorDescription: ""
-          alignX: start
-        preview:
-          text:
-            - template: Testimonial - {authorName}
-            - Testimonial
-          subtext:
-            - key: text
-            - Add testimonial text
-        picker_preview:
-          text: Testimonial
-          subtext: A quotation with an author and author description.
-          icon: format_quote
-        _inputs:
-          text:
-            type: markdown
-            comment: Quotation marks will be added around the text.
-            options:
-              bold: true
-              italic: true
-              link: true
-              strike: true
-              subscript: true
-              superscript: true
-              underline: true
-              undo: true
-              redo: true
-              removeformat: true
-              copyformatting: true
-          authorName:
-            comment: The person to whom you're attributing the quotation.
-            type: textarea
-          authorDescription:
-            comment: The role or company of the person.
-            type: textarea
-          alignX:
-            comment: The horizontal alignment of the testimonial.
-            type: select
-            options:
-              values:
-                - id: start
-                  name: Start
-                - id: center
-                  name: Center
-                - id: end
-                  name: End
       - label: Rich text
         icon: edit_note
         description: A catch-all for all content types. Can contain headings, paragraphs, images, bullets. Use text prop for Markdown content or slot for HTML content.
@@ -3660,30 +3660,6 @@ _structures:
                   name: Center
                 - id: end
                   name: End
-      - label: Form
-        icon: checklist_rtl
-        description: A form element that groups related form controls and handles form submission.
-        value:
-          _component: forms/form/form
-          action: null
-          formBlocks: []
-        preview:
-          subtext:
-            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
-            - Add items to the form
-        picker_preview:
-          text: Form
-          subtext: A form element that groups related form controls and handles form submission.
-          icon: checklist_rtl
-        _inputs:
-          action:
-            type: url
-            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
-          formBlocks:
-            type: array
-            comment: The form blocks to render inside the form.
-            options:
-              structures: _structures.formBlocks
       - label: Spacer
         icon: space_bar
         description: Gives space between content.
@@ -3790,6 +3766,30 @@ _structures:
                   name: Center
                 - id: right
                   name: Right
+      - label: Form
+        icon: checklist_rtl
+        description: A form element that groups related form controls and handles form submission.
+        value:
+          _component: forms/form
+          action: null
+          formBlocks: []
+        preview:
+          subtext:
+            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
+            - Add items to the form
+        picker_preview:
+          text: Form
+          subtext: A form element that groups related form controls and handles form submission.
+          icon: checklist_rtl
+        _inputs:
+          action:
+            type: url
+            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
+          formBlocks:
+            type: array
+            comment: The form blocks to render inside the form.
+            options:
+              structures: _structures.formBlocks
       - label: Smart Video
         icon: videocam
         description: Play a video from YouTube, Vimeo, or your local files.
@@ -3960,7 +3960,7 @@ _structures:
         icon: grid_on
         description: Responsive, centered grid with configurable sizing.
         value:
-          _component: wrappers/grid/grid
+          _component: wrappers/grid
           label: ""
           layout: features
           minItemWidth: 280
@@ -4008,7 +4008,7 @@ _structures:
         icon: view_sidebar
         description: Switches between related content panels using tab buttons.
         value:
-          _component: wrappers/content-selector/content-selector
+          _component: wrappers/content-selector
           label: ""
           items: null
           navigationPosition: start
@@ -4043,7 +4043,7 @@ _structures:
         icon: image
         description: A carousel component for displaying slides with navigation controls
         value:
-          _component: wrappers/carousel/carousel
+          _component: wrappers/carousel
           label: ""
           slides: []
           autoPlay: false
@@ -4089,7 +4089,7 @@ _structures:
         icon: crop_square
         description: A container component that provides card layout with background options and padding controls.
         value:
-          _component: wrappers/card/card
+          _component: wrappers/card
           label: null
           contentBlocks: []
           headerContentBlocks: []
@@ -4248,7 +4248,7 @@ _structures:
         icon: rectangle
         description: Controls the alignment and direction of buttons.
         value:
-          _component: wrappers/button-group/button-group
+          _component: wrappers/button-group
           label: null
           buttonBlocks: []
           direction: row
@@ -4297,7 +4297,7 @@ _structures:
         icon: expand_all
         description: Hides content behind an expandable menu.
         value:
-          _component: wrappers/accordion/accordion
+          _component: wrappers/accordion
           label: null
           items: null
           openFirst: false
@@ -4328,6 +4328,59 @@ _structures:
           singleOpen:
             comment: Whether only one item can be open at a time within this accordion.
             type: switch
+      - label: Testimonial
+        icon: format_quote
+        description: A quotation with an author and author description.
+        value:
+          _component: typography/testimonial
+          text: ""
+          authorName: ""
+          authorDescription: ""
+          alignX: start
+        preview:
+          text:
+            - template: Testimonial - {authorName}
+            - Testimonial
+          subtext:
+            - key: text
+            - Add testimonial text
+        picker_preview:
+          text: Testimonial
+          subtext: A quotation with an author and author description.
+          icon: format_quote
+        _inputs:
+          text:
+            type: markdown
+            comment: Quotation marks will be added around the text.
+            options:
+              bold: true
+              italic: true
+              link: true
+              strike: true
+              subscript: true
+              superscript: true
+              underline: true
+              undo: true
+              redo: true
+              removeformat: true
+              copyformatting: true
+          authorName:
+            comment: The person to whom you're attributing the quotation.
+            type: textarea
+          authorDescription:
+            comment: The role or company of the person.
+            type: textarea
+          alignX:
+            comment: The horizontal alignment of the testimonial.
+            type: select
+            options:
+              values:
+                - id: start
+                  name: Start
+                - id: center
+                  name: Center
+                - id: end
+                  name: End
       - label: Simple Text
         icon: view_headline
         description: Displays blocks of text for content sections with options for alignment, size and decoration.
@@ -4397,59 +4450,6 @@ _structures:
                   name: 5xl
                 - id: 6xl
                   name: 6xl
-      - label: Testimonial
-        icon: format_quote
-        description: A quotation with an author and author description.
-        value:
-          _component: typography/testimonial
-          text: ""
-          authorName: ""
-          authorDescription: ""
-          alignX: start
-        preview:
-          text:
-            - template: Testimonial - {authorName}
-            - Testimonial
-          subtext:
-            - key: text
-            - Add testimonial text
-        picker_preview:
-          text: Testimonial
-          subtext: A quotation with an author and author description.
-          icon: format_quote
-        _inputs:
-          text:
-            type: markdown
-            comment: Quotation marks will be added around the text.
-            options:
-              bold: true
-              italic: true
-              link: true
-              strike: true
-              subscript: true
-              superscript: true
-              underline: true
-              undo: true
-              redo: true
-              removeformat: true
-              copyformatting: true
-          authorName:
-            comment: The person to whom you're attributing the quotation.
-            type: textarea
-          authorDescription:
-            comment: The role or company of the person.
-            type: textarea
-          alignX:
-            comment: The horizontal alignment of the testimonial.
-            type: select
-            options:
-              values:
-                - id: start
-                  name: Start
-                - id: center
-                  name: Center
-                - id: end
-                  name: End
       - label: Rich text
         icon: edit_note
         description: A catch-all for all content types. Can contain headings, paragraphs, images, bullets. Use text prop for Markdown content or slot for HTML content.
@@ -4635,30 +4635,6 @@ _structures:
                   name: Center
                 - id: end
                   name: End
-      - label: Form
-        icon: checklist_rtl
-        description: A form element that groups related form controls and handles form submission.
-        value:
-          _component: forms/form/form
-          action: null
-          formBlocks: []
-        preview:
-          subtext:
-            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
-            - Add items to the form
-        picker_preview:
-          text: Form
-          subtext: A form element that groups related form controls and handles form submission.
-          icon: checklist_rtl
-        _inputs:
-          action:
-            type: url
-            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
-          formBlocks:
-            type: array
-            comment: The form blocks to render inside the form.
-            options:
-              structures: _structures.formBlocks
       - label: Spacer
         icon: space_bar
         description: Gives space between content.
@@ -4765,6 +4741,30 @@ _structures:
                   name: Center
                 - id: right
                   name: Right
+      - label: Form
+        icon: checklist_rtl
+        description: A form element that groups related form controls and handles form submission.
+        value:
+          _component: forms/form
+          action: null
+          formBlocks: []
+        preview:
+          subtext:
+            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
+            - Add items to the form
+        picker_preview:
+          text: Form
+          subtext: A form element that groups related form controls and handles form submission.
+          icon: checklist_rtl
+        _inputs:
+          action:
+            type: url
+            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
+          formBlocks:
+            type: array
+            comment: The form blocks to render inside the form.
+            options:
+              structures: _structures.formBlocks
       - label: Smart Video
         icon: videocam
         description: Play a video from YouTube, Vimeo, or your local files.
@@ -4940,7 +4940,7 @@ _structures:
         icon: width_full
         description: A container component that provides layout structure with background options, padding, and content width controls.
         value:
-          _component: wrappers/container/container
+          _component: wrappers/container
           label: ""
           contentBlocks: []
           maxContentWidth: md
@@ -5189,7 +5189,7 @@ _structures:
         icon: crop_square
         description: A container component that provides card layout with background options and padding controls.
         value:
-          _component: wrappers/card/card
+          _component: wrappers/card
           label: null
           contentBlocks: []
           headerContentBlocks: []
@@ -5348,7 +5348,7 @@ _structures:
         icon: rectangle
         description: Controls the alignment and direction of buttons.
         value:
-          _component: wrappers/button-group/button-group
+          _component: wrappers/button-group
           label: null
           buttonBlocks: []
           direction: row
@@ -5397,7 +5397,7 @@ _structures:
         icon: expand_all
         description: Hides content behind an expandable menu.
         value:
-          _component: wrappers/accordion/accordion
+          _component: wrappers/accordion
           label: null
           items: null
           openFirst: false
@@ -5428,6 +5428,59 @@ _structures:
           singleOpen:
             comment: Whether only one item can be open at a time within this accordion.
             type: switch
+      - label: Testimonial
+        icon: format_quote
+        description: A quotation with an author and author description.
+        value:
+          _component: typography/testimonial
+          text: ""
+          authorName: ""
+          authorDescription: ""
+          alignX: start
+        preview:
+          text:
+            - template: Testimonial - {authorName}
+            - Testimonial
+          subtext:
+            - key: text
+            - Add testimonial text
+        picker_preview:
+          text: Testimonial
+          subtext: A quotation with an author and author description.
+          icon: format_quote
+        _inputs:
+          text:
+            type: markdown
+            comment: Quotation marks will be added around the text.
+            options:
+              bold: true
+              italic: true
+              link: true
+              strike: true
+              subscript: true
+              superscript: true
+              underline: true
+              undo: true
+              redo: true
+              removeformat: true
+              copyformatting: true
+          authorName:
+            comment: The person to whom you're attributing the quotation.
+            type: textarea
+          authorDescription:
+            comment: The role or company of the person.
+            type: textarea
+          alignX:
+            comment: The horizontal alignment of the testimonial.
+            type: select
+            options:
+              values:
+                - id: start
+                  name: Start
+                - id: center
+                  name: Center
+                - id: end
+                  name: End
       - label: Simple Text
         icon: view_headline
         description: Displays blocks of text for content sections with options for alignment, size and decoration.
@@ -5497,59 +5550,6 @@ _structures:
                   name: 5xl
                 - id: 6xl
                   name: 6xl
-      - label: Testimonial
-        icon: format_quote
-        description: A quotation with an author and author description.
-        value:
-          _component: typography/testimonial
-          text: ""
-          authorName: ""
-          authorDescription: ""
-          alignX: start
-        preview:
-          text:
-            - template: Testimonial - {authorName}
-            - Testimonial
-          subtext:
-            - key: text
-            - Add testimonial text
-        picker_preview:
-          text: Testimonial
-          subtext: A quotation with an author and author description.
-          icon: format_quote
-        _inputs:
-          text:
-            type: markdown
-            comment: Quotation marks will be added around the text.
-            options:
-              bold: true
-              italic: true
-              link: true
-              strike: true
-              subscript: true
-              superscript: true
-              underline: true
-              undo: true
-              redo: true
-              removeformat: true
-              copyformatting: true
-          authorName:
-            comment: The person to whom you're attributing the quotation.
-            type: textarea
-          authorDescription:
-            comment: The role or company of the person.
-            type: textarea
-          alignX:
-            comment: The horizontal alignment of the testimonial.
-            type: select
-            options:
-              values:
-                - id: start
-                  name: Start
-                - id: center
-                  name: Center
-                - id: end
-                  name: End
       - label: Rich text
         icon: edit_note
         description: A catch-all for all content types. Can contain headings, paragraphs, images, bullets. Use text prop for Markdown content or slot for HTML content.
@@ -5735,30 +5735,6 @@ _structures:
                   name: Center
                 - id: end
                   name: End
-      - label: Form
-        icon: checklist_rtl
-        description: A form element that groups related form controls and handles form submission.
-        value:
-          _component: forms/form/form
-          action: null
-          formBlocks: []
-        preview:
-          subtext:
-            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
-            - Add items to the form
-        picker_preview:
-          text: Form
-          subtext: A form element that groups related form controls and handles form submission.
-          icon: checklist_rtl
-        _inputs:
-          action:
-            type: url
-            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
-          formBlocks:
-            type: array
-            comment: The form blocks to render inside the form.
-            options:
-              structures: _structures.formBlocks
       - label: Spacer
         icon: space_bar
         description: Gives space between content.
@@ -5865,6 +5841,30 @@ _structures:
                   name: Center
                 - id: right
                   name: Right
+      - label: Form
+        icon: checklist_rtl
+        description: A form element that groups related form controls and handles form submission.
+        value:
+          _component: forms/form
+          action: null
+          formBlocks: []
+        preview:
+          subtext:
+            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
+            - Add items to the form
+        picker_preview:
+          text: Form
+          subtext: A form element that groups related form controls and handles form submission.
+          icon: checklist_rtl
+        _inputs:
+          action:
+            type: url
+            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
+          formBlocks:
+            type: array
+            comment: The form blocks to render inside the form.
+            options:
+              structures: _structures.formBlocks
       - label: Smart Video
         icon: videocam
         description: Play a video from YouTube, Vimeo, or your local files.
@@ -6017,7 +6017,7 @@ _structures:
         icon: rectangle
         description: Controls the alignment and direction of buttons.
         value:
-          _component: wrappers/button-group/button-group
+          _component: wrappers/button-group
           label: null
           buttonBlocks: []
           direction: row
@@ -6066,7 +6066,7 @@ _structures:
         icon: expand_all
         description: Hides content behind an expandable menu.
         value:
-          _component: wrappers/accordion/accordion
+          _component: wrappers/accordion
           label: null
           items: null
           openFirst: false
@@ -6097,6 +6097,59 @@ _structures:
           singleOpen:
             comment: Whether only one item can be open at a time within this accordion.
             type: switch
+      - label: Testimonial
+        icon: format_quote
+        description: A quotation with an author and author description.
+        value:
+          _component: typography/testimonial
+          text: ""
+          authorName: ""
+          authorDescription: ""
+          alignX: start
+        preview:
+          text:
+            - template: Testimonial - {authorName}
+            - Testimonial
+          subtext:
+            - key: text
+            - Add testimonial text
+        picker_preview:
+          text: Testimonial
+          subtext: A quotation with an author and author description.
+          icon: format_quote
+        _inputs:
+          text:
+            type: markdown
+            comment: Quotation marks will be added around the text.
+            options:
+              bold: true
+              italic: true
+              link: true
+              strike: true
+              subscript: true
+              superscript: true
+              underline: true
+              undo: true
+              redo: true
+              removeformat: true
+              copyformatting: true
+          authorName:
+            comment: The person to whom you're attributing the quotation.
+            type: textarea
+          authorDescription:
+            comment: The role or company of the person.
+            type: textarea
+          alignX:
+            comment: The horizontal alignment of the testimonial.
+            type: select
+            options:
+              values:
+                - id: start
+                  name: Start
+                - id: center
+                  name: Center
+                - id: end
+                  name: End
       - label: Simple Text
         icon: view_headline
         description: Displays blocks of text for content sections with options for alignment, size and decoration.
@@ -6166,59 +6219,6 @@ _structures:
                   name: 5xl
                 - id: 6xl
                   name: 6xl
-      - label: Testimonial
-        icon: format_quote
-        description: A quotation with an author and author description.
-        value:
-          _component: typography/testimonial
-          text: ""
-          authorName: ""
-          authorDescription: ""
-          alignX: start
-        preview:
-          text:
-            - template: Testimonial - {authorName}
-            - Testimonial
-          subtext:
-            - key: text
-            - Add testimonial text
-        picker_preview:
-          text: Testimonial
-          subtext: A quotation with an author and author description.
-          icon: format_quote
-        _inputs:
-          text:
-            type: markdown
-            comment: Quotation marks will be added around the text.
-            options:
-              bold: true
-              italic: true
-              link: true
-              strike: true
-              subscript: true
-              superscript: true
-              underline: true
-              undo: true
-              redo: true
-              removeformat: true
-              copyformatting: true
-          authorName:
-            comment: The person to whom you're attributing the quotation.
-            type: textarea
-          authorDescription:
-            comment: The role or company of the person.
-            type: textarea
-          alignX:
-            comment: The horizontal alignment of the testimonial.
-            type: select
-            options:
-              values:
-                - id: start
-                  name: Start
-                - id: center
-                  name: Center
-                - id: end
-                  name: End
       - label: Rich text
         icon: edit_note
         description: A catch-all for all content types. Can contain headings, paragraphs, images, bullets. Use text prop for Markdown content or slot for HTML content.
@@ -6404,30 +6404,6 @@ _structures:
                   name: Center
                 - id: end
                   name: End
-      - label: Form
-        icon: checklist_rtl
-        description: A form element that groups related form controls and handles form submission.
-        value:
-          _component: forms/form/form
-          action: null
-          formBlocks: []
-        preview:
-          subtext:
-            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
-            - Add items to the form
-        picker_preview:
-          text: Form
-          subtext: A form element that groups related form controls and handles form submission.
-          icon: checklist_rtl
-        _inputs:
-          action:
-            type: url
-            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
-          formBlocks:
-            type: array
-            comment: The form blocks to render inside the form.
-            options:
-              structures: _structures.formBlocks
       - label: Spacer
         icon: space_bar
         description: Gives space between content.
@@ -6534,6 +6510,30 @@ _structures:
                   name: Center
                 - id: right
                   name: Right
+      - label: Form
+        icon: checklist_rtl
+        description: A form element that groups related form controls and handles form submission.
+        value:
+          _component: forms/form
+          action: null
+          formBlocks: []
+        preview:
+          subtext:
+            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
+            - Add items to the form
+        picker_preview:
+          text: Form
+          subtext: A form element that groups related form controls and handles form submission.
+          icon: checklist_rtl
+        _inputs:
+          action:
+            type: url
+            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
+          formBlocks:
+            type: array
+            comment: The form blocks to render inside the form.
+            options:
+              structures: _structures.formBlocks
       - label: Smart Video
         icon: videocam
         description: Play a video from YouTube, Vimeo, or your local files.
@@ -6686,7 +6686,7 @@ _structures:
         icon: rectangle
         description: Controls the alignment and direction of buttons.
         value:
-          _component: wrappers/button-group/button-group
+          _component: wrappers/button-group
           label: null
           buttonBlocks: []
           direction: row
@@ -6722,6 +6722,59 @@ _structures:
                   name: Column
           alignX:
             comment: The horizontal alignment of the buttons within the group.
+            type: select
+            options:
+              values:
+                - id: start
+                  name: Start
+                - id: center
+                  name: Center
+                - id: end
+                  name: End
+      - label: Testimonial
+        icon: format_quote
+        description: A quotation with an author and author description.
+        value:
+          _component: typography/testimonial
+          text: ""
+          authorName: ""
+          authorDescription: ""
+          alignX: start
+        preview:
+          text:
+            - template: Testimonial - {authorName}
+            - Testimonial
+          subtext:
+            - key: text
+            - Add testimonial text
+        picker_preview:
+          text: Testimonial
+          subtext: A quotation with an author and author description.
+          icon: format_quote
+        _inputs:
+          text:
+            type: markdown
+            comment: Quotation marks will be added around the text.
+            options:
+              bold: true
+              italic: true
+              link: true
+              strike: true
+              subscript: true
+              superscript: true
+              underline: true
+              undo: true
+              redo: true
+              removeformat: true
+              copyformatting: true
+          authorName:
+            comment: The person to whom you're attributing the quotation.
+            type: textarea
+          authorDescription:
+            comment: The role or company of the person.
+            type: textarea
+          alignX:
+            comment: The horizontal alignment of the testimonial.
             type: select
             options:
               values:
@@ -6800,59 +6853,6 @@ _structures:
                   name: 5xl
                 - id: 6xl
                   name: 6xl
-      - label: Testimonial
-        icon: format_quote
-        description: A quotation with an author and author description.
-        value:
-          _component: typography/testimonial
-          text: ""
-          authorName: ""
-          authorDescription: ""
-          alignX: start
-        preview:
-          text:
-            - template: Testimonial - {authorName}
-            - Testimonial
-          subtext:
-            - key: text
-            - Add testimonial text
-        picker_preview:
-          text: Testimonial
-          subtext: A quotation with an author and author description.
-          icon: format_quote
-        _inputs:
-          text:
-            type: markdown
-            comment: Quotation marks will be added around the text.
-            options:
-              bold: true
-              italic: true
-              link: true
-              strike: true
-              subscript: true
-              superscript: true
-              underline: true
-              undo: true
-              redo: true
-              removeformat: true
-              copyformatting: true
-          authorName:
-            comment: The person to whom you're attributing the quotation.
-            type: textarea
-          authorDescription:
-            comment: The role or company of the person.
-            type: textarea
-          alignX:
-            comment: The horizontal alignment of the testimonial.
-            type: select
-            options:
-              values:
-                - id: start
-                  name: Start
-                - id: center
-                  name: Center
-                - id: end
-                  name: End
       - label: Rich text
         icon: edit_note
         description: A catch-all for all content types. Can contain headings, paragraphs, images, bullets. Use text prop for Markdown content or slot for HTML content.
@@ -7038,30 +7038,6 @@ _structures:
                   name: Center
                 - id: end
                   name: End
-      - label: Form
-        icon: checklist_rtl
-        description: A form element that groups related form controls and handles form submission.
-        value:
-          _component: forms/form/form
-          action: null
-          formBlocks: []
-        preview:
-          subtext:
-            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
-            - Add items to the form
-        picker_preview:
-          text: Form
-          subtext: A form element that groups related form controls and handles form submission.
-          icon: checklist_rtl
-        _inputs:
-          action:
-            type: url
-            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
-          formBlocks:
-            type: array
-            comment: The form blocks to render inside the form.
-            options:
-              structures: _structures.formBlocks
       - label: Spacer
         icon: space_bar
         description: Gives space between content.
@@ -7168,6 +7144,30 @@ _structures:
                   name: Center
                 - id: right
                   name: Right
+      - label: Form
+        icon: checklist_rtl
+        description: A form element that groups related form controls and handles form submission.
+        value:
+          _component: forms/form
+          action: null
+          formBlocks: []
+        preview:
+          subtext:
+            - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
+            - Add items to the form
+        picker_preview:
+          text: Form
+          subtext: A form element that groups related form controls and handles form submission.
+          icon: checklist_rtl
+        _inputs:
+          action:
+            type: url
+            comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.
+          formBlocks:
+            type: array
+            comment: The form blocks to render inside the form.
+            options:
+              structures: _structures.formBlocks
       - label: Smart Video
         icon: videocam
         description: Play a video from YouTube, Vimeo, or your local files.
@@ -7329,43 +7329,6 @@ _structures:
             type: array
             options:
               structures: _structures.accordionBlocks
-  listItems:
-    id_key: _component
-    values:
-      - label: List Item
-        value:
-          text: ""
-          icon: ""
-        preview:
-          icon: text_fields
-          image:
-            - template: src/icons/{icon}.svg
-        _inputs:
-          text:
-            type: markdown
-            comment: The text to display in the list item.
-            options:
-              bold: true
-              italic: true
-              link: true
-              strike: true
-              subscript: true
-              superscript: true
-              underline: true
-              undo: true
-              redo: true
-              removeformat: true
-              copyformatting: true
-          icon:
-            type: select
-            comment: The name of the icon to display from the icon library.
-            options:
-              values: _select_data.icons
-              preview:
-                text:
-                  - key: name
-                image:
-                  - template: src/icons/{id}.svg
   contentBlocks:
     id_key: _component
     values:
@@ -7693,6 +7656,43 @@ _structures:
                   name: Before
                 - id: after
                   name: After
+  listItems:
+    id_key: _component
+    values:
+      - label: List Item
+        value:
+          text: ""
+          icon: ""
+        preview:
+          icon: text_fields
+          image:
+            - template: src/icons/{icon}.svg
+        _inputs:
+          text:
+            type: markdown
+            comment: The text to display in the list item.
+            options:
+              bold: true
+              italic: true
+              link: true
+              strike: true
+              subscript: true
+              superscript: true
+              underline: true
+              undo: true
+              redo: true
+              removeformat: true
+              copyformatting: true
+          icon:
+            type: select
+            comment: The name of the icon to display from the icon library.
+            options:
+              values: _select_data.icons
+              preview:
+                text:
+                  - key: name
+                image:
+                  - template: src/icons/{id}.svg
   definitionListItems:
     id_key: _component
     values:
@@ -7781,7 +7781,7 @@ _structures:
         icon: text_ad
         description: A multi-line text input field with an optional label.
         value:
-          _component: forms/textarea/textarea
+          _component: forms/textarea
           label: null
           name: null
           required: false
@@ -7819,7 +7819,7 @@ _structures:
         icon: check
         description: A submit button for forms.
         value:
-          _component: forms/submit/submit
+          _component: forms/submit
           text: Submit
           variant: primary
           size: md
@@ -7895,59 +7895,11 @@ _structures:
           disabled:
             type: switch
             comment: Whether the submit button is disabled.
-      - label: Segments
-        icon: radio_button_partial
-        description: A segmented control component using radio buttons or checkboxes with optional icons.
-        value:
-          _component: forms/segments/segments
-          title: null
-          name: null
-          required: false
-          options: []
-          iconOnly: false
-          multiple: false
-          keepStateOnRefresh: true
-        preview:
-          subtext:
-            - template: A segments field, containing {options|array_length} {"option"|pluralize=options}
-        picker_preview:
-          text: Segments
-          subtext: A segmented control component using radio buttons or checkboxes with optional icons.
-          icon: radio_button_partial
-        _inputs:
-          title:
-            type: text
-            comment: Optional title text for the fieldset.
-          name:
-            type: text
-            comment: A unique name attribute for the radio button group.
-            options:
-              required: true
-              required_message: Only form elements with a name will have their values passed when submitting a form.
-          required:
-            type: switch
-            comment: Whether the field is required.
-          options:
-            type: array
-            comment: Array of segment options with value, label, icon, and checked state.
-            options:
-              structures: _structures.segmentOptions
-              min_items: 1
-              min_items_message: At least one option is required.
-          iconOnly:
-            type: switch
-            comment: When true, labels are used as tooltips instead of being displayed as text.
-          multiple:
-            type: switch
-            comment: When true, uses checkboxes for multiple selection instead of radio buttons for single selection.
-          keepStateOnRefresh:
-            type: switch
-            comment: When true, sets autocomplete="on" to allow browser to remember state on page refresh. Defaults to false (autocomplete="off").
       - label: Select
         icon: view_list
         description: A dropdown select field with an optional label.
         value:
-          _component: forms/select/select
+          _component: forms/select
           label: null
           name: null
           required: false
@@ -7995,33 +7947,59 @@ _structures:
           value:
             type: text
             comment: The default selected value.
-      - label: Hidden
-        icon: eye-slash
-        description: A hidden form field for storing data that should not be visible to users.
+      - label: Segments
+        icon: radio_button_partial
+        description: A segmented control component using radio buttons or checkboxes with optional icons.
         value:
-          _component: forms/hidden/hidden
-          name: ""
-          value: ""
+          _component: forms/segments
+          title: null
+          name: null
+          required: false
+          options: []
+          iconOnly: false
+          multiple: false
+          keepStateOnRefresh: true
         preview:
-          text:
-            - template: Hidden - {name}
-          subtext: A hidden form field for storing data that should not be visible to users.
+          subtext:
+            - template: A segments field, containing {options|array_length} {"option"|pluralize=options}
         picker_preview:
-          text: Hidden
-          subtext: A hidden form field for storing data that should not be visible to users.
-          icon: eye-slash
+          text: Segments
+          subtext: A segmented control component using radio buttons or checkboxes with optional icons.
+          icon: radio_button_partial
         _inputs:
+          title:
+            type: text
+            comment: Optional title text for the fieldset.
           name:
             type: text
-            comment: The name attribute for the hidden input field.
-          value:
-            type: text
-            comment: The value to be stored in the hidden field.
+            comment: A unique name attribute for the radio button group.
+            options:
+              required: true
+              required_message: Only form elements with a name will have their values passed when submitting a form.
+          required:
+            type: switch
+            comment: Whether the field is required.
+          options:
+            type: array
+            comment: Array of segment options with value, label, icon, and checked state.
+            options:
+              structures: _structures.segmentOptions
+              min_items: 1
+              min_items_message: At least one option is required.
+          iconOnly:
+            type: switch
+            comment: When true, labels are used as tooltips instead of being displayed as text.
+          multiple:
+            type: switch
+            comment: When true, uses checkboxes for multiple selection instead of radio buttons for single selection.
+          keepStateOnRefresh:
+            type: switch
+            comment: When true, sets autocomplete="on" to allow browser to remember state on page refresh. Defaults to false (autocomplete="off").
       - label: Input
         icon: rectangle
         description: A form input field with an optional label.
         value:
-          _component: forms/input/input
+          _component: forms/input
           label: null
           name: null
           type: text
@@ -8066,49 +8044,33 @@ _structures:
           value:
             type: text
             comment: The default value for the input field.
-      - label: File Upload
-        icon: upload
-        description: A file input field with an optional label.
+      - label: Hidden
+        icon: eye-slash
+        description: A hidden form field for storing data that should not be visible to users.
         value:
-          _component: forms/file-upload/file-upload
-          label: null
-          name: null
-          required: false
-          accept: null
-          multiple: false
+          _component: forms/hidden
+          name: ""
+          value: ""
         preview:
-          subtext:
-            - key: label
-            - key: name
-            - Enter a name for the file upload form field.
+          text:
+            - template: Hidden - {name}
+          subtext: A hidden form field for storing data that should not be visible to users.
         picker_preview:
-          text: File Upload
-          subtext: A file input field with an optional label.
-          icon: upload
+          text: Hidden
+          subtext: A hidden form field for storing data that should not be visible to users.
+          icon: eye-slash
         _inputs:
-          label:
-            type: text
-            comment: The label text for the file upload field.
           name:
             type: text
-            comment: A unique name attribute for the file upload field.
-            options:
-              required: true
-              required_message: Only form elements with a name will have their values passed when submitting a form.
-          required:
-            type: switch
-            comment: Whether the field is required.
-          accept:
+            comment: The name attribute for the hidden input field.
+          value:
             type: text
-            comment: Comma-separated list of accepted file types (eg. '.jpg,.png,.pdf').
-          multiple:
-            type: switch
-            comment: Whether multiple files can be selected.
+            comment: The value to be stored in the hidden field.
       - label: Date
         icon: calendar
         description: A date input field with an optional label, date constraints, and ISO8601 format validation.
         value:
-          _component: forms/date/date
+          _component: forms/date
           label: null
           name: null
           required: false
@@ -8143,11 +8105,49 @@ _structures:
           max:
             type: date
             comment: The maximum date allowed (ISO8601 format).
+      - label: File Upload
+        icon: upload
+        description: A file input field with an optional label.
+        value:
+          _component: forms/file-upload
+          label: null
+          name: null
+          required: false
+          accept: null
+          multiple: false
+        preview:
+          subtext:
+            - key: label
+            - key: name
+            - Enter a name for the file upload form field.
+        picker_preview:
+          text: File Upload
+          subtext: A file input field with an optional label.
+          icon: upload
+        _inputs:
+          label:
+            type: text
+            comment: The label text for the file upload field.
+          name:
+            type: text
+            comment: A unique name attribute for the file upload field.
+            options:
+              required: true
+              required_message: Only form elements with a name will have their values passed when submitting a form.
+          required:
+            type: switch
+            comment: Whether the field is required.
+          accept:
+            type: text
+            comment: Comma-separated list of accepted file types (eg. '.jpg,.png,.pdf').
+          multiple:
+            type: switch
+            comment: Whether multiple files can be selected.
       - label: Choice Group
         icon: check_box
         description: A group of checkboxes or radio buttons with labels.
         value:
-          _component: forms/choice-group/choice-group
+          _component: forms/choice-group
           title: null
           name: null
           required: false
@@ -8202,6 +8202,27 @@ _structures:
           multiple:
             type: switch
             comment: When true, uses checkboxes for multiple selection. When false, uses radio buttons for single selection.
+  selectOptions:
+    id_key: _component
+    values:
+      - value:
+          value: null
+          label: null
+        preview:
+          icon: check_circle
+          text:
+            - key: label
+            - Add a label for the select item
+          subtext:
+            - key: value
+            - Add a value for the select item
+        _inputs:
+          label:
+            type: text
+            comment: The label text for the select option.
+          value:
+            type: text
+            comment: The value to add to the form when the option is selected.
   segmentOptions:
     id_key: _component
     values:
@@ -8240,27 +8261,6 @@ _structures:
                   - key: name
                 image:
                   - template: src/icons/{id}.svg
-  selectOptions:
-    id_key: _component
-    values:
-      - value:
-          value: null
-          label: null
-        preview:
-          icon: check_circle
-          text:
-            - key: label
-            - Add a label for the select item
-          subtext:
-            - key: value
-            - Add a value for the select item
-        _inputs:
-          label:
-            type: text
-            comment: The label text for the select option.
-          value:
-            type: text
-            comment: The value to add to the form when the option is selected.
   choiceOptions:
     id_key: _component
     values:
@@ -8286,36 +8286,6 @@ _structures:
           checked:
             type: switch
             comment: Whether the field is checked by default.
-  linkItems:
-    id_key: _component
-    values:
-      - label: Navigation Link
-        icon: link
-        value:
-          name: ""
-          path: ""
-        _inputs:
-          name:
-            type: text
-            comment: Display text for the navigation link.
-          path:
-            type: text
-            comment: URL path for the navigation link.
-  socialItems:
-    id_key: _component
-    values:
-      - label: Social Link
-        icon: share
-        value:
-          icon: ""
-          link: ""
-        _inputs:
-          icon:
-            type: text
-            comment: Icon name for the social media platform.
-          link:
-            type: text
-            comment: URL link to the social media profile.
   buttonBlocks:
     id_key: _component
     values:
@@ -8402,3 +8372,33 @@ _structures:
                   name: Medium
                 - id: lg
                   name: Large
+  linkItems:
+    id_key: _component
+    values:
+      - label: Navigation Link
+        icon: link
+        value:
+          name: ""
+          path: ""
+        _inputs:
+          name:
+            type: text
+            comment: Display text for the navigation link.
+          path:
+            type: text
+            comment: URL path for the navigation link.
+  socialItems:
+    id_key: _component
+    values:
+      - label: Social Link
+        icon: share
+        value:
+          icon: ""
+          link: ""
+        _inputs:
+          icon:
+            type: text
+            comment: Icon name for the social media platform.
+          link:
+            type: text
+            comment: URL link to the social media profile.

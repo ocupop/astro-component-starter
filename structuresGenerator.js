@@ -92,6 +92,16 @@ async function generateStructures() {
 
       console.log(`   Processing: ${componentPath}`);
 
+      // Fix _component path if it has duplicate folder names
+      // e.g., wrappers/container/container -> wrappers/container
+      if (config.value && config.value._component) {
+        const parts = config.value._component.split("/");
+        if (parts.length >= 2 && parts[parts.length - 1] === parts[parts.length - 2]) {
+          parts.pop(); // Remove the duplicate last segment
+          config.value._component = parts.join("/");
+        }
+      }
+
       // Extract the component definition (everything except 'structures' and nested '_structures')
       const {
         structures: targetStructures,
