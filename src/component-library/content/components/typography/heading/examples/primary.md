@@ -4,5 +4,5 @@ spacing: "sides"
 blocks:
   _component: "typography/heading"
   text: This looks important
-  type: h2
+  level: h2
 ---

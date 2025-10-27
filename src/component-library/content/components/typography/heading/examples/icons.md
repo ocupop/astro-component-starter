@@ -3,12 +3,12 @@ title: "Icon"
 spacing: "sides"
 blocks:
   - _component: "typography/heading"
-    text: Icons default to appearing before headings  
-    type: h3
+    text: Icons default to appearing before headings
+    level: h3
     iconName: briefcase
   - _component: "typography/heading"
     text: Icons can also come after headings
-    type: h3
+    level: h3
     iconName: arrow-up-right
     iconPosition: after
 ---

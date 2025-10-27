@@ -33,6 +33,9 @@ collection_groups:
   - heading: Data
     collections:
       - data
+_inputs:
+  pageBlocks:
+    comment: The main sections of the page.
 _select_data:
   icons:
     - id: academic-cap
@@ -1596,7 +1599,7 @@ _structures:
         value:
           _component: typography/heading
           text: ""
-          type: h2
+          level: h2
           size: default
           alignX: start
           iconName: null
@@ -1614,8 +1617,8 @@ _structures:
           text:
             comment: The text content of the heading.
             type: textarea
-          type:
-            comment: The heading type or level.
+          level:
+            comment: The heading level or type.
             type: select
             options:
               values:
@@ -1625,8 +1628,6 @@ _structures:
                 - h4
                 - h5
                 - h6
-                - eyebrow
-                - subtitle
           size:
             comment: The font size of the text.
             type: select
@@ -2513,7 +2514,7 @@ _structures:
           hideText:
             type: switch
             comment: Whether to hide the button text and show only the icon.
-            hidden: "!iconName\""
+            hidden: '!iconName"'
           disabled:
             type: switch
             comment: Whether the submit button is disabled.

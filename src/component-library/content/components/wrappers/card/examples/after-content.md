@@ -10,7 +10,7 @@ blocks:
   contentBlocks:
     - _component: "typography/heading"
       text: "Card with After Content"
-      type: h3
+      level: h3
     - _component: "typography/simple-text"
       text: "The image below is placed in the afterContentBlocks area, which sits outside the card's internal padding. This is ideal for footer images or visual footers."
   afterContentBlocks:

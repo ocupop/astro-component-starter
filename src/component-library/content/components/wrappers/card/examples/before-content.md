@@ -15,7 +15,7 @@ blocks:
   contentBlocks:
     - _component: "typography/heading"
       text: "Card with Before Content"
-      type: h3
+      level: h3
     - _component: "typography/simple-text"
       text: "The image above is placed in the beforeContentBlocks area, which sits outside the card's internal padding. This is perfect for hero images or visual headers."
   style: "max-width: 400px; margin-inline: auto;"

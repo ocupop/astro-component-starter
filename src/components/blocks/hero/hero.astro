@@ -1,6 +1,7 @@
 ---
 import SmartImage from "@components/elements/smart-image/smart-image.astro";
 import Heading from "@components/typography/heading/heading.astro";
+import SimpleText from "@components/typography/simple-text/simple-text.astro";
 import ButtonGroup from "@components/wrappers/button-group/button-group.astro";
 import Card from "@components/wrappers/card/card.astro";
 import Container from "@components/wrappers/container/container.astro";
@@ -33,8 +34,8 @@ const {
   >
     <div slot="first">
       <Card>
-        <Heading type="h1">{heading}</Heading>
-        <Heading type="subtitle">{subtitle}</Heading>
+        <Heading level="h1">{heading}</Heading>
+        <SimpleText>{subtitle}</SimpleText>
         <ButtonGroup class="buttons-container" buttonBlocks={buttonBlocks} />
       </Card>
     </div>

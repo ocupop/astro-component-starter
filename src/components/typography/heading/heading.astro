@@ -5,7 +5,7 @@ import MarkdownIt from "markdown-it";
 
 const {
   text,
-  type = "h2",
+  level = "h2",
   size,
   alignX = "start",
   iconName,
@@ -20,19 +20,11 @@ const htmlAttributes = Object.fromEntries(
 
 const md = MarkdownIt({ html: true });
 const MarkdownText = text ? md.renderInline(text) : "";
-
-const getTag = (type: string) => {
-  if (type === "eyebrow" || type === "subtitle") {
-    return "div";
-  }
-  return type;
-};
-
-const Tag = getTag(type);
+const Tag = level;
 ---
 
 <Tag
-  class:list={["heading", `type-${type}`, size && `size-${size}`, `align-${alignX}`, className]}
+  class:list={["heading", size && `size-${size}`, `align-${alignX}`, className]}
   {...htmlAttributes}
 >
   {

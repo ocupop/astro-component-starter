@@ -12,7 +12,7 @@ structures:
 value:
   _component: typography/heading
   text: ""
-  type: h2
+  level: h2
   size: "default"
   alignX: start
   iconName: null
@@ -31,8 +31,8 @@ _inputs:
   text:
     comment: The text content of the heading.
     type: textarea
-  type:
-    comment: The heading type or level.
+  level:
+    comment: The heading level or type.
     type: select
     options:
       values:
@@ -42,8 +42,6 @@ _inputs:
         - h4
         - h5
         - h6
-        - eyebrow
-        - subtitle
   size:
     comment: The font size of the text.
     type: select

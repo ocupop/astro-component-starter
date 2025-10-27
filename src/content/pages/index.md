@@ -7,7 +7,7 @@ pageBlocks:
     contentBlocks:
       - _component: typography/heading
         text: Welcome to your CloudCannon Starter Component site
-        type: h1
+        level: h1
         alignX: center
         iconPosition: before
       - _component: wrappers/button-group
