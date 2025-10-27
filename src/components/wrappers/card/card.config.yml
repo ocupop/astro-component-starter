@@ -11,8 +11,6 @@ value:
   _component: wrappers/card/card
   label: null
   contentBlocks: []
-  beforeContentBlocks: []
-  afterContentBlocks: []
   paddingHorizontal: sm
   paddingVertical: sm
   colorScheme: default
@@ -25,6 +23,9 @@ value:
   link: null
   rounded: false
   border: false
+  showBeforeAfter: false
+  beforeContentBlocks: []
+  afterContentBlocks: []
 preview:
   text:
     - key: label
@@ -44,14 +45,19 @@ _inputs:
       structures: _structures.cardBlocks
   beforeContentBlocks:
     type: array
-    comment: Content that appears above the main card area, without padding (great for full-width images or banners).
+    comment: Content that appears above the main card area, without padding.
+    hidden: !showBeforeAfter
     options:
       structures: _structures.cardBlocks
   afterContentBlocks:
     type: array
-    comment: Content that appears below the main card area, without padding (great for footers or full-width elements).
+    comment: Content that appears below the main card area, without padding.
+    hidden: !showBeforeAfter
     options:
       structures: _structures.cardBlocks
+  showBeforeAfter:
+    type: switch
+    comment: Whether to show the before/after content blocks used to add content outside the card's padding.
   paddingHorizontal:
     type: select
     comment: Horizontal padding applied to the card content.
