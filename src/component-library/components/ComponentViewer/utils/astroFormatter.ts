@@ -2,6 +2,22 @@ import { formatComponentWithSlots } from "./componentFormatter";
 import { getComponentMetadataMap, getNestedBlockProperties } from "./componentMetadata";
 import { getComponentDisplayName } from "./componentUtils";
 
+function removeStyleField(obj: any): any {
+  if (Array.isArray(obj)) {
+    return obj.map((item) => removeStyleField(item));
+  } else if (obj !== null && typeof obj === "object") {
+    const result: any = {};
+
+    for (const [key, value] of Object.entries(obj)) {
+      if (key !== "style") {
+        result[key] = removeStyleField(value);
+      }
+    }
+    return result;
+  }
+  return obj;
+}
+
 /**
  * Gets the full component path for a child component
  * E.g., "typography/list" + "ListItem" -> "typography/list/list-item"
@@ -20,7 +36,10 @@ export async function formatBlocksAstro(blocks: any): Promise<string> {
   if (!blocks) return "";
 
   try {
-    const blocksArray = Array.isArray(blocks) ? blocks : [blocks];
+    const blocksWithoutStyle = removeStyleField(blocks);
+    const blocksArray = Array.isArray(blocksWithoutStyle)
+      ? blocksWithoutStyle
+      : [blocksWithoutStyle];
 
     // Get unique components and generate imports
     const uniqueComponents = new Set<string>();
