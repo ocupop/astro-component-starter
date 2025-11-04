@@ -12,7 +12,7 @@ value:
   secondColumnContentBlocks: []
   distributionMode: half
   fixedWidth: null
-  minSplitWidth: 0
+  minSplitWidth: 760
   verticalAlignment: center
   reverse: false
 preview:
