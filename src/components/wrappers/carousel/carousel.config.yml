@@ -42,10 +42,10 @@ _inputs:
   slideWidthPercent:
     comment: Width of each slide as a percentage of the carousel (e.g., 33, 50, 100).
     type: range
-    default: 100
-    min: 0
-    max: 100
-    step: 1
+    options:
+      min: 0
+      max: 100
+      step: 1
   minSlideWidth:
     comment: Minimum width of slides in pixels. Prevents slides from getting too small.
     type: number
