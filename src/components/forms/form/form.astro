@@ -15,7 +15,7 @@ const htmlAttributes = Object.fromEntries(
   enctype="text/plain"
   {...htmlAttributes}
 >
-  <RenderBlock contentBlocks={formBlocks} />
+  <RenderBlock contentBlocks={formBlocks} propName="formBlocks" />
   <slot />
 </form>
 
