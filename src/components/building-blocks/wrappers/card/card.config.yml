@@ -2,15 +2,16 @@ label: Card
 icon: crop_square
 description: "Groups related content within a section."
 structures:
-  - containerBlocks
-  - splitBlocks
-  - gridItemBlocks
-  - carouselBlocks
-  - contentSelectorBlocks
+  - containerSections
+  - splitSections
+  - gridItemSections
+  - carouselSections
+  - contentSelectorSections
 value:
   _component: building-blocks/wrappers/card
   label: null
-  contentBlocks: []
+  contentSections: []
+  maxContentWidth: null
   paddingHorizontal: sm
   paddingVertical: sm
   colorScheme: default
@@ -24,8 +25,8 @@ value:
   rounded: false
   border: false
   showBeforeAfter: false
-  beforeContentBlocks: []
-  afterContentBlocks: []
+  beforeContentSections: []
+  afterContentSections: []
 preview:
   text:
     - key: label
@@ -38,23 +39,42 @@ _inputs:
   label:
     type: text
     comment: Optional label for the card to help identify it in the editor.
-  contentBlocks:
+  contentSections:
     type: array
     comment: Content inside the main area of the card, with padding.
     options:
-      structures: _structures.cardBlocks
-  beforeContentBlocks:
+      structures: _structures.cardSections
+  beforeContentSections:
     type: array
     comment: Content that appears above the main card area, without padding.
     hidden: "!showBeforeAfter"
     options:
-      structures: _structures.cardBlocks
-  afterContentBlocks:
+      structures: _structures.cardSections
+  afterContentSections:
     type: array
     comment: Content that appears below the main card area, without padding.
     hidden: "!showBeforeAfter"
     options:
-      structures: _structures.cardBlocks
+      structures: _structures.cardSections
+  maxContentWidth:
+    type: select
+    comment: Maximum width constraint for the card content.
+    options:
+      values:
+        - id: xs
+          name: Extra Small
+        - id: sm
+          name: Small
+        - id: md
+          name: Medium
+        - id: lg
+          name: Large
+        - id: xl
+          name: Extra Large
+        - id: 2xl
+          name: 2xl
+        - id: 3xl
+          name: 3xl
   showBeforeAfter:
     type: switch
     comment: "Whether to show the before/after content blocks used to add content outside the card's padding."

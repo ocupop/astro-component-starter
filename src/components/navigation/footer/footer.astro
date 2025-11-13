@@ -5,13 +5,13 @@ import Image from "@components/building-blocks/core-elements/image/image.astro";
 import Bar from "@components/navigation/bar/bar.astro";
 import Text from "@components/building-blocks/core-elements/text/text.astro";
 import ButtonGroup from "@components/building-blocks/wrappers/button-group/button-group.astro";
-import Container from "@components/building-blocks/wrappers/container/container.astro";
+import CustomSection from "@components/page-sections/custom-section/custom-section.astro";
 
 const { links = [], socials = [], footerText = "", logoSource, logoAlt } = Astro.props;
 ---
 
 <footer class="footer">
-  <Container maxContentWidth="2xl" paddingHorizontal="md" paddingVertical="lg">
+  <CustomSection maxContentWidth="2xl" paddingHorizontal="md" paddingVertical="lg">
     <div class="footer-content">
       <div class="content-container">
         <Image source={logoSource} alt={logoAlt} class="footer-logo" editable={false} />
@@ -46,7 +46,7 @@ const { links = [], socials = [], footerText = "", logoSource, logoAlt } = Astro
         </ButtonGroup>
       </div>
     </div>
-  </Container>
+  </CustomSection>
 </footer>
 
 <style>

@@ -3,23 +3,23 @@ title: Not Reversed
 spacing:
 blocks:
   _component: "building-blocks/wrappers/split"
-  firstColumnContentBlocks:
-    - _component: "building-blocks/wrappers/container"
+  firstColumnContentSections:
+    - _component: "page-sections/custom-section"
       backgroundColor: "accent"
       paddingHorizontal: sm
       paddingVertical: sm
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/text"
           text: |-
             ## Side A
 
             This is content for side A.
-  secondColumnContentBlocks:
-    - _component: "building-blocks/wrappers/container"
+  secondColumnContentSections:
+    - _component: "page-sections/custom-section"
       backgroundColor: "highlight"
       paddingHorizontal: sm
       paddingVertical: sm
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/text"
           text: |-
             ## Side B

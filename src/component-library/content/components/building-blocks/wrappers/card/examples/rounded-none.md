@@ -7,7 +7,7 @@ blocks:
   rounded: false
   paddingHorizontal: sm
   paddingVertical: sm
-  contentBlocks:
+  contentSections:
     - _component: "building-blocks/core-elements/heading"
       text: "Square Card"
       level: h3

@@ -5,11 +5,11 @@ overview: "Displays two content areas side by side with adjustable widths. Suppo
 slots:
   - title: first
     description: The contents for the first side of the Split.
-    fallback_for: firstColumnContentBlocks
+    fallback_for: firstColumnContentSections
     child_component:
   - title: second
     description: The contents for the second side of the Split.
-    fallback_for: secondColumnContentBlocks
+    fallback_for: secondColumnContentSections
     child_component:
 examples:
   - title: Mode

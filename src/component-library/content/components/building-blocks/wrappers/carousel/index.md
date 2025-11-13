@@ -9,7 +9,7 @@ slots:
     child_component:
       name: CarouselSlide
       props:
-        - "contentBlocks/slot"
+        - "contentSections/slot"
 examples:
   - slugs:
       - auto-play

@@ -24,7 +24,7 @@ blocks:
     - name: "Contact"
       path: "#"
       children: []
-  buttonBlocks:
+  buttonSections:
     - _component: "building-blocks/core-elements/button"
       link: "#"
       variant: "ghost"

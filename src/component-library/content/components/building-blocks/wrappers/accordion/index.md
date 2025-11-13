@@ -9,7 +9,7 @@ slots:
     child_component:
       name: AccordionItem
       props:
-        - "contentBlocks/slot"
+        - "contentSections/slot"
         - "title"
 examples:
   - title: Open First Item

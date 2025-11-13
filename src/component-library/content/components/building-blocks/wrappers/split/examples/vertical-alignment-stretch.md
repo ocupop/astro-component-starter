@@ -3,12 +3,12 @@ title: Stretch Alignment
 spacing:
 blocks:
   _component: "building-blocks/wrappers/split"
-  firstColumnContentBlocks:
-    - _component: "building-blocks/wrappers/container"
+  firstColumnContentSections:
+    - _component: "page-sections/custom-section"
       backgroundColor: "accent"
       paddingHorizontal: sm
       paddingVertical: sm
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/text"
           text: |-
             ## Side A
@@ -18,12 +18,12 @@ blocks:
             Here's even more text to help illustrate the point we're trying to make with this demonstration.
 
             And here's even more text to really drive the point home.
-  secondColumnContentBlocks:
-    - _component: "building-blocks/wrappers/container"
+  secondColumnContentSections:
+    - _component: "page-sections/custom-section"
       backgroundColor: "highlight"
       paddingHorizontal: sm
       paddingVertical: sm
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/text"
           text: |-
             ## Side B

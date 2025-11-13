@@ -4,7 +4,7 @@ import Image from "@components/building-blocks/core-elements/image/image.astro";
 import Text from "@components/building-blocks/core-elements/text/text.astro";
 import ButtonGroup from "@components/building-blocks/wrappers/button-group/button-group.astro";
 import Card from "@components/building-blocks/wrappers/card/card.astro";
-import Container from "@components/building-blocks/wrappers/container/container.astro";
+import CustomSection from "@components/page-sections/custom-section/custom-section.astro";
 import Split from "@components/building-blocks/wrappers/split/split.astro";
 
 const {
@@ -12,13 +12,13 @@ const {
   subtitle = "",
   imageSource = "",
   imageAlt = "",
-  buttonBlocks = [],
+  buttonSections = [],
   reverse = false,
   class: className,
 } = Astro.props;
 ---
 
-<Container
+<CustomSection
   maxContentWidth="2xl"
   paddingHorizontal="md"
   paddingVertical="xl"
@@ -36,14 +36,14 @@ const {
       <Card>
         <Heading level="h1" size="xl">{heading}</Heading>
         <Text>{subtitle}</Text>
-        <ButtonGroup class="buttons-container" buttonBlocks={buttonBlocks} />
+        <ButtonGroup class="buttons-container" buttonSections={buttonSections} />
       </Card>
     </div>
     <div slot="second">
       <Image source={imageSource} alt={imageAlt} rounded="true" editable={false} />
     </div>
   </Split>
-</Container>
+</CustomSection>
 
 <style lang="pcss">
   .hero {

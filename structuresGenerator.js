@@ -18,7 +18,7 @@ async function generateStructures() {
   }
 
   // Get structure aliases configuration
-  // Format: { aliasName: targetName } - e.g., { firstContentBlocks: 'contentBlocks' }
+  // Format: { aliasName: targetName } - e.g., { firstContentSections: 'contentSections' }
   const structureAliases = existingConfig.structure_aliases || {};
 
   if (Object.keys(structureAliases).length > 0) {
@@ -55,7 +55,7 @@ async function generateStructures() {
       console.log(`   Processing: ${componentPath}`);
 
       // Fix _component path if it has duplicate folder names
-      // e.g., wrappers/container/container -> wrappers/container
+      // e.g., page-sections/custom-section/custom-section -> page-sections/custom-section
       if (config.value && config.value._component) {
         const parts = config.value._component.split("/");
 
@@ -91,8 +91,8 @@ async function generateStructures() {
       }
 
       // Expand structures to include aliases
-      // If a component specifies 'contentBlocks' and there's an alias
-      // 'firstContentBlocks: contentBlocks', include 'firstContentBlocks' too
+      // If a component specifies 'contentSections' and there's an alias
+      // 'firstContentSections: contentSections', include 'firstContentSections' too
       const expandedStructures = new Set(targetStructures);
 
       for (const structureName of targetStructures) {

@@ -10,7 +10,7 @@ blocks:
     alt: "Dunedin cliffside"
     positionVertical: bottom
     positionHorizontal: right
-  contentBlocks:
+  contentSections:
     - _component: "building-blocks/core-elements/heading"
       text: "Bottom Right Position"
       level: h3

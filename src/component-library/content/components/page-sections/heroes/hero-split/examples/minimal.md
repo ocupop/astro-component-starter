@@ -7,5 +7,5 @@ blocks:
   subtitle: "Clean and minimal design"
   imageSource: /src/assets/images/component-library/quiet-street.jpg
   imageAlt: "Quiet street scene"
-  buttonBlocks: []
+  buttonSections: []
 ---

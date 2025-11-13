@@ -7,37 +7,37 @@ blocks:
   minItemWidth: 0
   maxItemWidth: 320
   items:
-    - contentBlocks:
+    - contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: md
           paddingVertical: md
           rounded: true
           border: true
-          contentBlocks:
+          contentSections:
             - _component: "building-blocks/core-elements/heading"
               text: "Short"
               level: h3
             - _component: "building-blocks/core-elements/text"
               text: "Short content."
-    - contentBlocks:
+    - contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: md
           paddingVertical: md
           rounded: true
           border: true
-          contentBlocks:
+          contentSections:
             - _component: "building-blocks/core-elements/heading"
               text: "Medium"
               level: h3
             - _component: "building-blocks/core-elements/text"
               text: "This card is a little longer."
-    - contentBlocks:
+    - contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: md
           paddingVertical: md
           rounded: true
           border: true
-          contentBlocks:
+          contentSections:
             - _component: "building-blocks/core-elements/heading"
               text: "Much Longer Card"
               level: h3

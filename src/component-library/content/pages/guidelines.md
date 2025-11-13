@@ -1,6 +1,6 @@
 ---
 title: "Guidelines"
-contentBlocks: []
+contentSections: []
 ---
 
 # Guidelines

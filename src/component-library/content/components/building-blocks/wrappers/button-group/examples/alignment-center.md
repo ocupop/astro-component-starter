@@ -5,7 +5,7 @@ blocks:
   _component: "building-blocks/wrappers/button-group"
   direction: row
   alignX: center
-  buttonBlocks:
+  buttonSections:
     - _component: "building-blocks/core-elements/button"
       text: "Button A"
       variant: secondary

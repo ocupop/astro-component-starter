@@ -6,7 +6,7 @@ blocks:
   paddingHorizontal: 2xl
   paddingVertical: 2xl
   backgroundColor: surface
-  contentBlocks:
+  contentSections:
     - _component: "building-blocks/core-elements/heading"
       text: "2xl Padding"
       level: h3

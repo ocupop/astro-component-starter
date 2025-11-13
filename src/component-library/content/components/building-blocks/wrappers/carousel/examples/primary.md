@@ -5,7 +5,7 @@ blocks:
   _component: building-blocks/wrappers/carousel
   slides:
     - _component: building-blocks/wrappers/carousel/carousel-slide
-      contentBlocks:
+      contentSections:
         - _component: building-blocks/core-elements/heading
           text: Slide 1
           level: h2
@@ -14,7 +14,7 @@ blocks:
           alignX: center
           text: This is the first slide of the carousel.
     - _component: building-blocks/wrappers/carousel/carousel-slide
-      contentBlocks:
+      contentSections:
         - _component: building-blocks/core-elements/heading
           text: Slide 2
           level: h2
@@ -23,7 +23,7 @@ blocks:
           text: This is the second slide of the carousel.
           alignX: center
     - _component: building-blocks/wrappers/carousel/carousel-slide
-      contentBlocks:
+      contentSections:
         - _component: building-blocks/core-elements/heading
           text: Slide 3
           level: h2

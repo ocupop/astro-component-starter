@@ -4,9 +4,10 @@ import Component from "@components/utils/renderBlock.astro";
 
 const {
   label,
-  contentBlocks,
-  beforeContentBlocks,
-  afterContentBlocks,
+  contentSections,
+  beforeContentSections,
+  afterContentSections,
+  maxContentWidth,
   paddingHorizontal,
   paddingVertical,
   colorScheme,
@@ -77,9 +78,9 @@ const Tag = link ? "a" : "div";
   }
 
   {
-    (beforeContentBlocks || Astro.slots.has("before")) && (
+    (beforeContentSections || Astro.slots.has("before")) && (
       <div class="before-content">
-        <Component contentBlocks={beforeContentBlocks} propName="beforeContentBlocks" />
+        <Component contentSections={beforeContentSections} propName="beforeContentSections" />
         <slot name="before" />
       </div>
     )
@@ -91,17 +92,18 @@ const Tag = link ? "a" : "div";
         "content",
         paddingHorizontal && `pad-x-${paddingHorizontal}`,
         paddingVertical && `pad-y-${paddingVertical}`,
+        maxContentWidth && `max-width-${maxContentWidth}`,
       ]}
     >
       <slot />
-      <Component contentBlocks={contentBlocks} propName="contentBlocks" />
+      <Component contentSections={contentSections} propName="contentSections" />
     </div>
   </div>
 
   {
-    (afterContentBlocks || Astro.slots.has("after")) && (
+    (afterContentSections || Astro.slots.has("after")) && (
       <div class="after-content">
-        <Component contentBlocks={afterContentBlocks} propName="afterContentBlocks" />
+        <Component contentSections={afterContentSections} propName="afterContentSections" />
         <slot name="after" />
       </div>
     )
@@ -147,6 +149,7 @@ const Tag = link ? "a" : "div";
 
     > .outer-content > .content {
       height: 100%;
+      margin-inline: auto;
       position: relative;
       z-index: var(--layer-1);
 
@@ -206,6 +209,34 @@ const Tag = link ? "a" : "div";
 
       &.pad-y-2xl {
         padding-block: var(--spacing-2xl);
+      }
+
+      &.max-width-xs {
+        max-width: var(--content-width-xs);
+      }
+
+      &.max-width-sm {
+        max-width: var(--content-width-sm);
+      }
+
+      &.max-width-md {
+        max-width: var(--content-width-md);
+      }
+
+      &.max-width-lg {
+        max-width: var(--content-width-lg);
+      }
+
+      &.max-width-xl {
+        max-width: var(--content-width-xl);
+      }
+
+      &.max-width-2xl {
+        max-width: var(--content-width-2xl);
+      }
+
+      &.max-width-3xl {
+        max-width: var(--content-width-3xl);
       }
     }
 

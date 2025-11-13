@@ -9,7 +9,7 @@ slots:
     child_component:
       name: GridItem
       props:
-        - "contentBlocks/slot"
+        - "contentSections/slot"
 examples:
   - title: Layouts
     slugs:

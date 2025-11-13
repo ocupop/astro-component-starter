@@ -2,13 +2,13 @@ label: Form
 icon: checklist_rtl
 description: "Groups form fields into one submission area."
 structures:
-  - containerBlocks
-  - cardBlocks
-  - splitBlocks
-  - gridItemBlocks
-  - accordionBlocks
-  - carouselBlocks
-  - contentSelectorBlocks
+  - containerSections
+  - cardSections
+  - splitSections
+  - gridItemSections
+  - accordionSections
+  - carouselSections
+  - contentSelectorSections
 value:
   _component: building-blocks/forms/form
   action: "./"

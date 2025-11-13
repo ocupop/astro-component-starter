@@ -8,33 +8,12 @@
     "path": "/component-library/guidelines/"
   },
   {
-    "group": "Building Blocks",
-    "children": [
-      {
-        "group": "Core Elements",
-        "children": []
-      },
-      {
-        "group": "Forms",
-        "children": []
-      },
-      {
-        "group": "Wrappers",
-        "children": []
-      }
-    ]
+    "group": "Building Blocks"
   },
   {
-    "group": "Page Sections",
-    "children": [
-      {
-        "group": "Heroes",
-        "children": []
-      }
-    ]
+    "group": "Page Sections"
   },
   {
-    "group": "Navigation",
-    "children": []
+    "group": "Navigation"
   }
 ]

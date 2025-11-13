@@ -57,16 +57,16 @@ export function formatComponentWithSlots(
         }
       }
     }
-    delete props.contentBlocks;
+    delete props.contentSections;
     delete props.navBlocks;
     delete props.formBlocks;
-    delete props.firstColumnContentBlocks;
-    delete props.secondColumnContentBlocks;
-    delete props.buttonBlocks;
+    delete props.firstColumnContentSections;
+    delete props.secondColumnContentSections;
+    delete props.buttonSections;
     delete props.slides;
   } else if (componentPath.includes("split")) {
-    delete props.firstColumnContentBlocks;
-    delete props.secondColumnContentBlocks;
+    delete props.firstColumnContentSections;
+    delete props.secondColumnContentSections;
   } else if (componentPath.includes("form")) {
     delete props.formBlocks;
   }
@@ -106,7 +106,7 @@ export function formatComponentWithSlots(
   const items = block.items;
 
   const nestedBlocks =
-    block.contentBlocks || block.navBlocks || block.formBlocks || block.buttonBlocks;
+    block.contentSections || block.navBlocks || block.formBlocks || block.buttonSections;
 
   if (nestedBlocks && supportsSlots) {
     propsString = Object.entries(props)
@@ -149,12 +149,12 @@ ${nestedContent}
 ${indent}</${componentName}>`;
   } else if (
     componentPath.includes("split") &&
-    (block.firstColumnContentBlocks || block.secondColumnContentBlocks)
+    (block.firstColumnContentSections || block.secondColumnContentSections)
   ) {
-    const firstContent = block.firstColumnContentBlocks
-      ? (Array.isArray(block.firstColumnContentBlocks)
-          ? block.firstColumnContentBlocks
-          : [block.firstColumnContentBlocks]
+    const firstContent = block.firstColumnContentSections
+      ? (Array.isArray(block.firstColumnContentSections)
+          ? block.firstColumnContentSections
+          : [block.firstColumnContentSections]
         )
           .map((nestedBlock) =>
             formatComponentWithSlots(
@@ -167,10 +167,10 @@ ${indent}</${componentName}>`;
           .join("\n")
       : "";
 
-    const secondContent = block.secondColumnContentBlocks
-      ? (Array.isArray(block.secondColumnContentBlocks)
-          ? block.secondColumnContentBlocks
-          : [block.secondColumnContentBlocks]
+    const secondContent = block.secondColumnContentSections
+      ? (Array.isArray(block.secondColumnContentSections)
+          ? block.secondColumnContentSections
+          : [block.secondColumnContentSections]
         )
           .map((nestedBlock) =>
             formatComponentWithSlots(
@@ -259,7 +259,7 @@ ${indent}</${componentName}>`;
       .map((item) => {
         const itemProps = { ...item };
 
-        delete itemProps.contentBlocks; // Remove contentBlocks from props since it goes in the slot
+        delete itemProps.contentSections; // Remove contentSections from props since it goes in the slot
 
         const itemPropsString = Object.entries(itemProps)
           .sort(([a], [b]) => a.localeCompare(b)) // Sort attributes alphabetically
@@ -276,8 +276,8 @@ ${indent}</${componentName}>`;
           .filter(Boolean)
           .join(" ");
 
-        const itemContent = item.contentBlocks
-          ? (Array.isArray(item.contentBlocks) ? item.contentBlocks : [item.contentBlocks])
+        const itemContent = item.contentSections
+          ? (Array.isArray(item.contentSections) ? item.contentSections : [item.contentSections])
               .map((nestedBlock) =>
                 formatComponentWithSlots(
                   nestedBlock,
@@ -307,7 +307,7 @@ ${indent}</${componentName}>`;
       .map((item) => {
         const itemProps = { ...item };
 
-        delete itemProps.contentBlocks; // Remove contentBlocks from props since it goes in the slot
+        delete itemProps.contentSections; // Remove contentSections from props since it goes in the slot
 
         const itemPropsString = Object.entries(itemProps)
           .sort(([a], [b]) => a.localeCompare(b)) // Sort attributes alphabetically
@@ -324,8 +324,8 @@ ${indent}</${componentName}>`;
           .filter(Boolean)
           .join(" ");
 
-        const itemContent = item.contentBlocks
-          ? (Array.isArray(item.contentBlocks) ? item.contentBlocks : [item.contentBlocks])
+        const itemContent = item.contentSections
+          ? (Array.isArray(item.contentSections) ? item.contentSections : [item.contentSections])
               .map((nestedBlock) =>
                 formatComponentWithSlots(
                   nestedBlock,
@@ -355,7 +355,7 @@ ${indent}</${componentName}>`;
       .map((slide) => {
         const slideProps = { ...slide };
 
-        delete slideProps.contentBlocks; // Remove contentBlocks from props since it goes in the slot
+        delete slideProps.contentSections; // Remove contentSections from props since it goes in the slot
 
         const slidePropsString = Object.entries(slideProps)
           .sort(([a], [b]) => a.localeCompare(b)) // Sort attributes alphabetically
@@ -372,8 +372,8 @@ ${indent}</${componentName}>`;
           .filter(Boolean)
           .join(" ");
 
-        const slideContent = slide.contentBlocks
-          ? (Array.isArray(slide.contentBlocks) ? slide.contentBlocks : [slide.contentBlocks])
+        const slideContent = slide.contentSections
+          ? (Array.isArray(slide.contentSections) ? slide.contentSections : [slide.contentSections])
               .map((nestedBlock) =>
                 formatComponentWithSlots(nestedBlock, indentLevel + 2, componentMetadata)
               )

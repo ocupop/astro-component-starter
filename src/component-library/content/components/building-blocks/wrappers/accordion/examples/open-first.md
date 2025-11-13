@@ -7,19 +7,19 @@ blocks:
   items:
     - _component: building-blocks/wrappers/accordion/accordion-item
       title: What do I get?
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/text"
           text: |-
             You get access to basic features to help you get started quickly.
     - _component: building-blocks/wrappers/accordion/accordion-item
       title: Is it easy to use?
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/text"
           text: |-
             Yes, everything is designed to be simple and straightforward.
     - _component: building-blocks/wrappers/accordion/accordion-item
       title: Can I use it with others?
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/text"
           text: |-
             You can share and collaborate with others at any time.

@@ -2,9 +2,9 @@ label: Carousel
 icon: image
 description: "Displays multiple items in a sliding gallery."
 structures:
-  - containerBlocks
-  - splitBlocks
-  - contentSelectorBlocks
+  - containerSections
+  - splitSections
+  - contentSelectorSections
 value:
   _component: building-blocks/wrappers/carousel
   label: ""
@@ -55,17 +55,17 @@ _structures:
       - label: Carousel Slide
         value:
           _component: building-blocks/wrappers/carousel/carousel-slide
-          contentBlocks: []
+          contentSections: []
         _inputs:
           _component:
             hidden: true
-          contentBlocks:
+          contentSections:
             type: array
             options:
-              structures: _structures.carouselBlocks
+              structures: _structures.carouselSections
         preview:
           icon: transition_slide
           text: Carousel Slide
           subtext:
-            - template: Contains {contentBlocks|array_length} content {"block"|pluralize=contentBlocks}
+            - template: Contains {contentSections|array_length} content {"block"|pluralize=contentSections}
             - Add one or more content blocks to the grid item

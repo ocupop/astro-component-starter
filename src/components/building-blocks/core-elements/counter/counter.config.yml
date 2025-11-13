@@ -2,13 +2,13 @@ label: Counter
 icon: speed
 description: "Animated counter for highlighting key stats or figures."
 structures:
-  - containerBlocks
-  - cardBlocks
-  - splitBlocks
-  - gridItemBlocks
-  - accordionBlocks
-  - carouselBlocks
-  - contentSelectorBlocks
+  - containerSections
+  - cardSections
+  - splitSections
+  - gridItemSections
+  - accordionSections
+  - carouselSections
+  - contentSelectorSections
 value:
   _component: building-blocks/core-elements/counter
   number: 100

@@ -3,23 +3,23 @@ title: Two Thirds-Third
 spacing:
 blocks:
   _component: "building-blocks/wrappers/split"
-  firstColumnContentBlocks:
-    - _component: "building-blocks/wrappers/container"
+  firstColumnContentSections:
+    - _component: "page-sections/custom-section"
       backgroundColor: "accent"
       paddingHorizontal: sm
       paddingVertical: sm
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/text"
           text: |-
             ## Two thirds column
 
             This column takes up 66% of the available space.
-  secondColumnContentBlocks:
-    - _component: "building-blocks/wrappers/container"
+  secondColumnContentSections:
+    - _component: "page-sections/custom-section"
       backgroundColor: "highlight"
       paddingHorizontal: sm
       paddingVertical: sm
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/text"
           text: |-
             ## Third column

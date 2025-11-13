@@ -1,6 +1,6 @@
 ---
 title: "Component Library"
-contentBlocks: []
+contentSections: []
 ---
 
 # Component Library

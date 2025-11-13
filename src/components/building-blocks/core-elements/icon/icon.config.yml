@@ -2,13 +2,13 @@ label: Icon
 icon: star
 description: "SVG icon component."
 structures:
-  - containerBlocks
-  - cardBlocks
-  - splitBlocks
-  - gridItemBlocks
-  - accordionBlocks
-  - carouselBlocks
-  - contentSelectorBlocks
+  - containerSections
+  - cardSections
+  - splitSections
+  - gridItemSections
+  - accordionSections
+  - carouselSections
+  - contentSelectorSections
 value:
   _component: building-blocks/core-elements/icon
   name: "bolt"

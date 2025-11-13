@@ -2,9 +2,9 @@ label: Content Selector
 icon: view_sidebar
 description: "Lets users switch between different content panels using tabs."
 structures:
-  - containerBlocks
-  - splitBlocks
-  - carouselBlocks
+  - containerSections
+  - splitSections
+  - carouselSections
 value:
   _component: building-blocks/wrappers/content-selector
   label: ""
@@ -45,21 +45,21 @@ _structures:
         value:
           _component: building-blocks/wrappers/content-selector/content-selector-panel
           title: null
-          contentBlocks: null
+          contentSections: null
         preview:
           text:
             - key: title
             - Content Selector Item
           subtext:
-            - template: A content selector item containing {contentBlocks|array_length} content {"block"|pluralize=contentBlocks}
+            - template: A content selector item containing {contentSections|array_length} content {"block"|pluralize=contentSections}
             - Add content to the content selector item
         _inputs:
           title:
             type: text
             comment: The heading for the content panel.
-          contentBlocks:
+          contentSections:
             type: array
             options:
-              structures: _structures.contentSelectorBlocks
+              structures: _structures.contentSelectorSections
           _component:
             hidden: true

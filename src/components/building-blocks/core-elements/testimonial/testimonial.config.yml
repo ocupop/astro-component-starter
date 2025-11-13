@@ -2,13 +2,13 @@ label: Testimonial
 icon: format_quote
 description: "Displays customer quotes and reviews."
 structures:
-  - containerBlocks
-  - cardBlocks
-  - splitBlocks
-  - gridItemBlocks
-  - accordionBlocks
-  - carouselBlocks
-  - contentSelectorBlocks
+  - containerSections
+  - cardSections
+  - splitSections
+  - gridItemSections
+  - accordionSections
+  - carouselSections
+  - contentSelectorSections
 value:
   _component: building-blocks/core-elements/testimonial
   text: "My testimonial text."

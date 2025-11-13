@@ -3,13 +3,13 @@ title: Primary Split
 spacing: null
 blocks:
   _component: building-blocks/wrappers/split
-  firstColumnContentBlocks:
+  firstColumnContentSections:
     - _component: building-blocks/core-elements/text
       text: |-
         ## Side A
 
         This is content for side A.
-  secondColumnContentBlocks:
+  secondColumnContentSections:
     - _component: building-blocks/core-elements/text
       text: |-
         ## Side B

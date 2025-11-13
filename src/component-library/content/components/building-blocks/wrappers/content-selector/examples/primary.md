@@ -6,7 +6,7 @@ blocks:
   navigationPosition: start
   items:
     - title: Overview
-      contentBlocks:
+      contentSections:
         - _component: building-blocks/core-elements/heading
           text: Overview
           level: h2
@@ -17,7 +17,7 @@ blocks:
           alignX: start
           size: md
     - title: Details
-      contentBlocks:
+      contentSections:
         - _component: building-blocks/core-elements/heading
           text: Details
           level: h2
@@ -28,7 +28,7 @@ blocks:
           alignX: start
           size: md
     - title: Next steps
-      contentBlocks:
+      contentSections:
         - _component: building-blocks/core-elements/heading
           text: Next steps
           level: h2

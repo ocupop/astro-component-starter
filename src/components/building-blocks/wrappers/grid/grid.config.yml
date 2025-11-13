@@ -2,10 +2,10 @@ label: Grid
 icon: grid_on
 description: "Arranges content into a grid that adapts to screen size."
 structures:
-  - containerBlocks
-  - splitBlocks
-  - carouselBlocks
-  - contentSelectorBlocks
+  - containerSections
+  - splitSections
+  - carouselSections
+  - contentSelectorSections
 value:
   _component: building-blocks/wrappers/grid
   label: ""
@@ -77,18 +77,18 @@ _structures:
       - label: Grid Item
         value:
           _component: building-blocks/wrappers/grid/grid-item
-          contentBlocks: []
+          contentSections: []
         preview:
           icon: grid_view
           text: Grid Item
           subtext:
-            - template: Contains {contentBlocks|array_length} content {"block"|pluralize=contentBlocks}
+            - template: Contains {contentSections|array_length} content {"block"|pluralize=contentSections}
             - Add one or more content blocks to the grid item
         _inputs:
           _component:
             hidden: true
-          contentBlocks:
+          contentSections:
             type: array
-            comment: Content blocks to render within this grid item.
+            comment: Content sections to render within this grid item.
             options:
-              structures: _structures.gridItemBlocks
+              structures: _structures.gridItemSections

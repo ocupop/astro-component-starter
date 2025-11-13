@@ -2,13 +2,13 @@ label: Heading
 icon: title
 description: "Headings for content hierarchy."
 structures:
-  - containerBlocks
-  - cardBlocks
-  - splitBlocks
-  - gridItemBlocks
-  - accordionBlocks
-  - carouselBlocks
-  - contentSelectorBlocks
+  - containerSections
+  - cardSections
+  - splitSections
+  - gridItemSections
+  - accordionSections
+  - carouselSections
+  - contentSelectorSections
 value:
   _component: building-blocks/core-elements/heading
   text: "My Heading"

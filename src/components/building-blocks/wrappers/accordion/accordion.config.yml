@@ -2,12 +2,12 @@ label: Accordion
 icon: expand_all
 description: "Interactive component for showing and hiding content panels."
 structures:
-  - containerBlocks
-  - cardBlocks
-  - splitBlocks
-  - gridItemBlocks
-  - carouselBlocks
-  - contentSelectorBlocks
+  - containerSections
+  - cardSections
+  - splitSections
+  - gridItemSections
+  - carouselSections
+  - contentSelectorSections
 value:
   _component: building-blocks/wrappers/accordion
   label: null
@@ -48,14 +48,14 @@ _structures:
         value:
           _component: building-blocks/wrappers/accordion/accordion-item
           title: null
-          contentBlocks: null
+          contentSections: null
         _inputs:
           title:
             comment: The title of the accordion item.
             type: text
-          contentBlocks:
+          contentSections:
             type: array
             options:
-              structures: _structures.accordionBlocks
+              structures: _structures.accordionSections
           _component:
             hidden: true

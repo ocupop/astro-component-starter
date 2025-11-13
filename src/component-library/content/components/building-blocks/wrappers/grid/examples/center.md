@@ -7,49 +7,49 @@ blocks:
   minItemWidth: 350
   maxItemWidth: 350
   items:
-    - contentBlocks:
+    - contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: md
           paddingVertical: md
           rounded: true
           border: true
-          contentBlocks:
+          contentSections:
             - _component: "building-blocks/core-elements/heading"
               text: "Feature One"
               level: h3
             - _component: "building-blocks/core-elements/text"
               text: "The center-aligned layout sizes items within the min/max width provided."
-    - contentBlocks:
+    - contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: md
           paddingVertical: md
           rounded: true
           border: true
-          contentBlocks:
+          contentSections:
             - _component: "building-blocks/core-elements/heading"
               text: "Feature Two"
               level: h3
             - _component: "building-blocks/core-elements/text"
               text: "Items are centered if there is extra whitespace."
-    - contentBlocks:
+    - contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: md
           paddingVertical: md
           rounded: true
           border: true
-          contentBlocks:
+          contentSections:
             - _component: "building-blocks/core-elements/heading"
               text: "Feature Three"
               level: h3
             - _component: "building-blocks/core-elements/text"
               text: "You can ensure all items are always equal in a center-aligned layout by giving it the same value for min and max width."
-    - contentBlocks:
+    - contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: md
           paddingVertical: md
           rounded: true
           border: true
-          contentBlocks:
+          contentSections:
             - _component: "building-blocks/core-elements/heading"
               text: "Feature Four"
               level: h3

@@ -1,10 +1,10 @@
 ---
 _schema: default
 title: Your Site
-pageBlocks:
-  - _component: building-blocks/wrappers/container
+pageSections:
+  - _component: page-sections/custom-section
     label: ''
-    contentBlocks:
+    contentSections:
       - _component: building-blocks/core-elements/heading
         text: Welcome to your CloudCannon Starter Component site
         level: h1
@@ -12,7 +12,7 @@ pageBlocks:
         alignX: center
         iconPosition: before
       - _component: building-blocks/wrappers/button-group
-        buttonBlocks:
+        buttonSections:
           - _component: building-blocks/core-elements/button
             text: View Components
             link: /component-library/

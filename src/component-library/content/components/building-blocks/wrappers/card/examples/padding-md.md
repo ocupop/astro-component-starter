@@ -6,7 +6,7 @@ blocks:
   paddingHorizontal: md
   paddingVertical: md
   backgroundColor: surface
-  contentBlocks:
+  contentSections:
     - _component: "building-blocks/core-elements/heading"
       text: "md Padding"
       level: h3

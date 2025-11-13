@@ -7,27 +7,27 @@ blocks:
   autoScroll: true
   slides:
     - _component: building-blocks/wrappers/carousel/carousel-slide
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/image"
           source: /src/assets/images/component-library/quiet-street.jpg
           alt: "Quiet Street"
     - _component: building-blocks/wrappers/carousel/carousel-slide
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/image"
           source: /src/assets/images/component-library/sunset.jpg
           alt: "Sunset"
     - _component: building-blocks/wrappers/carousel/carousel-slide
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/image"
           source: /src/assets/images/component-library/sheep.jpg
           alt: "Sheep"
     - _component: building-blocks/wrappers/carousel/carousel-slide
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/image"
           source: /src/assets/images/component-library/castle.jpg
           alt: "Castle"
     - _component: building-blocks/wrappers/carousel/carousel-slide
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/image"
           source: /src/assets/images/component-library/dunedin-cliff.jpg
           alt: "Dunedin Cliff"

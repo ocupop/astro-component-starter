@@ -3,23 +3,23 @@ title: Flexible Fixed Mode
 spacing:
 blocks:
   _component: "building-blocks/wrappers/split"
-  firstColumnContentBlocks:
-    - _component: "building-blocks/wrappers/container"
+  firstColumnContentSections:
+    - _component: "page-sections/custom-section"
       backgroundColor: "accent"
       paddingHorizontal: sm
       paddingVertical: sm
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/text"
           text: |-
             ## Flexible column
 
             This column takes up the remaining space.
-  secondColumnContentBlocks:
-    - _component: "building-blocks/wrappers/container"
+  secondColumnContentSections:
+    - _component: "page-sections/custom-section"
       paddingHorizontal: sm
       paddingVertical: sm
       backgroundColor: "highlight"
-      contentBlocks:
+      contentSections:
         - _component: "building-blocks/core-elements/text"
           text: |-
             ## Fixed column

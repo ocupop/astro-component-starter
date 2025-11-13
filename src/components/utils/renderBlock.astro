@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  contentBlocks: any[];
+  contentSections: any[];
   propName?: string;
   editable?: boolean;
 }
@@ -21,12 +21,12 @@ Object.entries(componentImports).forEach(([path, obj]) => {
   components[componentName] = (obj as any).default;
 });
 
-const { contentBlocks, propName = "contentBlocks", editable = true } = Astro.props;
+const { contentSections, propName = "contentSections", editable = true } = Astro.props;
 ---
 
 {
   !editable ? (
-    contentBlocks?.map((block) => {
+    contentSections?.map((block) => {
       const Component = components[block._component];
 
       if (!Component && block._component) {
@@ -45,7 +45,7 @@ const { contentBlocks, propName = "contentBlocks", editable = true } = Astro.pro
       data-id-key="_component"
       data-prop={propName}
     >
-      {contentBlocks?.map((block) => {
+      {contentSections?.map((block) => {
         const Component = components[block._component];
 
         if (!Component && block._component) {

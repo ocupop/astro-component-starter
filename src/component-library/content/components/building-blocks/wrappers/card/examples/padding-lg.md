@@ -6,7 +6,7 @@ blocks:
   paddingHorizontal: lg
   paddingVertical: lg
   backgroundColor: surface
-  contentBlocks:
+  contentSections:
     - _component: "building-blocks/core-elements/heading"
       text: "lg Padding"
       level: h3

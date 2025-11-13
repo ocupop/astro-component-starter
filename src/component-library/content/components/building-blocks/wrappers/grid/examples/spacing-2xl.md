@@ -8,37 +8,37 @@ blocks:
   minItemWidth: 200
   maxItemWidth: 300
   items:
-    - contentBlocks:
+    - contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: md
           paddingVertical: md
           rounded: true
           border: true
-          contentBlocks:
+          contentSections:
             - _component: "building-blocks/core-elements/heading"
               text: "Item 1"
               level: h3
             - _component: "building-blocks/core-elements/text"
               text: "2XL spacing creates maximum visual separation."
-    - contentBlocks:
+    - contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: md
           paddingVertical: md
           rounded: true
           border: true
-          contentBlocks:
+          contentSections:
             - _component: "building-blocks/core-elements/heading"
               text: "Item 2"
               level: h3
             - _component: "building-blocks/core-elements/text"
               text: "Ideal for showcasing premium content."
-    - contentBlocks:
+    - contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: md
           paddingVertical: md
           rounded: true
           border: true
-          contentBlocks:
+          contentSections:
             - _component: "building-blocks/core-elements/heading"
               text: "Item 3"
               level: h3

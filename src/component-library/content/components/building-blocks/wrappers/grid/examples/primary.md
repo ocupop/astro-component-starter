@@ -6,19 +6,19 @@ blocks:
   minItemWidth: 250
   layout: start
   items:
-    - contentBlocks:
+    - contentSections:
         - _component: building-blocks/core-elements/heading
           text: Grid Item 1
           level: h3
         - _component: building-blocks/core-elements/text
           text: This is the first grid item with a heading and simple text. The grid component centers items and provides flexible width options.
-    - contentBlocks:
+    - contentSections:
         - _component: building-blocks/core-elements/heading
           text: Grid Item 2
           level: h3
         - _component: building-blocks/core-elements/text
           text: This is the second grid item. Items can have equal or unequal widths.
-    - contentBlocks:
+    - contentSections:
         - _component: building-blocks/core-elements/heading
           text: Grid Item 3
           level: h3

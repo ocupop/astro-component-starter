@@ -6,7 +6,7 @@ blocks:
   border: false
   paddingHorizontal: sm
   paddingVertical: sm
-  contentBlocks:
+  contentSections:
     - _component: "building-blocks/core-elements/heading"
       text: "Borderless Card"
       level: h3

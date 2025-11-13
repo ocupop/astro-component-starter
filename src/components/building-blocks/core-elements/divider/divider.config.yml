@@ -2,13 +2,13 @@ label: Divider
 icon: horizontal_rule
 description: "Visual separator for dividing content sections."
 structures:
-  - containerBlocks
-  - cardBlocks
-  - splitBlocks
-  - gridItemBlocks
-  - accordionBlocks
-  - carouselBlocks
-  - contentSelectorBlocks
+  - containerSections
+  - cardSections
+  - splitSections
+  - gridItemSections
+  - accordionSections
+  - carouselSections
+  - contentSelectorSections
 value:
   _component: building-blocks/core-elements/divider
   paddingVertical: "lg"

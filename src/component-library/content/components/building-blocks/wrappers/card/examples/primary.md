@@ -6,7 +6,7 @@ blocks:
   border: true
   paddingHorizontal: sm
   paddingVertical: sm
-  contentBlocks:
+  contentSections:
     - _component: building-blocks/core-elements/heading
       text: This is a card
       level: h3
@@ -23,6 +23,6 @@ blocks:
   link: ""
   rounded: false
   showBeforeAfter: false
-  beforeContentBlocks: []
-  afterContentBlocks: []
+  beforeContentSections: []
+  afterContentSections: []
 ---

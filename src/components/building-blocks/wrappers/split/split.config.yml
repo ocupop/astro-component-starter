@@ -2,14 +2,14 @@ label: Split
 icon: vertical_split
 description: "Two-column layout for side-by-side content."
 structures:
-  - containerBlocks
-  - carouselBlocks
-  - contentSelectorBlocks
+  - containerSections
+  - carouselSections
+  - contentSelectorSections
 value:
   _component: building-blocks/wrappers/split
   label: ""
-  firstColumnContentBlocks: []
-  secondColumnContentBlocks: []
+  firstColumnContentSections: []
+  secondColumnContentSections: []
   distributionMode: half
   fixedWidth: null
   minSplitWidth: 760
@@ -20,7 +20,7 @@ preview:
     - key: label
     - Split
   subtext:
-    - template: A split containing {firstColumnContentBlocks|array_length} content {"block"|pluralize=firstColumnContentBlocks} in the first column, and {secondColumnContentBlocks|array_length} content {"block"|pluralize=secondColumnContentBlocks} in the second column
+    - template: A split containing {firstColumnContentSections|array_length} content {"block"|pluralize=firstColumnContentSections} in the first column, and {secondColumnContentSections|array_length} content {"block"|pluralize=secondColumnContentSections} in the second column
     - Add items to the split
 picker_preview:
   text: Split
@@ -30,16 +30,16 @@ _inputs:
   label:
     comment: Optional label for the split to help identify it in the editor.
     type: text
-  firstColumnContentBlocks:
+  firstColumnContentSections:
     type: array
-    comment: Array of content blocks to render in the first column.
+    comment: Array of content sections to render in the first column.
     options:
-      structures: _structures.splitBlocks
-  secondColumnContentBlocks:
+      structures: _structures.splitSections
+  secondColumnContentSections:
     type: array
-    comment: Array of content blocks to render in the second column.
+    comment: Array of content sections to render in the second column.
     options:
-      structures: _structures.splitBlocks
+      structures: _structures.splitSections
   distributionMode:
     comment: Predefined distribution mode for both columns.
     type: select

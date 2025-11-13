@@ -7,7 +7,7 @@ blocks:
   paddingVertical: md
   backgroundColor: accent
   link: "#"
-  contentBlocks:
+  contentSections:
     - _component: "building-blocks/core-elements/heading"
       text: "Clickable Card"
       level: h3

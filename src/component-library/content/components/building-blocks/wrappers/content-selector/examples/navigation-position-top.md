@@ -8,7 +8,7 @@ blocks:
     - title: FAQ
       sub_text: Common questions
       icon_name: question-mark-circle
-      contentBlocks:
+      contentSections:
         - _component: building-blocks/core-elements/heading
           text: "Frequently asked questions"
           level: h2
@@ -23,7 +23,7 @@ blocks:
     - title: Shipping
       sub_text: How we deliver
       icon_name: truck
-      contentBlocks:
+      contentSections:
         - _component: building-blocks/core-elements/text
           text: |
             We ship worldwide. Orders leave within 2 business days.
@@ -42,7 +42,7 @@ blocks:
     - title: Returns
       sub_text: Easy and fair
       icon_name: arrow-path
-      contentBlocks:
+      contentSections:
         - _component: building-blocks/core-elements/text
           text: "30‑day returns. Unused items only. Full refund once received."
           alignX: start

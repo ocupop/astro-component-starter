@@ -4,7 +4,7 @@ import Component from "@components/utils/renderBlock.astro";
 const {
   direction,
   alignX,
-  buttonBlocks,
+  buttonSections,
   editable = true,
   class: className,
   label,
@@ -40,8 +40,8 @@ const alignClass = alignMap[alignX as keyof typeof alignMap] ?? "align-start";
   {...htmlAttributes}
 >
   {
-    buttonBlocks && buttonBlocks.length > 0 ? (
-      <Component contentBlocks={buttonBlocks} editable={editable} propName="buttonBlocks" />
+    buttonSections && buttonSections.length > 0 ? (
+      <Component contentSections={buttonSections} editable={editable} propName="buttonSections" />
     ) : (
       <slot />
     )

@@ -7,15 +7,15 @@ overview: "A card for grouping related content within a section. Provides backgr
 slots:
   - title: default
     description: The contents for the body of the Card.
-    fallback_for: contentBlocks
+    fallback_for: contentSections
     child_component:
   - title: before
     description: The contents to display before the Card content.
-    fallback_for: beforeContentBlocks
+    fallback_for: beforeContentSections
     child_component:
   - title: after
     description: The contents to display after the Card content.
-    fallback_for: afterContentBlocks
+    fallback_for: afterContentSections
     child_component:
 examples:
   - slugs:
@@ -23,6 +23,15 @@ examples:
   - slugs:
       - border
       - border-none
+  - title: "Max Content Width"
+    slugs:
+      - max-content-width-xs
+      - max-content-width-sm
+      - max-content-width-md
+      - max-content-width-lg
+      - max-content-width-xl
+      - max-content-width-2xl
+      - max-content-width-3xl
   - title: "Padding Options"
     slugs:
       - padding-xs

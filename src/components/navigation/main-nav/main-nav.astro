@@ -3,20 +3,20 @@ import Image from "@components/building-blocks/core-elements/image/image.astro";
 import Bar from "@components/navigation/bar/bar.astro";
 import Mobile from "@components/navigation/mobile/mobile.astro";
 import ButtonGroup from "@components/building-blocks/wrappers/button-group/button-group.astro";
-import Container from "@components/building-blocks/wrappers/container/container.astro";
+import CustomSection from "@components/page-sections/custom-section/custom-section.astro";
 
 const {
   logoSource,
   logoAlt = "logo",
   navData = [],
-  buttonBlocks = [],
+  buttonSections = [],
   class: className,
   ...rest
 } = Astro.props;
 
 const mobileNavData = [
   ...navData,
-  ...buttonBlocks.map((button: any) => ({
+  ...buttonSections.map((button: any) => ({
     name: button.text || "Button",
     path: button.href || "#",
     children: [],
@@ -24,7 +24,7 @@ const mobileNavData = [
 ];
 ---
 
-<Container
+<CustomSection
   maxContentWidth="2xl"
   paddingHorizontal="md"
   paddingVertical="none"
@@ -36,12 +36,12 @@ const mobileNavData = [
     <Bar navData={navData} class="desktop-main-nav" />
 
     {
-      buttonBlocks.length > 0 && (
+      buttonSections.length > 0 && (
         <ButtonGroup
           direction="row"
           align="center"
           class="desktop-button-group"
-          buttonBlocks={buttonBlocks}
+          buttonSections={buttonSections}
           editable={false}
         />
       )
@@ -53,7 +53,7 @@ const mobileNavData = [
     navData={mobileNavData}
     class="mobile-main-nav"
   />
-</Container>
+</CustomSection>
 
 <style lang="pcss">
   .main-nav {

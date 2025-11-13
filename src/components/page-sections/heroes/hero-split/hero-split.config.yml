@@ -1,14 +1,15 @@
 label: Hero Split
 icon: hero
 description: "Prominent section block for landing pages."
-structures: []
+structures:
+  - pageSections
 value:
   _component: page-sections/heroes/hero-split
   heading: ""
   subtitle: ""
   imageSource: ""
   imageAlt: ""
-  buttonBlocks: []
+  buttonSections: []
   reverse: false
 preview:
   text:
@@ -39,11 +40,11 @@ _inputs:
   imageAlt:
     type: text
     comment: "Alt text for the feature image for accessibility."
-  buttonBlocks:
+  buttonSections:
     type: array
     comment: "Array of button components for call-to-action buttons. See the Button component documentation for more information."
     options:
-      structures: _structures.buttonBlocks
+      structures: _structures.buttonSections
   reverse:
     type: switch
     comment: "Whether to reverse the order of content and image (image first, content second)."

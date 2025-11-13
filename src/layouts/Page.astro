@@ -9,7 +9,7 @@ type Props = {
     keywords?: string[];
     image?: string;
     canonical?: string;
-    pageBlocks: any[];
+    pageSections: any[];
   };
 };
 
@@ -23,5 +23,5 @@ const props = Astro.props.frontmatter;
   image={props.image}
   canonical={props.canonical}
 >
-  <Components contentBlocks={props.pageBlocks} propName="pageBlocks" />
+  <Components contentSections={props.pageSections} propName="pageSections" />
 </Layout>

@@ -1,0 +1,22 @@
+---
+title: Primary Custom Section
+spacing: null
+blocks:
+  _component: page-sections/custom-section
+  backgroundColor: surface
+  paddingHorizontal: md
+  paddingVertical: md
+  contentSections:
+    - _component: building-blocks/core-elements/heading
+      text: This is a heading inside a container.
+      level: h2
+  label: ""
+  maxContentWidth: 2xl
+  colorScheme: null
+  backgroundImage:
+    source: ""
+    alt: ""
+    positionVertical: top
+    positionHorizontal: center
+  rounded: false
+---

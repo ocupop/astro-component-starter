@@ -6,7 +6,7 @@ blocks:
   backgroundColor: accent
   paddingHorizontal: sm
   paddingVertical: sm
-  contentBlocks:
+  contentSections:
     - _component: "building-blocks/core-elements/heading"
       text: "Accent Card"
       level: h3

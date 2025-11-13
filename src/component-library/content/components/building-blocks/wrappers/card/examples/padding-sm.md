@@ -6,7 +6,7 @@ blocks:
   paddingHorizontal: sm
   paddingVertical: sm
   backgroundColor: surface
-  contentBlocks:
+  contentSections:
     - _component: "building-blocks/core-elements/heading"
       text: "sm padding"
       level: h3

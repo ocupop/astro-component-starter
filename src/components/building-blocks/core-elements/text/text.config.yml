@@ -2,13 +2,13 @@ label: Text
 icon: edit_note
 description: "Content component for markdown-formatted text."
 structures:
-  - containerBlocks
-  - cardBlocks
-  - splitBlocks
-  - gridItemBlocks
-  - accordionBlocks
-  - carouselBlocks
-  - contentSelectorBlocks
+  - containerSections
+  - cardSections
+  - splitSections
+  - gridItemSections
+  - accordionSections
+  - carouselSections
+  - contentSelectorSections
 value:
   _component: building-blocks/core-elements/text
   text: "My text goes here."
@@ -61,4 +61,3 @@ _inputs:
         - id: end
           name: End
     comment: The horizontal alignment of the text component.
-
