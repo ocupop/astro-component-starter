@@ -53,7 +53,6 @@ const finalDistributionMode = reverse
   ? getReversedDistributionMode(distributionMode)
   : distributionMode;
 
-// Generate unique ID for container query targeting
 const splitId = `split-${crypto.randomUUID()}`;
 ---
 
@@ -103,13 +102,6 @@ const splitId = `split-${crypto.randomUUID()}`;
 }
 
 <style lang="pcss">
-  :where(:has(> .split):not(:is(editable-array-item, editable-array))) {
-    container-type: inline-size;
-  }
-
-  :where(:has(> editable-array > editable-array-item > .split)) {
-    container-type: inline-size;
-  }
 
   .split {
     --gap-size: var(--spacing-lg);
@@ -147,6 +139,12 @@ const splitId = `split-${crypto.randomUUID()}`;
       min-width: 0;
       overflow-wrap: break-word;
       word-wrap: break-word;
+      container-type: inline-size;
+
+      > :global(editable-array) > :global(editable-array-item:first-child) > :global(*:first-child),
+      > :global(:not(editable-array):first-child) {
+        margin-top: 0 !important;
+      }
     }
   }
 

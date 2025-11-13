@@ -15,7 +15,7 @@ examples:
     slugs:
       - start
       - center
-      - uneven-columns
+
   - title: Spacing
     slugs:
       - spacing-xs

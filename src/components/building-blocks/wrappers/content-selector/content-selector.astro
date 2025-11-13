@@ -169,18 +169,13 @@ const uniqueId = crypto.randomUUID();
       width: 100%;
     }
 
-    > .panels > .panel {
-      animation: fade-in var(--animation-slow) ease-in-out forwards;
-      display: none;
-      padding: 0 var(--spacing-md);
-    }
-
     @each $i in 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 {
       .input:nth-of-type($i):checked ~ .tabs > .tab:nth-of-type($i)::before {
         background: var(--color-border-strong);
       }
 
-      .input:nth-of-type($i):checked ~ .panels > .panel:nth-of-type($i) {
+      .input:nth-of-type($i):checked ~ .panels > :global(.panel:nth-of-type($i)),
+      .input:nth-of-type($i):checked ~ .panels > :global(editable-array-item:nth-of-type($i)) > :global(.panel) {
         display: revert;
       }
     }

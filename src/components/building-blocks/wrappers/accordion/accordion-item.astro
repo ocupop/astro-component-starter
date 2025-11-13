@@ -22,6 +22,7 @@ const htmlAttributes = Object.fromEntries(
 <style lang="pcss">
   .item {
     border-bottom: 1px solid var(--color-border-subtle);
+    container-type: inline-size;
 
     > .title {
       align-items: center;
@@ -56,6 +57,11 @@ const htmlAttributes = Object.fromEntries(
     > .detail {
       padding-inline: var(--spacing-md);
       padding-bottom: var(--spacing-md);
+
+      > :global(editable-array) > :global(editable-array-item:first-child) > :global(*:first-child),
+      > :global(:not(editable-array):first-child) {
+        margin-top: 0 !important;
+      }
     }
   }
 

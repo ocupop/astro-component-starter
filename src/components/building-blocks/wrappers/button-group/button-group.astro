@@ -52,6 +52,7 @@ const alignClass = alignMap[alignX as keyof typeof alignMap] ?? "align-start";
   .button-group {
     position: relative;
     margin-top: var(--spacing-lg);
+    container-type: inline-size;
 
     &, :global(> editable-array) {
       align-items: center;

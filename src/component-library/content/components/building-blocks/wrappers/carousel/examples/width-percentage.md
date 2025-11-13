@@ -11,7 +11,7 @@ blocks:
       contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: xs
-          paddingVertical: sm
+          paddingVertical: none
           contentSections:
             - _component: "building-blocks/core-elements/image"
               source: /src/assets/images/component-library/quiet-street.jpg
@@ -20,7 +20,7 @@ blocks:
       contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: xs
-          paddingVertical: sm
+          paddingVertical: none
           contentSections:
             - _component: "building-blocks/core-elements/image"
               source: /src/assets/images/component-library/sunset.jpg
@@ -29,7 +29,7 @@ blocks:
       contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: xs
-          paddingVertical: sm
+          paddingVertical: none
           contentSections:
             - _component: "building-blocks/core-elements/image"
               source: /src/assets/images/component-library/sheep.jpg
@@ -38,7 +38,7 @@ blocks:
       contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: xs
-          paddingVertical: sm
+          paddingVertical: none
           contentSections:
             - _component: "building-blocks/core-elements/image"
               source: /src/assets/images/component-library/castle.jpg
@@ -47,7 +47,7 @@ blocks:
       contentSections:
         - _component: "building-blocks/wrappers/card"
           paddingHorizontal: xs
-          paddingVertical: sm
+          paddingVertical: none
           contentSections:
             - _component: "building-blocks/core-elements/image"
               source: /src/assets/images/component-library/dunedin-cliff.jpg

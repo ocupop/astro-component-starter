@@ -18,3 +18,17 @@ const htmlAttributes = Object.fromEntries(
 >
   <RenderBlock contentSections={contentSections} />
 </div>
+
+<style lang="pcss">
+  .panel {
+    container-type: inline-size;
+    animation: fade-in var(--animation-slow) ease-in-out forwards;
+    display: none;
+    padding: 0 var(--spacing-md);
+
+    > :global(editable-array) > :global(editable-array-item:first-child) > :global(*:first-child),
+    > :global(:not(editable-array):first-child) {
+      margin-top: 0 !important;
+    }
+  }
+</style>

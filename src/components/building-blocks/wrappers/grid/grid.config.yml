@@ -38,8 +38,6 @@ _inputs:
           name: Left Aligned
         - id: center
           name: Center Aligned
-        - id: uneven-columns
-          name: Uneven Columns
   minItemWidth:
     comment: The minimum width for each grid item in pixels.
     type: number

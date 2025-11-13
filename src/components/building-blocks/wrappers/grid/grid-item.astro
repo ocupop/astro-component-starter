@@ -20,6 +20,13 @@ const htmlAttributes = Object.fromEntries(
 
 <style lang="pcss">
   .grid-item {
+    container-type: inline-size;
+
+    > :global(editable-array) > :global(editable-array-item:first-child) > :global(*:first-child),
+    > :global(:not(editable-array):first-child) {
+      margin-top: 0 !important;
+    }
+
     &.layout-start {
       height: 100%;
 
@@ -30,9 +37,8 @@ const htmlAttributes = Object.fromEntries(
     }
 
     &.layout-center {
-      flex: 1 1 min(var(--min-item-width, 200px), 100%);
       height: 100%;
-      max-width: var(--max-item-width, 320px);
+      width: 100%;
 
       > :global(editable-array) > :global(editable-array-item:only-child) > :global(*),
       > :global(:not(editable-array):only-child) {
@@ -42,12 +48,6 @@ const htmlAttributes = Object.fromEntries(
       > :global(editable-array) > :global(editable-array-item) {
         height: 100%;
       }
-    }
-
-    &.layout-uneven-columns {
-      flex: 0 0 auto;
-      max-width: var(--max-item-width, 320px);
-      min-width: min(var(--min-item-width, 200px), 100%);
     }
   }
 </style>

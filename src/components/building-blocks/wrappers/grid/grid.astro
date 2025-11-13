@@ -78,13 +78,13 @@ const gridStyles = [
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-    }
 
-    &.layout-uneven-columns {
-      align-items: center;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      > :global(editable-array-item),
+      > :global(.grid-item) {
+        flex: 1 1 var(--min-item-width, 200px);
+        max-width: var(--max-item-width, 320px);
+        min-width: min(var(--min-item-width, 200px), 100%);
+      }
     }
   }
 </style>

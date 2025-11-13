@@ -20,5 +20,5 @@ blocks:
   verticalAlignment: top
   reverse: false
   label: ""
-  minSplitWidth: 0
+  minSplitWidth: 700
 ---

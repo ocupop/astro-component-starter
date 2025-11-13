@@ -152,15 +152,11 @@ const Tag = link ? "a" : "div";
       margin-inline: auto;
       position: relative;
       z-index: var(--layer-1);
+      container-type: inline-size;
 
-      > editable-array > editable-array-item:first-child > *:first-child,
-      > :not(editable-array):first-child {
-        margin-top: 0;
-      }
-
-      > editable-array > editable-array-item:last-child > *:last-child,
-      > :not(editable-array):last-child {
-        margin-bottom: 0;
+      > :global(editable-array) > :global(editable-array-item:first-child) > :global(*:first-child),
+      > :global(:not(editable-array):first-child) {
+        margin-top: 0 !important;
       }
 
       &.pad-x-xs {
