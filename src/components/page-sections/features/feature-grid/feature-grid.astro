@@ -48,7 +48,15 @@ const {
   }
   {
     features?.length > 0 && (
-      <Grid gap="lg" minItemWidth="360" maxItemWidth="360" style="margin-top: var(--spacing-2xl)">
+      <Grid
+        gap="lg"
+        minItemWidth="360"
+        maxItemWidth="360"
+        style="margin-top: var(--spacing-2xl)"
+        data-editable="array"
+        data-prop="features"
+        data-component-key="_component"
+      >
         {features.map((feature, index) => (
           <GridItem>
             <editable-array-item data-component={feature._component}>
