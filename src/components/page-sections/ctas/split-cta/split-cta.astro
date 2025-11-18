@@ -58,7 +58,16 @@ const {
     <div slot="second">
       {
         imageSource && (
-          <Image source={imageSource} rounded={true} alt={imageAlt} aspectRatio="landscape" />
+          <Image
+            source={imageSource}
+            rounded={true}
+            alt={imageAlt}
+            aspectRatio="landscape"
+            editable={true}
+            data-prop-src="imageSource"
+            data-prop-alt="imageAlt"
+            data-editable="image"
+          />
         )
       }
     </div>

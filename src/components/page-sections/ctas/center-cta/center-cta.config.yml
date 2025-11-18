@@ -5,10 +5,18 @@ structures:
   - pageSections
 value:
   _component: page-sections/ctas/center-cta
-  heading: ""
-  subtext: ""
-  buttonSections: []
-  colorScheme:
+  heading: "Heading text"
+  subtext: "Subtext placeholder text that will be replaced with actual content."
+  buttonSections:
+    - _component: building-blocks/core-elements/button
+      text: "My Button"
+      link: ""
+      iconName: ""
+      iconPosition: before
+      hideText: false
+      variant: primary
+      size: md
+  colorScheme: default
   backgroundColor: base
 preview:
   text:
