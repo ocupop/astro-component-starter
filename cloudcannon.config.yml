@@ -1540,11 +1540,11 @@ _structures:
         icon: apps
         value:
           _component: page-sections/features/feature-grid/feature-item
-          title: ''
-          description: ''
-          iconName: ''
-          iconColor: default
-          iconBackground: false
+          title: Feature title
+          description: Feature description placeholder text that will be replaced with actual content.
+          iconName: bolt
+          iconColor: yellow
+          iconBackground: true
         preview:
           text:
             - key: title
@@ -1835,92 +1835,6 @@ _structures:
             comment: Minimum width of slides in pixels. Prevents slides from getting too small.
             type: number
       - &ref_3
-        label: Button Group
-        icon: rectangle
-        description: Arranges buttons side by side with consistent spacing.
-        value:
-          _component: building-blocks/wrappers/button-group
-          label: null
-          buttonSections: []
-          direction: row
-          alignX: start
-        preview:
-          text:
-            - key: label
-            - Button Group
-          subtext:
-            - template: A button group containing {buttonSections|array_length} {"button"|pluralize=buttonSections}
-            - Add one or more buttons to the button group
-        picker_preview:
-          text: Button Group
-          subtext: Arranges buttons side by side with consistent spacing.
-          icon: rectangle
-        _inputs:
-          label:
-            comment: Optional label for the button group to help identify it in the editor.
-            type: text
-          buttonSections:
-            type: array
-            comment: Array of button components to render within the group.
-            options:
-              structures: _structures.buttonSections
-          direction:
-            comment: Direction of button layout.
-            type: select
-            options:
-              values:
-                - id: row
-                  name: Row
-                - id: column
-                  name: Column
-          alignX:
-            comment: The horizontal alignment of the buttons within the group.
-            type: select
-            options:
-              values:
-                - id: start
-                  name: Start
-                - id: center
-                  name: Center
-                - id: end
-                  name: End
-      - &ref_4
-        label: Accordion
-        icon: expand_all
-        description: Interactive component for showing and hiding content panels.
-        value:
-          _component: building-blocks/wrappers/accordion
-          label: null
-          items: []
-          openFirst: false
-          singleOpen: false
-        preview:
-          text:
-            - key: label
-            - Accordion
-          subtext:
-            - template: An accordion containing {items|array_length} {"item"|pluralize=items}
-            - Add items to the accordion
-        picker_preview:
-          text: Accordion
-          subtext: Interactive component for showing and hiding content panels.
-          icon: expand_all
-        _inputs:
-          label:
-            comment: Optional label for the accordion to help identify it in the editor.
-            type: text
-          items:
-            comment: The items to display in the accordion.
-            type: array
-            options:
-              structures: _structures.accordionItems
-          openFirst:
-            comment: Whether the first item will be open by default.
-            type: switch
-          singleOpen:
-            comment: Whether only one item can be open at a time within this accordion.
-            type: switch
-      - &ref_5
         label: Card
         icon: crop_square
         description: Groups related content within a section.
@@ -2108,6 +2022,92 @@ _structures:
           border:
             type: switch
             comment: Whether to apply a border to the card.
+      - &ref_4
+        label: Button Group
+        icon: rectangle
+        description: Arranges buttons side by side with consistent spacing.
+        value:
+          _component: building-blocks/wrappers/button-group
+          label: null
+          buttonSections: []
+          direction: row
+          alignX: start
+        preview:
+          text:
+            - key: label
+            - Button Group
+          subtext:
+            - template: A button group containing {buttonSections|array_length} {"button"|pluralize=buttonSections}
+            - Add one or more buttons to the button group
+        picker_preview:
+          text: Button Group
+          subtext: Arranges buttons side by side with consistent spacing.
+          icon: rectangle
+        _inputs:
+          label:
+            comment: Optional label for the button group to help identify it in the editor.
+            type: text
+          buttonSections:
+            type: array
+            comment: Array of button components to render within the group.
+            options:
+              structures: _structures.buttonSections
+          direction:
+            comment: Direction of button layout.
+            type: select
+            options:
+              values:
+                - id: row
+                  name: Row
+                - id: column
+                  name: Column
+          alignX:
+            comment: The horizontal alignment of the buttons within the group.
+            type: select
+            options:
+              values:
+                - id: start
+                  name: Start
+                - id: center
+                  name: Center
+                - id: end
+                  name: End
+      - &ref_5
+        label: Accordion
+        icon: expand_all
+        description: Interactive component for showing and hiding content panels.
+        value:
+          _component: building-blocks/wrappers/accordion
+          label: null
+          items: []
+          openFirst: false
+          singleOpen: false
+        preview:
+          text:
+            - key: label
+            - Accordion
+          subtext:
+            - template: An accordion containing {items|array_length} {"item"|pluralize=items}
+            - Add items to the accordion
+        picker_preview:
+          text: Accordion
+          subtext: Interactive component for showing and hiding content panels.
+          icon: expand_all
+        _inputs:
+          label:
+            comment: Optional label for the accordion to help identify it in the editor.
+            type: text
+          items:
+            comment: The items to display in the accordion.
+            type: array
+            options:
+              structures: _structures.accordionItems
+          openFirst:
+            comment: Whether the first item will be open by default.
+            type: switch
+          singleOpen:
+            comment: Whether only one item can be open at a time within this accordion.
+            type: switch
       - &ref_6
         label: Form
         icon: checklist_rtl
@@ -3013,26 +3013,6 @@ _structures:
           subtext:
             - template: Contains {contentSections|array_length} content {"block"|pluralize=contentSections}
             - Add one or more content blocks to the grid item
-  cardSections:
-    id_key: _component
-    style: modal
-    values:
-      - *ref_3
-      - *ref_4
-      - *ref_6
-      - *ref_7
-      - *ref_8
-      - *ref_9
-      - *ref_10
-      - *ref_11
-      - *ref_12
-      - *ref_13
-      - *ref_14
-      - *ref_15
-      - *ref_16
-      - *ref_17
-      - *ref_18
-      - *ref_19
   gridItemSections:
     id_key: _component
     style: modal
@@ -3054,11 +3034,31 @@ _structures:
       - *ref_17
       - *ref_18
       - *ref_19
+  cardSections:
+    id_key: _component
+    style: modal
+    values:
+      - *ref_4
+      - *ref_5
+      - *ref_6
+      - *ref_7
+      - *ref_8
+      - *ref_9
+      - *ref_10
+      - *ref_11
+      - *ref_12
+      - *ref_13
+      - *ref_14
+      - *ref_15
+      - *ref_16
+      - *ref_17
+      - *ref_18
+      - *ref_19
   accordionSections:
     id_key: _component
     style: modal
     values:
-      - *ref_3
+      - *ref_4
       - *ref_6
       - *ref_7
       - *ref_8
