@@ -103,7 +103,6 @@ _structures:
       - label: Feature
         icon: apps
         value:
-          _component: page-sections/features/feature-grid/feature-item
           title: "Feature title"
           description: "Feature description placeholder text that will be replaced with actual content."
           iconName: "bolt"
@@ -119,8 +118,6 @@ _structures:
           image:
             - template: "src/icons/{iconName}.svg"
         _inputs:
-          _component:
-            hidden: true
           title:
             type: text
             comment: Name of the feature.

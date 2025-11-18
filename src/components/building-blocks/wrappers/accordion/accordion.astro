@@ -35,7 +35,7 @@ const accordionName = singleOpen ? `accordion-${crypto.randomUUID()}` : undefine
         const isFirst = index === 0 && openFirst;
 
         return (
-          <editable-array-item data-component={item._component}>
+          <editable-array-item data-component="building-blocks/wrappers/accordion/accordion-item">
             <AccordionItem
               title={item.title}
               contentSections={item.contentSections}

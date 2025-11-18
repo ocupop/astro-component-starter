@@ -88,7 +88,7 @@ const carouselStyles = `
       {
         slides.length > 0 ? (
           slides.map((slide: any, index: number) => (
-            <editable-array-item data-component={slide._component}>
+            <editable-array-item data-component="building-blocks/wrappers/carousel/carousel-slide">
               <CarouselSlide
                 contentSections={slide.contentSections}
                 aria-label={`Slide ${index + 1} of ${slides.length}`}

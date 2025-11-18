@@ -8,13 +8,11 @@ blocks:
   subtext: "Pair the story of your launch with concrete capabilities—so execs get the narrative while implementers see the proof."
   reverse: true
   buttonSections:
-    - _component: "building-blocks/core-elements/button"
-      text: "Book a live tour"
+    - text: "Book a live tour"
       variant: primary
       size: md
       link: "/demo"
-    - _component: "building-blocks/core-elements/button"
-      text: "Download brief"
+    - text: "Download brief"
       variant: secondary
       size: md
       link: "/brief.pdf"

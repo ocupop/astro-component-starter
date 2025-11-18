@@ -74,7 +74,6 @@ _structures:
     values:
       - label: Grid Item
         value:
-          _component: building-blocks/wrappers/grid/grid-item
           contentSections: []
         preview:
           icon: grid_view
@@ -83,8 +82,6 @@ _structures:
             - template: Contains {contentSections|array_length} content {"block"|pluralize=contentSections}
             - Add one or more content blocks to the grid item
         _inputs:
-          _component:
-            hidden: true
           contentSections:
             type: array
             comment: Content sections to render within this grid item.
