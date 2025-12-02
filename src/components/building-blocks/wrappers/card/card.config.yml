@@ -29,8 +29,9 @@ value:
   afterContentSections: []
 preview:
   text:
-    - key: label
     - Card
+  subtext:
+    - key: label
 picker_preview:
   text: Card
   subtext: "Groups related content within a section."

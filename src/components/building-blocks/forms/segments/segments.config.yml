@@ -13,8 +13,10 @@ value:
   multiple: false
   keepStateOnRefresh: true
 preview:
+  text:
+    - Segments
   subtext:
-    - template: A segments field, containing {options|array_length} {"option"|pluralize=options}
+    - key: title
 picker_preview:
   text: Segments
   subtext: "Segmented control form field with connected buttons."

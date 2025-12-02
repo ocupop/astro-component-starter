@@ -9,8 +9,10 @@ value:
   value: ""
 preview:
   text:
-    - template: Hidden - {name}
-  subtext: A hidden form field for storing data that should not be visible to users.
+    - Hidden
+  subtext:
+    - key: text
+    - ""
 picker_preview:
   text: Hidden
   subtext: "Hidden form field for storing data."

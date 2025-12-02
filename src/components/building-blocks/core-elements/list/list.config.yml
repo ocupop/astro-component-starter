@@ -22,9 +22,8 @@ value:
   alignX: start
   size: md
 preview:
-  subtext:
-    - template: "Contains {items|array_length} list {'item'|pluralize=items}"
-    - Add list items
+  text:
+    - List
 picker_preview:
   text: List
   subtext: "Lists items with icons as markers."

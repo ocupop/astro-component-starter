@@ -13,9 +13,9 @@ value:
   max: null
 preview:
   text:
-    - key: label
     - Date
-  subtext: A date input field with an optional label, date constraints, and ISO8601 format validation
+  subtext:
+    - key: label
 picker_preview:
   text: Date
   subtext: "Form field for selecting a date."

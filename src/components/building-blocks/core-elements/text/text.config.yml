@@ -14,9 +14,10 @@ value:
   text: "My text goes here."
   alignX: start
 preview:
+  text:
+    - Text
   subtext:
     - key: text
-    - Add text to block
 picker_preview:
   text: Text
   subtext: "Content component for markdown-formatted text."

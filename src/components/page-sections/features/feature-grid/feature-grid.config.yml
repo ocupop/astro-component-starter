@@ -16,10 +16,9 @@ value:
   backgroundColor: base
 preview:
   text:
-    - key: heading
     - Feature Grid
   subtext:
-    - key: subtext
+    - key: heading
 picker_preview:
   text: Feature Grid
   subtext: "Grid of feature highlights with icons and descriptions."

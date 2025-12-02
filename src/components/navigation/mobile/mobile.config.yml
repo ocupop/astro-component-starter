@@ -8,8 +8,8 @@ value:
   logoAlt: null
   navData: []
 preview:
-  text: Mobile Navigation
-  icon: device-phone-mobile
+  text:
+    - Mobile Navigation
 picker_preview:
   text: Mobile Navigation
   subtext: "Mobile navigation with full-screen overlay."

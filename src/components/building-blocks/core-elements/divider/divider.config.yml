@@ -13,11 +13,8 @@ value:
   _component: building-blocks/core-elements/divider
   paddingVertical: "lg"
 preview:
-  text: Divider
-  subtext:
-    - key: paddingVertical
-    - Add a padding value
-  icon: horizontal_rule
+  text:
+    - Divider
 picker_preview:
   text: Divider
   subtext: "Visual separator for dividing content sections."

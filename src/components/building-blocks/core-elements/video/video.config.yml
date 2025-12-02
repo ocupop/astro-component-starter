@@ -17,14 +17,11 @@ value:
   source: ""
   thumbnail: ""
 preview:
-  icon: videocam
   text:
     - template: "Video - {type}"
     - Video
   subtext:
     - key: title
-    - key: source
-    - Add video
 picker_preview:
   text: Video
   subtext: "Video component for YouTube, Vimeo, and HTML5 sources."

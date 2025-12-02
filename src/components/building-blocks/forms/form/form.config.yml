@@ -14,9 +14,10 @@ value:
   action: "./"
   formBlocks: []
 preview:
+  text:
+    - Form
   subtext:
-    - template: A form containing {formBlocks|array_length} {"item"|pluralize=formBlocks}
-    - Add items to the form
+    - key: label
 picker_preview:
   text: Form
   subtext: "Groups form fields into one submission area."

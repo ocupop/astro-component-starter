@@ -17,11 +17,9 @@ value:
   alignX: start
 preview:
   text:
-    - key: label
     - Button Group
   subtext:
-    - template: A button group containing {buttonSections|array_length} {"button"|pluralize=buttonSections}
-    - Add one or more buttons to the button group
+    - key: label
 picker_preview:
   text: Button Group
   subtext: "Arranges buttons side by side with consistent spacing."

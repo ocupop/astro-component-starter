@@ -18,11 +18,9 @@ value:
   alignX: start
 preview:
   text:
-    - template: "Testimonial - {authorName}"
     - Testimonial
   subtext:
-    - key: text
-    - Add testimonial text
+    - key: authorName
 picker_preview:
   text: Testimonial
   subtext: "Displays customer quotes and reviews."

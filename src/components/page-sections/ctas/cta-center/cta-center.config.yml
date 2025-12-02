@@ -21,10 +21,9 @@ value:
   rounded: false
 preview:
   text:
-    - key: heading
     - CTA Center
   subtext:
-    - key: subtext
+    - key: heading
 picker_preview:
   text: CTA Center
   subtext: Centered CTA with stacked text and buttons.

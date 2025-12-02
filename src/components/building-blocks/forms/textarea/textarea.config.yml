@@ -11,10 +11,10 @@ value:
   placeholder: null
   value: null
 preview:
+  text:
+    - Textarea
   subtext:
-    - key: label
     - key: name
-    - Enter a name for the textarea input.
 picker_preview:
   text: Textarea
   subtext: "Form field for entering multi-line text."

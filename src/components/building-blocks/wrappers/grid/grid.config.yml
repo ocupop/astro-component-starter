@@ -16,11 +16,10 @@ value:
   gap: md
 preview:
   text:
-    - key: label
     - Grid
   subtext:
-    - template: A grid containing {items|array_length} {"item"|pluralize=items}
-    - Add items to the grid
+    - key: label
+  icon: grid_on
 picker_preview:
   text: Grid
   subtext: "Arranges content into a grid that adapts to screen size."

@@ -15,12 +15,10 @@ value:
   title: ""
   aspectRatio: landscape
 preview:
-  icon: data_object
-  text: Embed
+  text:
+    - Embed
   subtext:
     - key: title
-    - key: source
-    - Add embed source
 picker_preview:
   text: Embed
   subtext: "Responsive wrapper for third-party embeds."

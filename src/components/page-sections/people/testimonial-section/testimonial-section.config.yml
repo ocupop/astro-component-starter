@@ -17,10 +17,9 @@ value:
   backgroundColor: surface
 preview:
   text:
-    - key: authorName
     - Testimonial Section
   subtext:
-    - key: authorDescription
+    - key: authorName
 picker_preview:
   text: Testimonial Section
   subtext: "Section with customer testimonial and author details."

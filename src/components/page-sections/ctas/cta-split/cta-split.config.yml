@@ -24,10 +24,9 @@ value:
   rounded: false
 preview:
   text:
-    - key: heading
     - CTA Split
   subtext:
-    - key: subtext
+    - key: heading
 picker_preview:
   text: CTA Split
   subtext: Split layout CTA with button stack.

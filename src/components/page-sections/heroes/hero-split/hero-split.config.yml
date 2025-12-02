@@ -25,10 +25,9 @@ value:
   backgroundColor: base
 preview:
   text:
-    - key: heading
     - Hero Split
   subtext:
-    - key: subtitle
+    - key: heading
 picker_preview:
   text: Hero Split
   subtext: "Prominent section block for landing pages."

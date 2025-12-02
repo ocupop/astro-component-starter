@@ -15,9 +15,7 @@ preview:
   text:
     - template: Input - {type}
   subtext:
-    - key: label
     - key: name
-    - A form input field with an optional label.
 picker_preview:
   text: Input
   subtext: "Single text input form field."

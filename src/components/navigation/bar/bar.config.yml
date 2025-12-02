@@ -6,7 +6,8 @@ value:
   _component: navigation/bar
   navData: []
 preview:
-  text: Bar Navigation
+  text:
+    - Bar Navigation
   icon: navigation
 picker_preview:
   text: Bar Navigation

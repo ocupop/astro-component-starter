@@ -13,14 +13,10 @@ value:
   variant: primary
   size: md
 preview:
-  icon: variables
   text:
-    - key: text
     - Button
   subtext:
-    - key: link
-    - key: iconName
-    - Add button content
+    - key: text
 picker_preview:
   text: Button
   subtext: "Clickable button for calls-to-action and navigation."

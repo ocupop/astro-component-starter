@@ -14,10 +14,9 @@ value:
   disabled: false
 preview:
   text:
+    - Submit
+  subtext:
     - key: text
-    - key: iconName
-    - Submit Button
-  subtext: A submit button for forms.
 picker_preview:
   text: Submit
   subtext: "Button for submitting a form."

@@ -18,8 +18,9 @@ value:
   backgroundColor: base
 preview:
   text:
-    - key: heading
     - FAQ Section
+  subtext:
+    - key: heading
 picker_preview:
   text: FAQ Section
   subtext: "Accordion of frequently asked questions."

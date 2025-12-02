@@ -20,11 +20,9 @@ value:
   rounded: false
 preview:
   text:
-    - key: label
     - Custom Section
   subtext:
-    - template: Contains {contentSections|array_length} content {"block"|pluralize=contentSections}
-    - Add content blocks to the custom section
+    - key: label
 picker_preview:
   text: Custom Section
   subtext: "Used to group and style large sections of a page."

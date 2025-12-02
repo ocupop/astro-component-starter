@@ -9,7 +9,8 @@ value:
   navData: []
   buttonSections: []
 preview:
-  text: Main Nav
+  text:
+    - Main Nav
   icon: navigation
 picker_preview:
   text: Main Nav

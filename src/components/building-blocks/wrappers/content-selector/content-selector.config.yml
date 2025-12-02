@@ -12,11 +12,9 @@ value:
   navigationPosition: start
 preview:
   text:
-    - key: label
     - Content Selector
   subtext:
-    - template: A content selector containing {items|array_length} {"item"|pluralize=items}
-    - Add items to the content selector
+    - key: label
 picker_preview:
   text: Content Selector
   subtext: "Lets users switch between different content panels using tabs."

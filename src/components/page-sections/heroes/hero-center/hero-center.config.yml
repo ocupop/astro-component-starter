@@ -21,10 +21,9 @@ value:
   backgroundColor: base
 preview:
   text:
-    - key: heading
     - Hero Center
   subtext:
-    - key: subtitle
+    - key: heading
 picker_preview:
   text: Hero Center
   subtext: "Centered hero with heading, subtext, and buttons."

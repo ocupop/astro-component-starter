@@ -10,7 +10,8 @@ value:
   socials: []
   footerText: ""
 preview:
-  text: Footer
+  text:
+    - Footer
   icon: footer
 picker_preview:
   text: Footer

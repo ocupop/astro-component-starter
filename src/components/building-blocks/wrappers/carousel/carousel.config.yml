@@ -15,11 +15,9 @@ value:
   minSlideWidth: 0
 preview:
   text:
-    - key: label
     - Carousel
   subtext:
-    - template: A carousel containing {slides|array_length} {"slide"|pluralize=slides}
-    - Add slides to the carousel
+    - key: label
 picker_preview:
   text: Carousel
   subtext: "Displays multiple items in a sliding gallery."

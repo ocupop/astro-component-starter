@@ -6,8 +6,8 @@ value:
   _component: navigation/side
   navData: []
 preview:
-  text: Side Navigation
-  icon: sidebar
+  text:
+    - Side Navigation
 picker_preview:
   text: Side Navigation
   subtext: "Sidebar navigation with expandable sections."

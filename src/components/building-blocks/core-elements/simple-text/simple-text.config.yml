@@ -16,9 +16,9 @@ value:
   size: default
 preview:
   text:
-    - key: text
     - Simple Text
-  icon: view_headline
+  subtext:
+    - key: text
 picker_preview:
   text: Simple Text
   subtext: "Paragraph for plain text content with inline markdown formatting."

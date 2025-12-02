@@ -19,10 +19,9 @@ value:
   multiple: true
 preview:
   text:
-    - key: title
     - Choice Group
   subtext:
-    - A choice group containing {options|array_length} {"option"|pluralize=options}
+    - key: title
 picker_preview:
   text: Choice Group
   subtext: "Form field for selecting one or more options."

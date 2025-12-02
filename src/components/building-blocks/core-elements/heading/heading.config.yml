@@ -18,10 +18,11 @@ value:
   iconName: null
   iconPosition: before
 preview:
-  text:
-    - key: text
-    - Heading
   icon: title
+  text:
+    - Heading
+  subtext:
+    - key: text
 picker_preview:
   text: Heading
   subtext: "Headings for content hierarchy."

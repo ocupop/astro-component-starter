@@ -14,9 +14,8 @@ value:
   items: []
   alignX: start
 preview:
-  subtext:
-    - template: "Contains {items|array_length} list {'item'|pluralize=items}"
-    - Add definition list items
+  text:
+    - Definition List
 picker_preview:
   text: Definition List
   subtext: "Lists term/definition pairs for structured content."

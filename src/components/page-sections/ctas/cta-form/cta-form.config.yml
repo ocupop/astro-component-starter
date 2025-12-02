@@ -33,10 +33,9 @@ value:
   backgroundColor: base
 preview:
   text:
-    - key: heading
     - CTA Form
   subtext:
-    - key: subtext
+    - key: heading
 picker_preview:
   text: CTA Form
   subtext: Split layout CTA with form and image.

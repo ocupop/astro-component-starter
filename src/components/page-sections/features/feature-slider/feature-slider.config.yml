@@ -13,10 +13,9 @@ value:
   backgroundColor: base
 preview:
   text:
-    - key: heading
     - Feature Slider
   subtext:
-    - key: subtext
+    - key: heading
 picker_preview:
   text: Feature Slider
   subtext: "Carousel of feature-focused cards."

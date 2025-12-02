@@ -13,7 +13,6 @@ value:
   backgroundColor: base
 preview:
   text:
-    - key: heading
     - Team Grid
   subtext:
     - key: subtext

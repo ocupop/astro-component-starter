@@ -18,10 +18,9 @@ value:
   backgroundColor: base
 preview:
   text:
-    - key: heading
     - Feature Split
   subtext:
-    - key: subtext
+    - key: heading
 picker_preview:
   text: Feature Split
   subtext: "Split view with story content and supporting feature list."

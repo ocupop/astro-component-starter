@@ -19,12 +19,10 @@ value:
   positionHorizontal: center
   priority: false
 preview:
-  icon: image
-  text: Image
+  text:
+    - Image
   subtext:
     - key: alt
-    - key: source
-    - Add image source
 picker_preview:
   text: Image
   subtext: "Optimized image component for local and remote sources."

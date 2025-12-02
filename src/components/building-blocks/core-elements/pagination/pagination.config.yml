@@ -6,8 +6,8 @@ value:
   _component: building-blocks/core-elements/pagination
   page: null
 preview:
-  text: Pagination
-  icon: list
+  text:
+    - Pagination
 picker_preview:
   text: Pagination
   subtext: "Navigation component for multi-page content."

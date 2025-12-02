@@ -18,10 +18,10 @@ value:
   placeholder: null
   value: null
 preview:
+  text:
+    - Select
   subtext:
-    - key: label
     - key: name
-    - Enter a name for the form input.
 picker_preview:
   text: Select
   subtext: "Form field for selecting one option from a list."

@@ -13,8 +13,10 @@ value:
   _component: building-blocks/core-elements/spacer
   size: md
 preview:
-  text: Spacer
-  icon: space_bar
+  text:
+    - Spacer
+  subtext:
+    - key: size
 picker_preview:
   text: Spacer
   subtext: "Adds adjustable spacing between content sections."

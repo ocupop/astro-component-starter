@@ -17,8 +17,10 @@ value:
   background: true
   alignX: start
 preview:
-  text: Icon
-  icon: star
+  text:
+    - Icon
+  subtext:
+    - key: name
 picker_preview:
   text: Icon
   subtext: "SVG icon component."

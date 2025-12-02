@@ -11,10 +11,10 @@ value:
   accept: null
   multiple: false
 preview:
+  text:
+    - File Upload
   subtext:
-    - key: label
     - key: name
-    - Enter a name for the file upload form field.
 picker_preview:
   text: File Upload
   subtext: "Form field for uploading files."

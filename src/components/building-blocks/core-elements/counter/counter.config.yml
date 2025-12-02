@@ -16,9 +16,10 @@ value:
   suffix: "USD"
   alignX: start
 preview:
+  text:
+    - Counter
   subtext:
     - template: "{prefix}{number}{suffix}"
-    - Add counter details
 picker_preview:
   text: Counter
   subtext: "Animated counter for highlighting key stats or figures."

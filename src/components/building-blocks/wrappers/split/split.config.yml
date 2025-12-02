@@ -18,11 +18,10 @@ value:
   gap: lg
 preview:
   text:
-    - key: label
     - Split
   subtext:
-    - template: A split containing {firstColumnContentSections|array_length} content {"block"|pluralize=firstColumnContentSections} in the first column, and {secondColumnContentSections|array_length} content {"block"|pluralize=secondColumnContentSections} in the second column
-    - Add items to the split
+    - key: label
+  icon: vertical_split
 picker_preview:
   text: Split
   subtext: "Two-column layout for side-by-side content."
