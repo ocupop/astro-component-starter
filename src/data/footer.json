@@ -7,8 +7,8 @@
       "path": "/"
     },
     {
-      "name": "About",
-      "path": "/about/"
+      "name": "Why",
+      "path": "/why/"
     },
     {
       "name": "Blog",
@@ -31,6 +31,3 @@
   ],
   "footerText": "© 2026 All rights reserved."
 }
-
-
-
