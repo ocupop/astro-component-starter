@@ -86,8 +86,8 @@ pageSections:
     subtext: We're a group of faces that fill out this team grid.
     teamMembers:
       - _component: page-sections/people/team-grid/team-item
-        name: Alex Smith
-        role: Chief Executive Officer
+        name: Mike Neumegen
+        role: Lead Developer
         bio: >-
           Alex brings over 15 years of leadership experience and a vision for
           innovation that drives our company forward.
