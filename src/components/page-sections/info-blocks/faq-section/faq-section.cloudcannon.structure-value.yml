@@ -193,3 +193,15 @@ _structures:
                     text:
                       type: markdown
                       comment: The answer text content.
+                      options:
+                        blockquote: false
+                        bold: true
+                        format:
+                        italic: true
+                        link: true
+                        strike: false
+                        subscript: true
+                        superscript: true
+                        underline: false
+                        bulletedlist: false
+                        numberedlist: false

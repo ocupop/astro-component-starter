@@ -36,6 +36,18 @@ _inputs:
   subtext:
     type: markdown
     comment: Supporting copy beneath the headline.
+    options:
+      blockquote: false
+      bold: true
+      format:
+      italic: true
+      link: true
+      strike: false
+      subscript: true
+      superscript: true
+      underline: false
+      bulletedlist: false
+      numberedlist: false
   imageSource:
     type: image
     comment: Image displayed alongside the CTA content.

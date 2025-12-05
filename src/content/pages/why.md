@@ -16,9 +16,6 @@ pageSections:
     paddingVertical: 4xl
 
   - _component: page-sections/features/feature-slider
-    eyebrow: Why Carousel
-    heading: Why this approach works
-    subtext: Highlight the core reasons in a simple, swipeable format.
     colorScheme: contrast
     backgroundColor: surface
     paddingVertical: 4xl

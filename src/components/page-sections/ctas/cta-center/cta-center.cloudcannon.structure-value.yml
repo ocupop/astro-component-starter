@@ -33,6 +33,18 @@ _inputs:
   subtext:
     type: markdown
     comment: Supporting copy beneath the headline.
+    options:
+      blockquote: false
+      bold: true
+      format:
+      italic: true
+      link: true
+      strike: false
+      subscript: true
+      superscript: true
+      underline: false
+      bulletedlist: false
+      numberedlist: false
   buttonSections:
     type: array
     comment: Buttons for calls-to-action.

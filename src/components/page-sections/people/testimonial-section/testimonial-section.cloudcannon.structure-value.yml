@@ -24,8 +24,20 @@ picker_preview:
   icon: format_quote
 _inputs:
   text:
-    type: textarea
+    type: markdown
     comment: The testimonial quote text.
+    options:
+      blockquote: false
+      bold: true
+      format:
+      italic: true
+      link: true
+      strike: false
+      subscript: true
+      superscript: true
+      underline: false
+      bulletedlist: false
+      numberedlist: false
   authorName:
     type: text
     comment: Name of the testimonial author.

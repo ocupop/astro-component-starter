@@ -40,6 +40,18 @@ _inputs:
   subtitle:
     type: markdown
     comment: Subtitle text displayed below the main heading.
+    options:
+      blockquote: false
+      bold: true
+      format:
+      italic: true
+      link: true
+      strike: false
+      subscript: true
+      superscript: true
+      underline: false
+      bulletedlist: false
+      numberedlist: false
   imageSource:
     type: image
     comment: Feature image to display alongside the hero content.
