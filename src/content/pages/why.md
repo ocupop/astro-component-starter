@@ -5,7 +5,14 @@ pageSections:
   - _component: page-sections/heroes/hero-split
     eyebrow:
     heading: Why build another Astro component library?
-    subtitle: "I’m a big fan of the static web. And I love what the Astro team is making!  For the last couple of years I’ve been watching agencies and dev teams rebuild the same patterns in every project — carousels, page hero sections, accordions — often starting from scratch each time.  So with help from a bunch of people at CloudCannon I’ve built a component library for Astro that outputs static HTML and CSS, for the fastest delivery possible —\_all unbranded and adaptable for any project. "
+    subtitle: >-
+      I’m a big fan of the static web. And I love what the Astro team is making!
+      For the last couple of years I’ve been watching agencies and dev teams
+      rebuild the same patterns in every project — carousels, page hero
+      sections, accordions — often starting from scratch each time. So with help
+      from a bunch of people at CloudCannon I’ve built a component library for
+      Astro that outputs static HTML and CSS, for the fastest delivery possible
+      —&nbsp;all unbranded and adaptable for any project.
     imageSource: /src/assets/images/component-library/sunset.jpg
     imageAlt: Sunset
     imageAspectRatio: portrait
