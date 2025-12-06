@@ -10,11 +10,10 @@ const {
   minSlideWidth = 0,
   style = "",
   label,
+  "data-prop": customDataProp = "slides",
   editable = true,
   ...rest
 } = Astro.props;
-
-const dataProp = (Astro.props as any)["data-prop"] ?? "items";
 
 const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component" && key !== "data-prop")
@@ -83,12 +82,14 @@ const carouselStyles = `
   <div class="viewport">
     <div
       class="track"
-      {...(editable ? {
-        "data-editable": "array",
-        "data-component-key": "_component",
-        "data-id-key": "_component",
-        "data-prop": dataProp,
-      } : {})}
+      {...editable
+        ? {
+            "data-editable": "array",
+            "data-component-key": "_component",
+            "data-id-key": "_component",
+            "data-prop": customDataProp,
+          }
+        : {}}
     >
       {
         slides.length > 0 ? (
