@@ -2,7 +2,15 @@
 import Heading from "@core-elements/heading/heading.astro";
 import ContentSelectorPanel from "./content-selector-panel.astro";
 
-const { items, navigationPosition = "start", class: className, label, ...restProps } = Astro.props;
+const {
+  items,
+  navigationPosition = "start",
+  class: className,
+  label,
+  editable = true,
+  "data-prop": customDataProp = "items",
+  ...restProps
+} = Astro.props;
 
 const htmlAttributes = Object.fromEntries(
   Object.entries(restProps).filter(([key]) => key !== "_component")
@@ -20,6 +28,15 @@ if (!htmlAttributes.id && label) {
 }
 
 const uniqueId = crypto.randomUUID();
+
+const arrayDataAttributes = editable
+  ? {
+      "data-editable": "array",
+      "data-prop": customDataProp,
+      "data-component-key": "_component",
+      "data-id-key": "_component",
+    }
+  : {};
 ---
 
 <section
@@ -59,19 +76,14 @@ const uniqueId = crypto.randomUUID();
             size="h3"
             alignX={navigationPosition === "top" ? "center" : "start"}
             class="tab-heading"
+            editable={false}
           />
         </label>
       ))
     }
   </div>
 
-  <div
-    class="panels"
-    data-editable="array"
-    data-prop="items"
-    data-component-key="_component"
-    data-id-key="_component"
-  >
+  <div class="panels" {...arrayDataAttributes}>
     {
       items?.map((item: any, index: number) => (
         <editable-array-item data-component="building-blocks/wrappers/content-selector/content-selector-panel">

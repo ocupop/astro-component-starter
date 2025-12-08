@@ -3,6 +3,7 @@ import CustomSection from "@builders/custom-section/custom-section.astro";
 import Heading from "@core-elements/heading/heading.astro";
 import Image from "@core-elements/image/image.astro";
 import SimpleText from "@core-elements/simple-text/simple-text.astro";
+import Text from "@core-elements/text/text.astro";
 import ButtonGroup from "@wrappers/button-group/button-group.astro";
 import Split from "@wrappers/split/split.astro";
 
@@ -62,9 +63,7 @@ const featureSplitId = `feature-split-${crypto.randomUUID()}`;
       }
       {
         subtext && (
-          <SimpleText class="subtext" size="md" data-prop="subtext">
-            {subtext}
-          </SimpleText>
+          <Text class="subtext" data-prop="subtext" text={subtext} />
         )
       }
       {

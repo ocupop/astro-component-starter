@@ -37,6 +37,7 @@ _structures:
       - label: Item
         icon: place_item
         value:
+          _component: building-blocks/wrappers/accordion/accordion-item
           title: null
           contentSections: null
         _inputs:

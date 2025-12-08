@@ -26,9 +26,6 @@ const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
 
-// Extract custom data attributes from props to pass to child components
-const hasCustomDataAttributes = customDataPropSrc || customDataPropAlt || customDataEditable;
-
 const hasValidSrc = source && typeof source === "string" && source.trim() !== "";
 
 const provider = hasValidSrc ? getProviderForUrl(source) : false;
@@ -38,15 +35,13 @@ const commonProps = {
   alt: alt || "",
 };
 
-// Use custom data attributes if provided, otherwise use defaults
-const dataAttributes =
-  editable || hasCustomDataAttributes
-    ? {
-        "data-editable": customDataEditable || "image",
-        "data-prop-src": customDataPropSrc || "source",
-        "data-prop-alt": customDataPropAlt || "alt",
-      }
-    : {};
+const dataAttributes = editable
+  ? {
+      "data-editable": customDataEditable || "image",
+      "data-prop-src": customDataPropSrc || "source",
+      "data-prop-alt": customDataPropAlt || "alt",
+    }
+  : {};
 
 const positionClass = `position-${positionVertical}-${positionHorizontal}`;
 ---

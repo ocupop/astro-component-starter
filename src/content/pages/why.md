@@ -5,7 +5,7 @@ pageSections:
   - _component: page-sections/heroes/hero-split
     eyebrow:
     heading: Why build another Astro component library?
-    subtitle: >-
+    subtext: >-
       I’m a big fan of the static web. And I love what the Astro team is making!
       For the last couple of years I’ve been watching agencies and dev teams
       rebuild the same patterns in every project — carousels, page hero

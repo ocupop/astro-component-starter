@@ -7,6 +7,7 @@ const {
   iconName,
   iconColor = "default",
   class: className,
+  editable = true,
   "data-prop": customDataProp = "text",
   ...restProps
 } = Astro.props;
@@ -17,7 +18,7 @@ const htmlAttributes = Object.fromEntries(
 
 const md = new MarkdownIt({ html: true });
 
-const textDataAttributes = customDataProp
+const textDataAttributes = editable && customDataProp
   ? {
       "data-editable": "text",
       "data-prop": customDataProp,

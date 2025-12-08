@@ -80,17 +80,17 @@ _structures:
             type: markdown
             comment: The text to display in the list item.
             options:
+              blockquote: false
               bold: true
+              format:
               italic: true
               link: true
-              strike: true
+              strike: false
               subscript: true
               superscript: true
-              underline: true
-              undo: true
-              redo: true
-              removeformat: true
-              copyformatting: true
+              underline: false
+              bulletedlist: false
+              numberedlist: false
           iconName:
             type: select
             comment: The name of the icon to display from the icon library.

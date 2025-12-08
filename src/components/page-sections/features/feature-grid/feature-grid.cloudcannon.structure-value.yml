@@ -29,8 +29,20 @@ _inputs:
     type: text
     comment: Main heading for the feature grid.
   subtext:
-    type: textarea
+    type: markdown
     comment: Supporting copy beneath the heading.
+    options:
+      blockquote: false
+      bold: true
+      format:
+      italic: true
+      link: true
+      strike: false
+      subscript: true
+      superscript: true
+      underline: false
+      bulletedlist: false
+      numberedlist: false
   align:
     type: select
     comment: Alignment for the heading and supporting text.
@@ -110,7 +122,6 @@ _structures:
             - Feature
           subtext:
             - key: description
-            - Describe the feature
           image:
             - template: src/icons/{iconName}.svg
         _inputs:
@@ -118,8 +129,20 @@ _structures:
             type: text
             comment: Name of the feature.
           description:
-            type: textarea
+            type: markdown
             comment: Supporting description for the feature.
+            options:
+              blockquote: false
+              bold: true
+              format:
+              italic: true
+              link: true
+              strike: false
+              subscript: true
+              superscript: true
+              underline: false
+              bulletedlist: false
+              numberedlist: false
           iconName:
             type: select
             comment: Icon displayed with the feature.

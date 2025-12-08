@@ -2,6 +2,7 @@
 import CustomSection from "@builders/custom-section/custom-section.astro";
 import Heading from "@core-elements/heading/heading.astro";
 import SimpleText from "@core-elements/simple-text/simple-text.astro";
+import Text from "@core-elements/text/text.astro";
 import FeatureItem from "@features/feature-grid/feature-item.astro";
 import GridItem from "@wrappers/grid/grid-item.astro";
 import Grid from "@wrappers/grid/grid.astro";
@@ -42,9 +43,7 @@ const {
   }
   {
     subtext && (
-      <SimpleText class="feature-grid-subtext" size="md" alignX="center" data-prop="subtext">
-        {subtext}
-      </SimpleText>
+      <Text class="feature-grid-subtext" alignX="center" data-prop="subtext" text={subtext} />
     )
   }
   {

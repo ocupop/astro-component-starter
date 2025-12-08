@@ -1,7 +1,7 @@
 ---
 import CustomSection from "@builders/custom-section/custom-section.astro";
 import Heading from "@core-elements/heading/heading.astro";
-import SimpleText from "@core-elements/simple-text/simple-text.astro";
+import Text from "@core-elements/text/text.astro";
 import ButtonGroup from "@wrappers/button-group/button-group.astro";
 
 const {
@@ -37,9 +37,7 @@ const {
     }
     {
       subtext && (
-        <SimpleText size="md" alignX="center" data-prop="subtext">
-          {subtext}
-        </SimpleText>
+        <Text alignX="center" data-prop="subtext" text={subtext} />
       )
     }
     {

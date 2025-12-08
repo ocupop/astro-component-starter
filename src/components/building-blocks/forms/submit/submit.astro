@@ -10,6 +10,7 @@ const {
   hideText = false,
   disabled = false,
   class: className,
+  editable = true,
   ...rest
 } = Astro.props;
 
@@ -28,6 +29,8 @@ const htmlAttributes = Object.fromEntries(
   iconPosition={iconPosition}
   hideText={hideText}
   disabled={disabled}
+  editable={editable}
+  data-prop="text"
   class:list={["submit", className]}
   {...htmlAttributes}
 >

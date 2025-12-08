@@ -68,6 +68,7 @@ _structures:
     values:
       - label: Grid Item
         value:
+          _component: building-blocks/wrappers/grid/grid-item
           contentSections: []
         preview:
           icon: grid_view

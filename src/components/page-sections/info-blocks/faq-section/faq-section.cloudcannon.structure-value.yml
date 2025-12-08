@@ -161,9 +161,8 @@ _structures:
           _component: building-blocks/wrappers/accordion/accordion-item
           title: Question text
           contentSections:
-            - _component: building-blocks/core-elements/simple-text
+            - _component: building-blocks/core-elements/text
               text: Answer text goes here.
-              size: md
         preview:
           text:
             - key: title
@@ -178,35 +177,31 @@ _structures:
           contentSections:
             type: array
             label: Answer Content
-            comment: Content sections for the answer (typically simple-text).
+            comment: Content sections for the answer (typically text).
             options:
               structures:
                 - label: Text
                   icon: text_fields
                   value:
-                    _component: building-blocks/core-elements/simple-text
+                    _component: building-blocks/core-elements/text
                     text: Answer text goes here.
-                    size: md
                   preview:
                     text:
                       - key: text
                       - Text content
                   _inputs:
                     text:
-                      type: textarea
+                      type: markdown
                       comment: The answer text content.
-                    size:
-                      type: select
-                      comment: Text size.
                       options:
-                        values:
-                          - id: xs
-                            name: Extra Small
-                          - id: sm
-                            name: Small
-                          - id: md
-                            name: Medium
-                          - id: lg
-                            name: Large
-                          - id: xl
-                            name: Extra Large
+                        blockquote: false
+                        bold: true
+                        format:
+                        italic: true
+                        link: true
+                        strike: false
+                        subscript: true
+                        superscript: true
+                        underline: false
+                        bulletedlist: false
+                        numberedlist: false

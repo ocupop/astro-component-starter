@@ -10,6 +10,7 @@ const {
   items = [],
   label,
   gap = "md",
+  editable = true,
   ...rest
 } = Astro.props;
 
@@ -38,13 +39,19 @@ const gridStyles = [
 ]
   .filter(Boolean)
   .join("; ");
+
+const arrayDataAttributes = editable
+  ? {
+      "data-editable": "array",
+      "data-prop": dataProp,
+      "data-component-key": "_component",
+      "data-id-key": "_component",
+    }
+  : {};
 ---
 
 <div
-  data-editable="array"
-  data-prop={dataProp}
-  data-component-key="_component"
-  data-id-key="_component"
+  {...arrayDataAttributes}
   class:list={["grid", `layout-${layout}`, className]}
   style={gridStyles}
   {...htmlAttributes}

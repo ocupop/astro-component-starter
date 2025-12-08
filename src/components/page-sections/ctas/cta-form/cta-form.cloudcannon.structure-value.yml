@@ -43,8 +43,20 @@ _inputs:
     type: text
     comment: Headline for the CTA.
   subtext:
-    type: textarea
+    type: markdown
     comment: Supporting copy beneath the headline.
+    options:
+      blockquote: false
+      bold: true
+      format:
+      italic: true
+      link: true
+      strike: false
+      subscript: true
+      superscript: true
+      underline: false
+      bulletedlist: false
+      numberedlist: false
   formAction:
     type: url
     comment: Where to send the form-data when the form is submitted. The URL that processes the form submission.

@@ -37,8 +37,9 @@ _structures:
       - label: Content Selector Item
         icon: place_item
         value:
-          title: null
-          contentSections: null
+          _component: building-blocks/wrappers/content-selector/content-selector-item
+          title: Section Title
+          contentSections: []
         preview:
           text:
             - key: title

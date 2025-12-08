@@ -8,6 +8,7 @@ const {
   text = "",
   alignX = "start",
   class: className,
+  editable = true,
   "data-prop": customDataProp = "text",
   ...rest
 } = Astro.props;
@@ -18,7 +19,7 @@ const htmlAttributes = Object.fromEntries(
 
 const markdownContent = text ? md.render(text) : "";
 
-const textDataAttributes = customDataProp
+const textDataAttributes = editable && customDataProp
   ? {
       "data-editable": "text",
       "data-prop": customDataProp,

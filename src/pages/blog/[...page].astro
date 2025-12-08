@@ -27,6 +27,7 @@ let heroSections: any[] = [];
 
 try {
   const pages = await getCollection("pages");
+
   blogPage = pages.find((page: any) => page.slug === "blog");
 
   if (blogPage?.data?.pageSections) {
@@ -59,6 +60,7 @@ const pageDescription =
             minItemWidth="320"
             maxItemWidth="400"
             style="margin-top: var(--spacing-2xl)"
+            editable={false}
           >
             {page.data.map((post: any) => {
               const pubDate = post.data.pubDate.toLocaleDateString("en-US", {
@@ -71,13 +73,14 @@ const pageDescription =
               const slug = post.id?.replace(/\.mdx?$/, "") || post.slug;
 
               return (
-                <GridItem>
+                <GridItem editable={false}>
                   <Card
                     link={`/blog/${slug}`}
                     rounded={true}
                     border={true}
                     paddingVertical="lg"
                     paddingHorizontal="lg"
+                    editable={false}
                   >
                     {post.data.image && (
                       <Image
@@ -91,6 +94,7 @@ const pageDescription =
                     <SimpleText
                       size="sm"
                       style="color: var(--color-text-muted); margin-bottom: var(--spacing-xs);"
+                      editable={false}
                     >
                       {pubDate} • {post.data.author || "Anonymous"}
                     </SimpleText>
@@ -98,10 +102,15 @@ const pageDescription =
                       level="h3"
                       size="md"
                       style="margin-bottom: var(--spacing-md); margin-top: var(--spacing-sm);"
+                      editable={false}
                     >
                       {post.data.title}
                     </Heading>
-                    <SimpleText size="sm" style="color: var(--color-text-muted); margin-top: 0;">
+                    <SimpleText
+                      size="sm"
+                      style="color: var(--color-text-muted); margin-top: 0;"
+                      editable={false}
+                    >
                       {post.data.description}
                     </SimpleText>
                   </Card>
@@ -112,7 +121,7 @@ const pageDescription =
           <Pagination page={page} style="margin-top: var(--spacing-2xl);" />
         </>
       ) : (
-        <SimpleText alignX="center" style="margin-top: var(--spacing-2xl);">
+        <SimpleText alignX="center" style="margin-top: var(--spacing-2xl);" editable={false}>
           No blog posts yet. Check back soon!
         </SimpleText>
       )

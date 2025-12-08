@@ -72,6 +72,7 @@ _inputs:
           name: 3xl
   showBeforeAfter:
     type: switch
+    label: Show Before / After Content Sections
     comment: Whether to show the before/after content blocks used to add content outside the card's padding.
   paddingHorizontal:
     type: select

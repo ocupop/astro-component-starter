@@ -34,8 +34,32 @@ _inputs:
     type: text
     comment: Main heading text for the hero.
   subtext:
-    type: textarea
+    type: markdown
     comment: Supporting subtext displayed beneath the heading.
+    options:
+      blockquote: false
+      bold: true
+      format:
+      italic: true
+      link: true
+      strike: false
+      subscript: true
+      superscript: true
+      underline: false
+      bulletedlist: false
+      numberedlist: false
+    options:
+      blockquote: false
+      bold: true
+      format:
+      italic: true
+      link: true
+      strike: false
+      subscript: true
+      superscript: true
+      underline: false
+      bulletedlist: false
+      numberedlist: false
   buttonSections:
     type: array
     comment: Button blocks for calls to action.

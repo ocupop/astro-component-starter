@@ -1,5 +1,5 @@
 label: Custom Section
-icon: width_full
+icon: star
 description: Used to group and style large sections of a page.
 value:
   _component: page-sections/builders/custom-section

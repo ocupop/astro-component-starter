@@ -31,8 +31,20 @@ _inputs:
     type: text
     comment: Main heading for the split section.
   subtext:
-    type: textarea
+    type: markdown
     comment: Supporting body copy beneath the heading.
+    options:
+      blockquote: false
+      bold: true
+      format:
+      italic: true
+      link: true
+      strike: false
+      subscript: true
+      superscript: true
+      underline: false
+      bulletedlist: false
+      numberedlist: false
   buttonSections:
     type: array
     comment: Calls-to-action shown beneath the copy block.

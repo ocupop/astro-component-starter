@@ -1,5 +1,5 @@
 ---
-const { page, class: className, ...rest } = Astro.props;
+const { page, class: className, editable = true, ...rest } = Astro.props;
 const maxVisiblePages = 5;
 
 if (!page || page.lastPage <= 1) {

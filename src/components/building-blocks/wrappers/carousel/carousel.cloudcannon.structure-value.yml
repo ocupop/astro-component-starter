@@ -48,6 +48,7 @@ _structures:
     values:
       - label: Carousel Slide
         value:
+          _component: building-blocks/wrappers/carousel/carousel-slide
           contentSections: []
         _inputs:
           contentSections:

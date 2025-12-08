@@ -2,6 +2,7 @@
 import Heading from "@core-elements/heading/heading.astro";
 import Image from "@core-elements/image/image.astro";
 import SimpleText from "@core-elements/simple-text/simple-text.astro";
+import Text from "@core-elements/text/text.astro";
 import Card from "@wrappers/card/card.astro";
 import Split from "@wrappers/split/split.astro";
 
@@ -26,7 +27,7 @@ const hasImage = Boolean(imageSource);
 <Card
   {...htmlAttributes}
   class:list={["feature-slider-item", className]}
-  paddingHorizontal="none"
+  paddingHorizontal="xs"
   paddingVertical="none"
 >
   <Split
@@ -49,13 +50,7 @@ const hasImage = Boolean(imageSource);
           </Heading>
         )
       }
-      {
-        description && (
-          <SimpleText size="md" data-prop="description">
-            {description}
-          </SimpleText>
-        )
-      }
+      {description && <Text data-prop="description" text={description} />}
     </Fragment>
     {
       hasImage && (

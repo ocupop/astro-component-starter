@@ -1,5 +1,5 @@
 ---
-const { type, id, title, source, thumbnail, class: className, ...restProps } = Astro.props;
+const { type, id, title, source, thumbnail, class: className, editable = true, ...restProps } = Astro.props;
 
 const htmlAttributes = Object.fromEntries(
   Object.entries(restProps).filter(([key]) => key !== "_component")

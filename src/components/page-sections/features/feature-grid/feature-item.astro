@@ -1,7 +1,7 @@
 ---
 import Heading from "@core-elements/heading/heading.astro";
 import Icon from "@core-elements/icon/icon.astro";
-import SimpleText from "@core-elements/simple-text/simple-text.astro";
+import Text from "@core-elements/text/text.astro";
 import Card from "@wrappers/card/card.astro";
 
 const {
@@ -56,15 +56,13 @@ const htmlAttributes = Object.fromEntries(
   }
   {
     description && (
-      <SimpleText
+      <Text
         class="feature-description"
-        size="sm"
         alignX="start"
         style="margin-top: 0;"
         data-prop="description"
-      >
-        {description}
-      </SimpleText>
+        text={description}
+      />
     )
   }
 </Card>
