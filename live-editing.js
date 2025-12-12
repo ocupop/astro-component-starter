@@ -20,15 +20,15 @@ for (const [path, module] of Object.entries(componentModules)) {
     const filename = parts[parts.length - 1];
     const parentFolder = parts.length > 1 ? parts[parts.length - 2] : null;
 
-    // Convert PascalCase filename to kebab-case
     const kebabFilename = pascalToKebab(filename);
-    const kebabParent = parentFolder ? pascalToKebab(parentFolder) : null;
+    const kebabParent = parentFolder;
 
     // If filename (in kebab-case) matches parent folder, it's not a subcomponent - remove redundant filename
     // e.g. 'wrappers/grid', 'wrappers/grid/grid-item'
-    const registrationPath = kebabFilename === kebabParent 
-      ? parts.slice(0, -1).join("/") 
-      : parts.slice(0, -1).concat(kebabFilename).join("/");
+    const registrationPath =
+      kebabFilename === kebabParent
+        ? parts.slice(0, -1).join("/")
+        : parts.slice(0, -1).concat(kebabFilename).join("/");
 
     registerAstroComponent(registrationPath, module.default);
   }
