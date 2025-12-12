@@ -7,6 +7,7 @@ const {
   distributionMode = "half",
   verticalAlignment = "top",
   reverse = false,
+  reverseOrderOnMobile = true,
   fixedWidth,
   minSplitWidth = 700,
   gap = "lg",
@@ -103,11 +104,17 @@ const splitId = `split-${crypto.randomUUID()}`;
       .split[data-split-id="${splitId}"] {
         grid-template-columns: var(--split-columns-mobile);
       }
+      ${
+        reverseOrderOnMobile
+          ? `
       .split.reversed[data-split-id="${splitId}"] .pane.first {
         order: 2;
       }
       .split.reversed[data-split-id="${splitId}"] .pane.second {
         order: 1;
+      }
+      `
+          : ""
       }
     }
   `}

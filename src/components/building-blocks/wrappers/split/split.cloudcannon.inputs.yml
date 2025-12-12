@@ -52,6 +52,10 @@ verticalAlignment:
 reverse:
   comment: Swaps the order of the columns.
   type: switch
+reverseOrderOnMobile:
+  comment: When true, reversed splits will have their order flipped on mobile (text-image pattern). When false, reversed splits keep their desktop order on mobile.
+  type: switch
+  default: false
 gap:
   comment: Spacing between the two columns.
   type: select
@@ -71,4 +75,3 @@ gap:
         name: 2XL
       - id: 3xl
         name: 3XL
-
