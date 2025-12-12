@@ -232,7 +232,7 @@ pageSections:
     imageSource: /src/assets/images/component-library/castle.jpg
     imageAlt: Get in touch
     reverse: false
-    colorScheme: default
-    backgroundColor: base
+    colorScheme: contrast
+    backgroundColor: surface
     paddingVertical: 4xl
 ---
