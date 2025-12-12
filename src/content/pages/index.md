@@ -6,20 +6,21 @@ pageSections:
     eyebrow:
     heading: The Astro Component Library for building any site
     subtext: >-
-      Built on web fundamentals. Easy to customize, fast to use, and simple to maintain.
+      Built on web fundamentals. Easy to customize, fast to use, and simple to
+      maintain.
     buttonSections:
       - _component: building-blocks/core-elements/button
         text: Explore Components
         link: /component-library/
-        iconName: ""
+        iconName: ''
         iconPosition: before
         hideText: false
         variant: primary
         size: md
       - _component: building-blocks/core-elements/button
         text: View in GitHub
-        link: "#"
-        iconName: ""
+        link: '#'
+        iconName: ''
         iconPosition: before
         hideText: false
         variant: secondary
@@ -30,7 +31,9 @@ pageSections:
     eyebrow: Built for Astro
     heading: Fast, modern, and easy to work with
     subtext: >-
-      This library takes full advantage of Astro's zero-JS-by-default approach. You get fast pages, simple routing, and a component system that stays easy to use as your site grows.
+      This library takes full advantage of Astro's zero-JS-by-default approach.
+      You get fast pages, simple routing, and a component system that stays easy
+      to use as your site grows.
     buttonSections: []
     imageSource: /src/assets/images/component-library/website-feature.svg
     imageAlt: Website Feature
@@ -78,7 +81,7 @@ pageSections:
       descriptions of every property, and clear guidance without having to dig
       through source files.
     buttonSections: []
-    imageSource: /src/assets/images/component-library/website-hero.svg
+    imageSource: /src/assets/images/documented.svg
     imageAlt: Website Hero
     imageAspectRatio: none
     imageRounded: false
@@ -141,15 +144,15 @@ pageSections:
       - _component: building-blocks/core-elements/button
         text: Explore Components
         link: /component-library/
-        iconName: ""
+        iconName: ''
         iconPosition: before
         hideText: false
         variant: primary
         size: md
       - _component: building-blocks/core-elements/button
         text: View in GitHub
-        link: "#"
-        iconName: ""
+        link: '#'
+        iconName: ''
         iconPosition: before
         hideText: false
         variant: tertiary
