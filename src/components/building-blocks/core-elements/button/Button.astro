@@ -36,13 +36,12 @@ const Tag = element as any;
 
 const tagProps = Tag === "a" && link ? { href: link } : Tag === "button" ? { type: "button" } : {};
 
-const hasText = text && text.trim().length > 0;
-const hasSlot = Astro.slots.has("default");
-const hasIcon = iconName && iconName.trim().length > 0;
+const hasText = text?.trim().length > 0;
+const slotContent = Astro.slots.has("default") ? await Astro.slots.render("default") : null;
+const hasSlotContent = (slotContent?.toString().trim().length ?? 0) > 0;
+const hasIcon = iconName?.trim().length > 0;
 
-if (!hasText && !hasSlot && !hasIcon) {
-  return;
-}
+if (!hasText && !hasSlotContent && !hasIcon) return;
 ---
 
 <Tag

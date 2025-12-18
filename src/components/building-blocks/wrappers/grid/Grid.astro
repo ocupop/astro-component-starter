@@ -49,12 +49,11 @@ const arrayDataAttributes = editable
     }
   : {};
 
-const hasItems = items && items.length > 0;
-const hasSlot = Astro.slots.has("default");
+const hasItems = items?.length > 0;
+const slotContent = Astro.slots.has("default") ? await Astro.slots.render("default") : null;
+const hasSlotContent = (slotContent?.toString().trim().length ?? 0) > 0;
 
-if (!hasItems && !hasSlot) {
-  return;
-}
+if (!hasItems && !hasSlotContent) return;
 ---
 
 <div

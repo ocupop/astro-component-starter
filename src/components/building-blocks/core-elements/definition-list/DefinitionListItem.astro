@@ -29,14 +29,14 @@ const contentDataAttributes =
       }
     : {};
 
-const hasTitle = title && title.trim().length > 0;
-const hasTitleSlot = Astro.slots.has("title");
-const hasText = text && text.trim().length > 0;
-const hasSlot = Astro.slots.has("default");
+const hasTitle = title?.trim().length > 0;
+const titleSlotContent = Astro.slots.has("title") ? await Astro.slots.render("title") : null;
+const hasTitleSlotContent = (titleSlotContent?.toString().trim().length ?? 0) > 0;
+const hasText = text?.trim().length > 0;
+const slotContent = Astro.slots.has("default") ? await Astro.slots.render("default") : null;
+const hasSlotContent = (slotContent?.toString().trim().length ?? 0) > 0;
 
-if ((!hasTitle && !hasTitleSlot) || (!hasText && !hasSlot)) {
-  return;
-}
+if ((!hasTitle && !hasTitleSlotContent) || (!hasText && !hasSlotContent)) return;
 ---
 
 <dt class:list={["title", className]} role="term" {...titleDataAttributes} {...htmlAttributes}>
