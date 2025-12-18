@@ -3,7 +3,7 @@ _schema: default
 title: Why
 pageSections:
   - _component: page-sections/heroes/hero-split
-    eyebrow: Eyebrow
+    eyebrow:
     heading: Why build an Astro component starter?
     subtext: >-
       At CloudCannon, we're big fans of the static web. And we love what the
@@ -21,7 +21,7 @@ pageSections:
     buttonSections: []
     reverse: true
     colorScheme: default
-    backgroundColor: '#c69999'
+    backgroundColor: '#ffffff'
     paddingVertical: 4xl
   - _component: page-sections/info-blocks/faq-section
     heading: Frequently asked questions
