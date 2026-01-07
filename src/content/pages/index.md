@@ -64,7 +64,8 @@ pageSections:
     heading: Fast by architecture, not by accident
     subtext: >-
       Your components render to static HTML, keeping bundles lean and pages
-      instant. Your users get instant page loads. You get modern DX.
+      instant. Your users get instant page loads. You get a modern developer
+      experience.
     buttonSections: []
     imageSource: /src/assets/images/component-library/website-hero.svg
     imageAlt: Website Hero

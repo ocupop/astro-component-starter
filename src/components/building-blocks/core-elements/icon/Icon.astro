@@ -12,10 +12,10 @@ const {
   ...rest
 } = props;
 
-const isValidName = name && name.trim();
+const isValidName = name && typeof name === "string" && name.trim();
 
 if (!isValidName) {
-  console.warn("Icon component received empty or invalid name:", name);
+  return;
 }
 
 const htmlAttributes = Object.fromEntries(
@@ -23,24 +23,20 @@ const htmlAttributes = Object.fromEntries(
 );
 ---
 
-{
-  isValidName && (
-    <div
-      class:list={[
-        "icon",
-        `size-${size}`,
-        `color-${color}`,
-        background && "background",
-        alignX && `align-${alignX}`,
-        name?.includes("social/") && "fill",
-        className,
-      ]}
-      {...(htmlAttributes as any)}
-    >
-      <AstroIcon name={name} />
-    </div>
-  )
-}
+<div
+  class:list={[
+    "icon",
+    `size-${size}`,
+    `color-${color}`,
+    background && "background",
+    alignX && `align-${alignX}`,
+    name?.includes("social/") && "fill",
+    className,
+  ]}
+  {...htmlAttributes as any}
+>
+  <AstroIcon name={String(name).trim()} is:inline />
+</div>
 
 <style lang="pcss">
   .icon {

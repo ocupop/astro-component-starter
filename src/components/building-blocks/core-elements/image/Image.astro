@@ -28,6 +28,10 @@ const htmlAttributes = Object.fromEntries(
 
 const hasValidSrc = source && typeof source === "string" && source.trim() !== "";
 
+if (!hasValidSrc) {
+  return;
+}
+
 const provider = hasValidSrc ? getProviderForUrl(source) : false;
 const isExternalCDN = provider !== false;
 
@@ -59,36 +63,30 @@ const positionClass = `position-${positionVertical}-${positionHorizontal}`;
   {...htmlAttributes}
 >
   {
-    hasValidSrc ? (
-      isExternalCDN ? (
-        <UnpicImage
-          {...commonProps}
-          {...dataAttributes}
-          source={source}
-          sizes={sizes}
-          widths={widths}
-          priority={priority}
-          aspectRatio={aspectRatio}
-          positionVertical={positionVertical}
-          positionHorizontal={positionHorizontal}
-        />
-      ) : (
-        <AstroImage
-          {...commonProps}
-          {...dataAttributes}
-          source={source}
-          sizes={sizes}
-          widths={widths}
-          priority={priority}
-          aspectRatio={aspectRatio}
-          positionVertical={positionVertical}
-          positionHorizontal={positionHorizontal}
-        />
-      )
+    isExternalCDN ? (
+      <UnpicImage
+        {...commonProps}
+        {...dataAttributes}
+        source={source}
+        sizes={sizes}
+        widths={widths}
+        priority={priority}
+        aspectRatio={aspectRatio}
+        positionVertical={positionVertical}
+        positionHorizontal={positionHorizontal}
+      />
     ) : (
-      <picture>
-        <img {...dataAttributes} src={source} alt={alt || ""} />
-      </picture>
+      <AstroImage
+        {...commonProps}
+        {...dataAttributes}
+        source={source}
+        sizes={sizes}
+        widths={widths}
+        priority={priority}
+        aspectRatio={aspectRatio}
+        positionVertical={positionVertical}
+        positionHorizontal={positionHorizontal}
+      />
     )
   }
 </div>

@@ -71,9 +71,7 @@ function hasCurrentChild(item) {
               >
                 <ul class="nav-list">
                   {item.children.map((child) => {
-                    // A child is expandable if it has children OR if it's a group (path === "#")
-                    // Groups should be expandable even if they have no items yet
-                    const childHasChildren = (child.children && child.children.length > 0) || child.path === "#";
+                    const childHasChildren = child.children && child.children.length > 0;
                     const childDropdownId = `dropdown-toggle-${crypto.randomUUID()}`;
                     const childContentId = `dropdown-content-${crypto.randomUUID()}`;
                     const childIsCurrent = isCurrentPage(child);
@@ -116,18 +114,20 @@ function hasCurrentChild(item) {
                             aria-hidden={(!childHasCurrent).toString()}
                           >
                             <ul class="nav-list">
-                              {child.children && child.children.length > 0 ? (
-                                child.children.map((grandChild) => (
-                                  <li class="nav-item">
-                                    <a
-                                      href={grandChild.path}
-                                      aria-current={isCurrentPage(grandChild) ? "page" : undefined}
-                                    >
-                                      {grandChild.name}
-                                    </a>
-                                  </li>
-                                ))
-                              ) : null}
+                              {child.children && child.children.length > 0
+                                ? child.children.map((grandChild) => (
+                                    <li class="nav-item">
+                                      <a
+                                        href={grandChild.path}
+                                        aria-current={
+                                          isCurrentPage(grandChild) ? "page" : undefined
+                                        }
+                                      >
+                                        {grandChild.name}
+                                      </a>
+                                    </li>
+                                  ))
+                                : null}
                             </ul>
                           </div>
                         </li>
@@ -135,7 +135,10 @@ function hasCurrentChild(item) {
                     } else {
                       return (
                         <li class="nav-item">
-                          <a href={child.path} aria-current={childIsCurrent ? "page" : undefined}>
+                          <a
+                            href={child.path || "#"}
+                            aria-current={childIsCurrent ? "page" : undefined}
+                          >
                             {child.name}
                           </a>
                         </li>
@@ -149,7 +152,7 @@ function hasCurrentChild(item) {
         } else {
           return (
             <li class="nav-item">
-              <a href={item.path} aria-current={isCurrent ? "page" : undefined}>
+              <a href={item.path || "#"} aria-current={isCurrent ? "page" : undefined}>
                 {item.name}
               </a>
             </li>

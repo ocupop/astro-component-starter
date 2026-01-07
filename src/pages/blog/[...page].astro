@@ -7,8 +7,8 @@ import SimpleText from "@core-elements/simple-text/SimpleText.astro";
 import Page from "@layouts/Page.astro";
 import CustomSection from "@page-sections/builders/custom-section/CustomSection.astro";
 import Card from "@wrappers/card/Card.astro";
-import GridItem from "@wrappers/grid/GridItem.astro";
 import Grid from "@wrappers/grid/Grid.astro";
+import GridItem from "@wrappers/grid/GridItem.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths({ paginate }) {
@@ -118,7 +118,7 @@ const pageDescription =
               );
             })}
           </Grid>
-          <Pagination page={page} style="margin-top: var(--spacing-2xl);" />
+          <Pagination page={page} showArrows={true} style="margin-top: var(--spacing-2xl);" />
         </>
       ) : (
         <SimpleText alignX="center" style="margin-top: var(--spacing-2xl);" editable={false}>

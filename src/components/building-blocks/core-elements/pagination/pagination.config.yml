@@ -17,3 +17,7 @@ _inputs:
   page:
     type: object
     comment: The Astro page object from paginate() function.
+  showArrows:
+    type: boolean
+    comment: Show previous/next arrow buttons.
+    default: false

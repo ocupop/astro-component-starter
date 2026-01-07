@@ -1,6 +1,6 @@
 ---
-import Icon from "@core-elements/icon/Icon.astro";
 import RenderBlock from "@components/utils/renderBlock.astro";
+import Icon from "@core-elements/icon/Icon.astro";
 
 const { title, contentSections, isOpen = false, accordionName, ...rest } = Astro.props;
 
@@ -15,7 +15,9 @@ const htmlAttributes = Object.fromEntries(
     <Icon name="chevron-up" size="none" />
   </summary>
   <div class="detail">
-    {contentSections ? <RenderBlock contentSections={contentSections} /> : <slot />}
+    <slot>
+      {contentSections && <RenderBlock contentSections={contentSections} />}
+    </slot>
   </div>
 </details>
 

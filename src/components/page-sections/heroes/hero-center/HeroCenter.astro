@@ -25,22 +25,14 @@ const {
   colorScheme={colorScheme}
   backgroundColor={backgroundColor}
 >
-  {
-    eyebrow && (
-      <SimpleText alignX="center" class="eyebrow" data-prop="eyebrow">
-        {eyebrow}
-      </SimpleText>
-    )
-  }
+  <SimpleText alignX="center" class="eyebrow" data-prop="eyebrow">
+    {eyebrow}
+  </SimpleText>
   <Heading level="h1" size="2xl" alignX="center" data-prop="heading">
     {heading}
   </Heading>
-  {subtext && <Text alignX="center" class="subtext" data-prop="subtext" text={subtext} />}
-  {
-    buttonSections?.length > 0 && (
-      <ButtonGroup class="buttons" buttonSections={buttonSections} alignX="center" />
-    )
-  }
+  <Text alignX="center" class="subtext" data-prop="subtext" text={subtext} />
+  <ButtonGroup class="buttons" buttonSections={buttonSections} alignX="center" />
 </CustomSection>
 
 <style>

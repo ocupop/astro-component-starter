@@ -47,47 +47,31 @@ const featureSplitId = `feature-split-${crypto.randomUUID()}`;
     reverseOrderOnMobile={true}
   >
     <Fragment slot="first">
-      {
-        eyebrow && (
-          <SimpleText class="eyebrow" data-prop="eyebrow">
-            {eyebrow}
-          </SimpleText>
-        )
-      }
-      {
-        heading && (
-          <Heading level="h2" size="lg" data-prop="heading">
-            {heading}
-          </Heading>
-        )
-      }
-      {subtext && <Text class="subtext" data-prop="subtext" text={subtext} />}
-      {
-        buttonSections?.length > 0 && (
-          <ButtonGroup
-            class="feature-buttons"
-            buttonSections={buttonSections}
-            direction="row"
-            alignX="start"
-          />
-        )
-      }
+      <SimpleText class="eyebrow" data-prop="eyebrow">
+        {eyebrow}
+      </SimpleText>
+      <Heading level="h2" size="lg" data-prop="heading">
+        {heading}
+      </Heading>
+      <Text class="subtext" data-prop="subtext" text={subtext} />
+      <ButtonGroup
+        class="feature-buttons"
+        buttonSections={buttonSections}
+        direction="row"
+        alignX="start"
+      />
     </Fragment>
-    {
-      imageSource && (
-        <Image
-          slot="second"
-          class:list={["feature-split-image", reverse && "reverse"]}
-          source={imageSource}
-          alt={imageAlt}
-          rounded={imageRounded}
-          aspectRatio={imageAspectRatio}
-          data-prop-src="imageSource"
-          data-prop-alt="imageAlt"
-          data-editable="image"
-        />
-      )
-    }
+    <Image
+      slot="second"
+      class:list={["feature-split-image", reverse && "reverse"]}
+      source={imageSource}
+      alt={imageAlt}
+      rounded={imageRounded}
+      aspectRatio={imageAspectRatio}
+      data-prop-src="imageSource"
+      data-prop-alt="imageAlt"
+      data-editable="image"
+    />
   </Split>
 </CustomSection>
 

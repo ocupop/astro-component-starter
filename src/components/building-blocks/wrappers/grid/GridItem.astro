@@ -9,13 +9,13 @@ const htmlAttributes = Object.fromEntries(
 ---
 
 <div class:list={["grid-item", className]} {...htmlAttributes}>
-  {
-    contentSections && contentSections.length > 0 ? (
-      <RenderBlock contentSections={contentSections} propName="contentSections" />
-    ) : (
-      <slot />
-    )
-  }
+  <slot>
+    {
+      contentSections && contentSections.length > 0 && (
+        <RenderBlock contentSections={contentSections} propName="contentSections" />
+      )
+    }
+  </slot>
 </div>
 
 <style lang="pcss">

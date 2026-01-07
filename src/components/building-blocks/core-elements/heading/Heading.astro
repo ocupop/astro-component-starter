@@ -20,18 +20,25 @@ const htmlAttributes = Object.fromEntries(
   Object.entries(rest).filter(([key]) => key !== "_component")
 );
 
-const textDataAttributes = editable && customDataProp
-  ? {
-      "data-editable": "text",
-      "data-prop": customDataProp,
-    }
-  : {};
+const textDataAttributes =
+  editable && customDataProp
+    ? {
+        "data-editable": "text",
+        "data-prop": customDataProp,
+      }
+    : {};
 
 const md = MarkdownIt({ html: true });
 let MarkdownText = text ? md.renderInline(text) : "";
 
 MarkdownText = MarkdownText.replace(/\n/g, "<br />");
 const Tag = level;
+
+const hasText = text?.trim().length > 0;
+const slotContent = Astro.slots.has("default") ? await Astro.slots.render("default") : null;
+const hasSlotContent = (slotContent?.toString().trim().length ?? 0) > 0;
+
+if (!hasText && !hasSlotContent) return;
 ---
 
 <Tag
@@ -39,7 +46,7 @@ const Tag = level;
   {...htmlAttributes}
 >
   {
-    iconName && iconPosition == "before" && (
+    iconPosition == "before" && (
       <Icon
         name={iconName}
         size="none"
@@ -49,17 +56,13 @@ const Tag = level;
       />
     )
   }
+  <span class="heading-text" {...textDataAttributes}>
+    <slot>
+      {text && <Fragment set:html={MarkdownText} />}
+    </slot>
+  </span>
   {
-    text ? (
-      <span class="heading-text" {...textDataAttributes} set:html={MarkdownText} />
-    ) : (
-      <span class="heading-text" {...textDataAttributes}>
-        <slot />
-      </span>
-    )
-  }
-  {
-    iconName && iconPosition === "after" && (
+    iconPosition === "after" && (
       <Icon
         name={iconName}
         size="none"

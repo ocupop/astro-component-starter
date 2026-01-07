@@ -53,21 +53,17 @@ const Tag = link ? "a" : "div";
   class:list={["card", rounded && "rounded", border && "border", className]}
   data-theme={colorScheme}
 >
-  {
-    source && (
-      <Image
-        class:list={["background-image"]}
-        source={source}
-        alt={alt}
-        editable={editable}
-        data-prop-src="backgroundImage.source"
-        data-prop-alt="backgroundImage.alt"
-        positionVertical={positionVertical}
-        positionHorizontal={positionHorizontal}
-        background={true}
-      />
-    )
-  }
+  <Image
+    class:list={["background-image"]}
+    source={source}
+    alt={alt}
+    editable={editable}
+    data-prop-src="backgroundImage.source"
+    data-prop-alt="backgroundImage.alt"
+    positionVertical={positionVertical}
+    positionHorizontal={positionHorizontal}
+    background={true}
+  />
   {
     backgroundColor && (
       <div
@@ -80,11 +76,11 @@ const Tag = link ? "a" : "div";
   {
     ((beforeContentSections && showBeforeAfter) || Astro.slots.has("before")) && (
       <div class="before-content">
-        {beforeContentSections ? (
-          <Component contentSections={beforeContentSections} propName="beforeContentSections" />
-        ) : (
-          <slot name="before" />
-        )}
+        <slot name="before">
+          {beforeContentSections && (
+            <Component contentSections={beforeContentSections} propName="beforeContentSections" />
+          )}
+        </slot>
       </div>
     )
   }
@@ -98,24 +94,24 @@ const Tag = link ? "a" : "div";
         maxContentWidth && `max-width-${maxContentWidth}`,
       ]}
     >
-      {
-        contentSections ? (
-          <Component contentSections={contentSections} propName="contentSections" />
-        ) : (
-          <slot />
-        )
-      }
+      <slot>
+        {
+          contentSections && (
+            <Component contentSections={contentSections} propName="contentSections" />
+          )
+        }
+      </slot>
     </div>
   </div>
 
   {
     ((afterContentSections && showBeforeAfter) || Astro.slots.has("after")) && (
       <div class="after-content">
-        {afterContentSections ? (
-          <Component contentSections={afterContentSections} propName="afterContentSections" />
-        ) : (
-          <slot name="after" />
-        )}
+        <slot name="after">
+          {afterContentSections && (
+            <Component contentSections={afterContentSections} propName="afterContentSections" />
+          )}
+        </slot>
       </div>
     )
   }

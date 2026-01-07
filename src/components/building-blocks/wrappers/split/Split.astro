@@ -73,23 +73,35 @@ const splitId = `split-${crypto.randomUUID()}`;
 >
   <div class="pane first">
     {
-      firstSplitBlocks && firstSplitBlocks.length > 0 ? (
-        <Component contentSections={firstSplitBlocks} propName={firstPropName} />
-      ) : reverse ? (
-        <slot name="second" />
+      reverse ? (
+        <slot name="second">
+          {firstSplitBlocks && firstSplitBlocks.length > 0 && (
+            <Component contentSections={firstSplitBlocks} propName={firstPropName} />
+          )}
+        </slot>
       ) : (
-        <slot name="first" />
+        <slot name="first">
+          {firstSplitBlocks && firstSplitBlocks.length > 0 && (
+            <Component contentSections={firstSplitBlocks} propName={firstPropName} />
+          )}
+        </slot>
       )
     }
   </div>
   <div class="pane second">
     {
-      secondSplitBlocks && secondSplitBlocks.length > 0 ? (
-        <Component contentSections={secondSplitBlocks} propName={secondPropName} />
-      ) : reverse ? (
-        <slot name="first" />
+      reverse ? (
+        <slot name="first">
+          {secondSplitBlocks && secondSplitBlocks.length > 0 && (
+            <Component contentSections={secondSplitBlocks} propName={secondPropName} />
+          )}
+        </slot>
       ) : (
-        <slot name="second" />
+        <slot name="second">
+          {secondSplitBlocks && secondSplitBlocks.length > 0 && (
+            <Component contentSections={secondSplitBlocks} propName={secondPropName} />
+          )}
+        </slot>
       )
     }
   </div>

@@ -41,15 +41,11 @@ const {
     class="hero-split"
   >
     <Fragment slot="first">
-      {
-        eyebrow && (
-          <SimpleText class="eyebrow" data-prop="eyebrow">
-            {eyebrow}
-          </SimpleText>
-        )
-      }
+      <SimpleText class="eyebrow" data-prop="eyebrow">
+        {eyebrow}
+      </SimpleText>
       <Heading level="h1" size="2xl" data-prop="heading">{heading}</Heading>
-      {subtext && <Text class="subtext" data-prop="subtext" text={subtext} />}
+      <Text class="subtext" data-prop="subtext" text={subtext} />
       <ButtonGroup class="buttons-container" buttonSections={buttonSections} />
     </Fragment>
     <Fragment slot="second">

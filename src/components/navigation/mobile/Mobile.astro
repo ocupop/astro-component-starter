@@ -62,19 +62,15 @@ function createNavItemData(item, level, parentGroupId) {
   <div class="mobile-header">
     <div class="mobile-logo">
       <slot name="logo">
-        {
-          logoSource && (
-            <Image
-              source={logoSource}
-              alt={logoAlt || "Logo"}
-              width={120}
-              height={48}
-              class="mobile-logo-image"
-              editable={false}
-              style="margin-top: 0 !important;"
-            />
-          )
-        }
+        <Image
+          source={logoSource}
+          alt={logoAlt || "Logo"}
+          width={120}
+          height={48}
+          class="mobile-logo-image"
+          editable={false}
+          style="margin-top: 0 !important;"
+        />
       </slot>
     </div>
     <label

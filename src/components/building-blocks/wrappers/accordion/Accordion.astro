@@ -38,29 +38,35 @@ const arrayDataAttributes = editable
       "data-id-key": "_component",
     }
   : {};
+
+const hasItems = items?.length > 0;
+const slotContent = Astro.slots.has("default") ? await Astro.slots.render("default") : null;
+const hasSlotContent = (slotContent?.toString().trim().length ?? 0) > 0;
+
+if (!hasItems && !hasSlotContent) return;
 ---
 
 <div class:list={["accordion"]} {...arrayDataAttributes} {...htmlAttributes}>
-  {
-    items ? (
-      items.map((item: any, index: number) => {
-        const isFirst = index === 0 && openFirst;
+  <slot>
+    {
+      items &&
+        items.length > 0 &&
+        items.map((item: any, index: number) => {
+          const isFirst = index === 0 && openFirst;
 
-        return (
-          <editable-array-item data-component="building-blocks/wrappers/accordion/accordion-item">
-            <AccordionItem
-              title={item.title}
-              contentSections={item.contentSections}
-              isOpen={isFirst}
-              accordionName={accordionName}
-            />
-          </editable-array-item>
-        );
-      })
-    ) : (
-      <slot />
-    )
-  }
+          return (
+            <editable-array-item data-component="building-blocks/wrappers/accordion/accordion-item">
+              <AccordionItem
+                title={item.title}
+                contentSections={item.contentSections}
+                isOpen={isFirst}
+                accordionName={accordionName}
+              />
+            </editable-array-item>
+          );
+        })
+    }
+  </slot>
 </div>
 
 <style lang="pcss">

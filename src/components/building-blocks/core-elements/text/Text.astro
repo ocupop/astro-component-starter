@@ -26,6 +26,12 @@ const textDataAttributes =
         "data-prop": customDataProp,
       }
     : {};
+
+const hasText = text?.trim().length > 0;
+const slotContent = Astro.slots.has("default") ? await Astro.slots.render("default") : null;
+const hasSlotContent = (slotContent?.toString().trim().length ?? 0) > 0;
+
+if (!hasText && !hasSlotContent) return;
 ---
 
 <div
@@ -33,7 +39,9 @@ const textDataAttributes =
   {...htmlAttributes}
   {...textDataAttributes}
 >
-  {text ? <Fragment set:html={markdownContent} /> : <slot />}
+  <slot>
+    {text && <Fragment set:html={markdownContent} />}
+  </slot>
 </div>
 
 <style lang="pcss">

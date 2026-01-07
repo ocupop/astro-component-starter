@@ -42,37 +42,25 @@ const {
     minSplitWidth={640}
   >
     <Fragment slot="first">
-      {
-        heading && (
-          <Heading level="h2" size="lg" data-prop="heading">
-            {heading}
-          </Heading>
-        )
-      }
-      {
-        subtext && (
-          <Text data-prop="subtext" text={subtext} />
-        )
-      }
+      <Heading level="h2" size="lg" data-prop="heading">
+        {heading}
+      </Heading>
+      <Text data-prop="subtext" text={subtext} />
       <Form class="form" action={formAction} formBlocks={formBlocks?.length > 0 ? formBlocks : []}>
         <slot />
       </Form>
     </Fragment>
     <Fragment slot="second">
-      {
-        imageSource && (
-          <Image
-            source={imageSource}
-            rounded={true}
-            alt={imageAlt}
-            aspectRatio="landscape"
-            editable={true}
-            data-prop-src="imageSource"
-            data-prop-alt="imageAlt"
-            data-editable="image"
-          />
-        )
-      }
+      <Image
+        source={imageSource}
+        rounded={true}
+        alt={imageAlt}
+        aspectRatio="landscape"
+        editable={true}
+        data-prop-src="imageSource"
+        data-prop-alt="imageAlt"
+        data-editable="image"
+      />
     </Fragment>
   </Split>
 </CustomSection>

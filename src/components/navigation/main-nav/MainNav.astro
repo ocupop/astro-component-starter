@@ -31,32 +31,19 @@ const mobileNavData = [
   class:list={["main-nav", className]}
   {...rest}
 >
-  {
-    logoSource && (
-      <a href="/">
-        <Image
-          source={logoSource}
-          alt={logoAlt}
-          editable={false}
-          style="margin-top: 0 !important;"
-        />
-      </a>
-    )
-  }
+  <a href="/">
+    <Image source={logoSource} alt={logoAlt} editable={false} style="margin-top: 0 !important;" />
+  </a>
   <div class="nav-end">
     <Bar navData={navData} class="desktop-main-nav" />
 
-    {
-      buttonSections.length > 0 && (
-        <ButtonGroup
-          direction="row"
-          align="center"
-          class="desktop-button-group"
-          buttonSections={buttonSections}
-          editable={false}
-        />
-      )
-    }
+    <ButtonGroup
+      direction="row"
+      align="center"
+      class="desktop-button-group"
+      buttonSections={buttonSections}
+      editable={false}
+    />
   </div>
   <Mobile
     logoSource={logoSource}

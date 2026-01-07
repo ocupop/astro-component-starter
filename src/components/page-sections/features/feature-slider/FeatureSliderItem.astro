@@ -36,36 +36,24 @@ const hasImage = Boolean(imageSource);
     verticalAlignment="center"
   >
     <Fragment slot="first">
-      {
-        eyebrow && (
-          <SimpleText class="eyebrow" data-prop="eyebrow">
-            {eyebrow}
-          </SimpleText>
-        )
-      }
-      {
-        title && (
-          <Heading level="h2" size="lg" style="margin-top: 0;" data-prop="title">
-            {title}
-          </Heading>
-        )
-      }
-      {description && <Text data-prop="description" text={description} />}
+      <SimpleText class="eyebrow" data-prop="eyebrow">
+        {eyebrow}
+      </SimpleText>
+      <Heading level="h2" size="lg" style="margin-top: 0;" data-prop="title">
+        {title}
+      </Heading>
+      <Text data-prop="description" text={description} />
     </Fragment>
-    {
-      hasImage && (
-        <Image
-          slot="second"
-          source={imageSource}
-          alt={imageAlt || title}
-          rounded={true}
-          aspectRatio="portrait"
-          priority={true}
-          data-prop-src="imageSource"
-          data-prop-alt="imageAlt"
-          data-editable="image"
-        />
-      )
-    }
+    <Image
+      slot="second"
+      source={imageSource}
+      alt={imageAlt || title}
+      rounded={true}
+      aspectRatio="portrait"
+      priority={true}
+      data-prop-src="imageSource"
+      data-prop-alt="imageAlt"
+      data-editable="image"
+    />
   </Split>
 </Card>

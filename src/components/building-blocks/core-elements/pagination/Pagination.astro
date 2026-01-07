@@ -1,5 +1,7 @@
 ---
-const { page, class: className, editable = true, ...rest } = Astro.props;
+import Icon from "@core-elements/icon/Icon.astro";
+
+const { page, class: className, showArrows = false, ...rest } = Astro.props;
 const maxVisiblePages = 5;
 
 if (!page || page.lastPage <= 1) {
@@ -69,6 +71,18 @@ const getPageUrl = (pageNum: number) => {
 ---
 
 <nav class:list={["pagination", className]} aria-label="Pagination Navigation" {...htmlAttributes}>
+  {
+    showArrows && currentPage > 1 && (
+      <a
+        href={getPageUrl(currentPage - 1)}
+        class="pagination-arrow pagination-prev"
+        aria-label="Go to previous page"
+      >
+        <Icon name="arrow-left" size="sm" />
+      </a>
+    )
+  }
+
   {startPage > 0 && <a href={getPageUrl(1)}>1</a>}
 
   {startPage > 1 && <span aria-hidden="true">…</span>}
@@ -97,6 +111,18 @@ const getPageUrl = (pageNum: number) => {
       </>
     )
   }
+
+  {
+    showArrows && currentPage < totalPages && (
+      <a
+        href={getPageUrl(currentPage + 1)}
+        class="pagination-arrow pagination-next"
+        aria-label="Go to next page"
+      >
+        <Icon name="arrow-right" size="sm" />
+      </a>
+    )
+  }
 </nav>
 
 <style lang="pcss">
@@ -122,13 +148,13 @@ const getPageUrl = (pageNum: number) => {
         color: var(--color-text-strong);
       }
 
-      &:first-child {
+      &:first-child:not(.pagination-arrow) {
         border-bottom-left-radius: var(--radius-sm);
         border-inline-start: 1px solid var(--color-border);
         border-top-left-radius: var(--radius-sm);
       }
 
-      &:last-child {
+      &:last-child:not(.pagination-arrow) {
         border-bottom-right-radius: var(--radius-sm);
         border-top-right-radius: var(--radius-sm);
       }
@@ -149,6 +175,30 @@ const getPageUrl = (pageNum: number) => {
       border-color: var(--color-bg-brand);
       color: var(--color-text-on-brand);
       cursor: default;
+    }
+
+    .pagination-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.5rem;
+
+      :global(.icon) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .pagination-prev {
+      border-inline-start: 1px solid var(--color-border);
+      border-bottom-left-radius: var(--radius-sm);
+      border-top-left-radius: var(--radius-sm);
+    }
+
+    .pagination-next {
+      border-bottom-right-radius: var(--radius-sm);
+      border-top-right-radius: var(--radius-sm);
     }
   }
 </style>

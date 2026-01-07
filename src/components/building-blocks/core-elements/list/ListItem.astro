@@ -28,11 +28,7 @@ const textDataAttributes =
 ---
 
 <li class:list={["item", className]} {...htmlAttributes}>
-  {
-    iconName && (
-      <Icon name={iconName} color={iconColor} size="none" class="list-icon" aria-hidden="true" />
-    )
-  }
+  <Icon name={iconName} color={iconColor} size="none" class="list-icon" aria-hidden="true" />
   <span {...textDataAttributes}>
     {text ? <Fragment set:html={md.renderInline(text)} /> : <slot />}
   </span>

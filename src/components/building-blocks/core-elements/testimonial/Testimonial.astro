@@ -49,23 +49,21 @@ const authorDescriptionDataAttributes =
 
 <blockquote class:list={["testimonial", `alignment-${alignX}`, className]} {...htmlAttributes}>
   <div class="quote" {...textDataAttributes}>
-    {text ? <Fragment set:html={MarkdownText} /> : <slot />}
+    <slot>
+      {text && <Fragment set:html={MarkdownText} />}
+    </slot>
   </div>
   <div class="author">
-    {
-      authorImage && (
-        <Image
-          source={authorImage}
-          alt={authorName}
-          width={100}
-          height={100}
-          class="author-image"
-          editable={editable}
-          data-prop-src="authorImage"
-          data-prop-alt="authorName"
-        />
-      )
-    }
+    <Image
+      source={authorImage}
+      alt={authorName}
+      width={100}
+      height={100}
+      class="author-image"
+      editable={editable}
+      data-prop-src="authorImage"
+      data-prop-alt="authorName"
+    />
     <cite class="author-content">
       <strong class="name" {...authorNameDataAttributes}>
         {authorName}

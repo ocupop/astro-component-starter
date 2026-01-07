@@ -28,6 +28,8 @@ if (!imageWidth || !imageHeight) {
     }
   } catch (error) {
     console.warn(`Could not detect image dimensions for: ${source}`, error);
+    imageWidth = imageWidth || Math.min(...widths);
+    imageHeight = imageHeight || Math.round(imageWidth * 0.75);
   }
 }
 

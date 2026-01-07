@@ -9,7 +9,7 @@ const {
   description = "",
   iconName = "",
   iconColor = "default",
-  iconBackground = false,
+  iconBackground = true,
   class: className,
   ...rest
 } = Astro.props;
@@ -28,41 +28,29 @@ const htmlAttributes = Object.fromEntries(
   border
   backgroundColor="base"
 >
-  {
-    iconName && (
-      <Icon
-        class="feature-icon"
-        name={iconName}
-        size="lg"
-        color={iconColor}
-        background={true}
-        alignX="start"
-      />
-    )
-  }
-  {
-    title && (
-      <Heading
-        class="feature-title"
-        level="h3"
-        size="md"
-        alignX="start"
-        style="margin-bottom: var(--spacing-sm); margin-top: var(--spacing-sm);"
-        data-prop="title"
-      >
-        {title}
-      </Heading>
-    )
-  }
-  {
-    description && (
-      <Text
-        class="feature-description"
-        alignX="start"
-        style="margin-top: 0;"
-        data-prop="description"
-        text={description}
-      />
-    )
-  }
+  <Icon
+    class="feature-icon"
+    name={iconName}
+    size="lg"
+    color={iconColor}
+    background={iconBackground}
+    alignX="start"
+  />
+  <Heading
+    class="feature-title"
+    level="h3"
+    size="md"
+    alignX="start"
+    style="margin-bottom: var(--spacing-sm); margin-top: var(--spacing-sm);"
+    data-prop="title"
+  >
+    {title}
+  </Heading>
+  <Text
+    class="feature-description"
+    alignX="start"
+    style="margin-top: 0;"
+    data-prop="description"
+    text={description}
+  />
 </Card>

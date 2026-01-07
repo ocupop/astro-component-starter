@@ -9,13 +9,13 @@ const htmlAttributes = Object.fromEntries(
 ---
 
 <div class="slide" role="group" {...htmlAttributes}>
-  {
-    contentSections && contentSections.length > 0 ? (
-      <Component contentSections={contentSections} />
-    ) : (
-      <slot />
-    )
-  }
+  <slot>
+    {
+      contentSections && contentSections.length > 0 && (
+        <Component contentSections={contentSections} />
+      )
+    }
+  </slot>
 </div>
 
 <style lang="pcss">
