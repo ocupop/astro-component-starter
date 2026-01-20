@@ -91,14 +91,19 @@ backgroundColor:
     values:
       - id: none
         name: None
+        value: bg-white/0
       - id: base
-        name: Base
+        name: blue
+        value: bg-blue-500
       - id: surface
-        name: Surface
+        name: pink
+        value: bg-pink-500
       - id: accent
-        name: Accent
-      - id: highlight
-        name: Highlight
+        name: orange
+        value: bg-orange-500
+      - id: custom
+        name: custom
+        value:
 backgroundImage:
   type: object
   comment: Background image configuration for the card.
@@ -154,4 +159,3 @@ rounded:
 border:
   type: switch
   comment: Whether to apply a border to the card.
-

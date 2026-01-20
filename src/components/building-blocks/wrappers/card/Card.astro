@@ -68,7 +68,7 @@ const Tag = link ? "a" : "div";
     backgroundColor && (
       <div
         aria-hidden="true"
-        class:list={["background", backgroundColor && `bg-${backgroundColor}`]}
+        class:list={["background", backgroundColor && `bg-pink-300 bg-${backgroundColor}-600`]}
       />
     )
   }
@@ -205,7 +205,7 @@ const Tag = link ? "a" : "div";
         padding-block: var(--spacing-2xl);
       }
 
-      @media (--to-sm) {
+      @media (width < 640px) {
         &.pad-y-xs {
           padding-block: var(--spacing-xs);
         }
@@ -284,7 +284,7 @@ const Tag = link ? "a" : "div";
     > .background-image {
       z-index: var(--layer-1);
     }
-    
+
     > .bg-base {
       background-color: var(--color-bg);
     }

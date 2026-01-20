@@ -3,7 +3,13 @@
   "type": "module",
   "version": "1.0.0",
   "description": "A modern design system built with Astro, featuring design tokens, components, and comprehensive documentation",
-  "keywords": ["design-system", "astro", "components", "css", "design-tokens"],
+  "keywords": [
+    "design-system",
+    "astro",
+    "components",
+    "css",
+    "design-tokens"
+  ],
   "author": "Your Name",
   "license": "MIT",
   "scripts": {
@@ -31,6 +37,7 @@
     "@cloudcannon/editable-regions": "^0.0.9",
     "@csstools/postcss-global-data": "^3.0.0",
     "@justinribeiro/lite-youtube": "^1.8.2",
+    "@tailwindcss/postcss": "^4.1.18",
     "@types/js-yaml": "^4.0.9",
     "astro": "^5.16.5",
     "astro-auto-import": "^0.4.5",
@@ -54,6 +61,7 @@
     "react-dom": "^18.2.0",
     "sharp": "^0.34.3",
     "shiki": "^3.9.2",
+    "tailwindcss": "^4.1.18",
     "unpic": "^4.1.3",
     "zod": "^4.0.17"
   },

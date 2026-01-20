@@ -174,7 +174,7 @@ const splitId = `split-${crypto.randomUUID()}`;
       gap: var(--spacing-3xl);
     }
 
-    @media (--to-sm) {
+    @media (width < 640px) {
       &.gap-xs {
         gap: var(--spacing-xs);
       }

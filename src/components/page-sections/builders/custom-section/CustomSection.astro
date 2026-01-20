@@ -104,7 +104,7 @@ if (!htmlAttributes.id && label) {
       z-index: var(--layer-1);
       container-type: inline-size;
 
-      > :global(*:not(editable-array-item):first-child), 
+      > :global(*:not(editable-array-item):first-child),
       > :global(editable-array > editable-array-item:first-child) > :global(*:first-child) {
         margin-top: 0 !important;
       }
@@ -193,7 +193,7 @@ if (!htmlAttributes.id && label) {
         padding-block: var(--spacing-6xl);
       }
 
-      @media (--to-sm) {
+      @media (width < 640px) {
         &.pad-y-xs {
           padding-block: var(--spacing-xs);
         }
