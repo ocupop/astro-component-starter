@@ -161,4 +161,37 @@ pageSections:
     colorScheme: contrast
     backgroundColor: surface
     rounded: false
+  - _component: page-sections/builders/custom-section
+    label: ''
+    contentSections:
+      - _component: building-blocks/wrappers/card
+        label: card label
+        contentSections: []
+        maxContentWidth:
+        paddingHorizontal: sm
+        paddingVertical: sm
+        colorScheme: default
+        backgroundColor: base
+        backgroundImage:
+          source: https://ocupop.com/assets/portfolio-cards/work_radio_milwaukee.webp
+          alt: radio milwaukee
+          positionVertical: top
+          positionHorizontal: center
+        link:
+        rounded: true
+        border: true
+        showBeforeAfter: false
+        beforeContentSections: []
+        afterContentSections: []
+    maxContentWidth: 2xl
+    paddingHorizontal: md
+    paddingVertical: md
+    colorScheme:
+    backgroundColor: base
+    backgroundImage:
+      source: ''
+      alt: ''
+      positionVertical: top
+      positionHorizontal: center
+    rounded: false
 ---
