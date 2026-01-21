@@ -63,8 +63,8 @@ collections_config:
           paths:
             uploads: src/assets/images
       tags:
-        type: text
-        comment: Comma-separated list of tags.
+        type: array
+        comment: Tags relevant to this post's content.
   data:
     path: src/data
     glob:
