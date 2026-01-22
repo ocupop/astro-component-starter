@@ -38,7 +38,7 @@ collections_config:
     schemas:
       default:
         name: New Blog Post
-        path: .cloudcannon/schemas/blog-post.md
+        path: .cloudcannon/schemas/blog-post.mdx
         remove_extra_inputs: false
     create:
       path: "[relative_base_path]/{filename|slugify|lowercase}.mdx"
@@ -63,8 +63,8 @@ collections_config:
           paths:
             uploads: src/assets/images
       tags:
-        type: text
-        comment: Comma-separated list of tags.
+        type: array
+        comment: Tags relevant to this post's content.
   data:
     path: src/data
     glob:
