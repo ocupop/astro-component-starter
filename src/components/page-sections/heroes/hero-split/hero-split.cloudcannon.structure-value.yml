@@ -19,7 +19,7 @@ value:
       variant: primary
       size: md
   reverse: false
-  colorScheme: null
+  colorScheme: inherit
   backgroundColor: base
 preview:
   text:

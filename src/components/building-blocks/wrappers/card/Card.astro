@@ -10,7 +10,7 @@ const {
   maxContentWidth,
   paddingHorizontal,
   paddingVertical,
-  colorScheme,
+  colorScheme = "inherit",
   backgroundColor,
   backgroundImage,
   link,
@@ -51,7 +51,7 @@ const Tag = link ? "a" : "div";
   {...htmlAttributes}
   {...link && { href: link }}
   class:list={["card", rounded && "rounded", border && "border", className]}
-  data-theme={colorScheme}
+  data-theme={colorScheme && colorScheme !== "inherit" ? colorScheme : undefined}
 >
   <Image
     class:list={["background-image"]}

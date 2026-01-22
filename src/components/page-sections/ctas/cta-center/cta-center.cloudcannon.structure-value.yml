@@ -14,7 +14,7 @@ value:
       iconPosition: before
       variant: primary
       size: md
-  colorScheme: null
+  colorScheme: inherit
   backgroundColor: base
   rounded: false
 preview:

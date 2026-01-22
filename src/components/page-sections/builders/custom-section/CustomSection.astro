@@ -8,7 +8,7 @@ const {
   maxContentWidth,
   paddingHorizontal,
   paddingVertical = "4xl",
-  colorScheme,
+  colorScheme = "inherit",
   backgroundColor,
   backgroundImage,
   rounded = false,
@@ -42,7 +42,7 @@ if (!htmlAttributes.id && label) {
 
 <section
   class:list={["custom-section", rounded && "rounded", className]}
-  data-theme={colorScheme}
+  data-theme={colorScheme && colorScheme !== "inherit" ? colorScheme : undefined}
   {...htmlAttributes}
 >
   <Image
