@@ -57,6 +57,7 @@ _structures:
               underline: false
               bulletedlist: false
               numberedlist: false
+              removeformat: true
           iconName:
             type: select
             comment: The name of the icon to display from the icon library.
