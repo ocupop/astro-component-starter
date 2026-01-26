@@ -16,12 +16,16 @@ blocks:
   colorScheme: default
   backgroundColor: pink
   backgroundImage:
-    source: null
+    source: https://ocupop.com/assets/portfolio-cards/work_radio_milwaukee.webp
     alt: null
     positionVertical: top
     positionHorizontal: center
-  link: ""
-  rounded: false
+  link:
+  tags:
+    - Illustration
+    - Typeface Design
+    - Brand Identity
+  rounded: true
   showBeforeAfter: false
   beforeContentSections: []
   afterContentSections: []

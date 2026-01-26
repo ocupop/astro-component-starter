@@ -159,3 +159,18 @@ rounded:
 border:
   type: switch
   comment: Whether to apply a border to the card.
+tags:
+  comment: What tags are relevent to this content
+  type: multiselect
+  options:
+    values:
+      - id: identityDesign
+        name: Identity Deisgn
+      - id: eventDesign
+        name: Event Design
+      - id: typefaceDesign
+        name: Typeface Design
+      - id: brandIdentity
+        name: Brand Identity
+      - id: illustration
+        name: Illustration

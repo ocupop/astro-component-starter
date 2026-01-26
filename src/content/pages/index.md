@@ -178,6 +178,8 @@ pageSections:
           positionVertical: top
           positionHorizontal: center
         link:
+        tags:
+          - illustration
         rounded: true
         border: true
         showBeforeAfter: false

@@ -21,6 +21,7 @@ value:
   showBeforeAfter: false
   beforeContentSections: []
   afterContentSections: []
+  tags: []
 preview:
   text:
     - Card
