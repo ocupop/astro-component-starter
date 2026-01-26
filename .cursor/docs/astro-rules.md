@@ -18,6 +18,7 @@ Avoid building functionality on speculation. Implement features only when they a
 
 ### Design Principles
 
+<!-- TODO: React by default -->
 - **Islands Architecture**: Ship minimal JavaScript, hydrate only what needs interactivity
 - **Performance by Default**: Static-first with selective hydration for optimal performance
 - **React First**: Prefer React for interactive components when framework islands are needed
@@ -51,6 +52,7 @@ Avoid building functionality on speculation. Implement features only when they a
 
 ### Search Command Requirements
 
+<!-- TODO: Beyond my knowledge -->
 **CRITICAL**: Always use `rg` (ripgrep) instead of traditional `grep` and `find` commands:
 
 ```bash
@@ -142,6 +144,7 @@ export const prerender = false; // Server island
 </div>
 ```
 
+<!-- TODO: is this section(tokens*) neccesary for our usecase? -->
 ### Environment Configuration (astro:env)
 
 - **Type-Safe Environment Variables**: Validation and TypeScript support
@@ -165,7 +168,7 @@ export default defineEnv({
 ```
 
 ## 🏗️ Project Structure (Islands Architecture)
-
+<!-- TODO: structure based on cloudcannon astro starter - does this better belong there? -->
 ```
 src/
 ├── components/            # Astro components (.astro)
@@ -174,7 +177,6 @@ src/
 │   │   ├── forms/        # Form components
 │   │   └── wrappers/     # Container components (card, section, etc.)
 │   ├── navigation/       # Navigation components
-│   │   ├── bar/         # Navigation bars
 │   │   ├── footer/      # Footer components
 │   │   ├── main-nav/    # Main navigation
 │   │   ├── mobile/      # Mobile navigation
@@ -271,7 +273,8 @@ const { title, description, image, class: className } = Astro.props;
 ## 📦 Package Management & Dependencies
 
 ### MUST Use pnpm (MANDATORY)
-
+<!-- TODO: are we defaulting to pnpm for all projects? -->
+<!-- TODO: verify install commands with pnpm vs npx -->
 **CRITICAL**: Always use pnpm for Astro projects for better performance and dependency management.
 
 ```bash
@@ -504,6 +507,7 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
   </div>
 </article>
 
+<!-- TODO: let's discuss this inline style pattern & how it relates to our tailwind usage -->
 <style>
   .blog-card {
     /* Component-scoped styles */
@@ -656,7 +660,7 @@ export async function getFeaturedPosts(): Promise<CollectionEntry<"blog">[]> {
 ## 🚀 Performance Optimization (ASTRO-SPECIFIC)
 
 ### Image Optimization (MANDATORY)
-
+<!-- TODO: let's discuss ~width & height -->
 ```astro
 ---
 import { Image } from 'astro:assets';
@@ -748,7 +752,7 @@ const recommendations = await getRecommendations(userPreferences);
 ## 🔐 Security Requirements (MANDATORY)
 
 ### Environment Variables (MUST VALIDATE)
-
+<!-- TODO: is this use case aplicable to what we do? -->
 ```typescript
 // src/env.d.ts
 import { envField, defineEnv } from "astro:env/config";
@@ -778,7 +782,7 @@ export default defineEnv({
   },
 });
 ```
-
+<!-- TODO: relevant? -->
 ### Content Security Policy
 ```astro
 ---
