@@ -1,5 +1,4 @@
 # CloudCannon CMS Rules
-<!-- TODO: specifying this is for astro -->
 This file provides comprehensive guidance for working with CloudCannon CMS integration in Astro projects.
 
 ## Core Concepts
@@ -178,6 +177,7 @@ tags:
       - id: eventDesign
         name: Event Design
 
+# TODO: html vs markdown - opinionated
 # Rich text editor (field name ends with -html)
 eyebrow-text-html:
   type: html
@@ -566,5 +566,5 @@ const { Content } = await render(page);
 
 _This guide is optimized for CloudCannon CMS integration with Astro._
 _Focus on visual editing, component reusability, and content management workflows._
-_Last updated: January 2025_
+_Last updated: January 2026_
 

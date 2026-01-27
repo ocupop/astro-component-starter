@@ -349,7 +349,7 @@ font-weight: var(--weight-normal);
 
 hover: background var(--color-primary-700);
 ```
-<!-- TODO: add other component rules -->
+<!-- TODO: add other component rules? Shorten up? -->
 ---
 
 ## Tone & Voice

@@ -18,7 +18,6 @@ Avoid building functionality on speculation. Implement features only when they a
 
 ### Design Principles
 
-<!-- TODO: React by default -->
 - **Islands Architecture**: Ship minimal JavaScript, hydrate only what needs interactivity
 - **Performance by Default**: Static-first with selective hydration for optimal performance
 - **React First**: Prefer React for interactive components when framework islands are needed
@@ -52,7 +51,6 @@ Avoid building functionality on speculation. Implement features only when they a
 
 ### Search Command Requirements
 
-<!-- TODO: Beyond my knowledge -->
 **CRITICAL**: Always use `rg` (ripgrep) instead of traditional `grep` and `find` commands:
 
 ```bash
@@ -273,8 +271,7 @@ const { title, description, image, class: className } = Astro.props;
 ## 📦 Package Management & Dependencies
 
 ### MUST Use pnpm (MANDATORY)
-<!-- TODO: are we defaulting to pnpm for all projects? -->
-<!-- TODO: verify install commands with pnpm vs npx -->
+
 **CRITICAL**: Always use pnpm for Astro projects for better performance and dependency management.
 
 ```bash
@@ -322,12 +319,6 @@ pnpm astro add react
 # or
 npx astro add react
 
-# Only add other frameworks if specifically needed
-# Vue integration
-pnpm astro add vue
-
-# Svelte integration
-pnpm astro add svelte
 ```
 
 ### Essential Integrations
@@ -974,4 +965,4 @@ pnpm outdated         # Check for outdated packages
 
 _This guide is optimized for Astro 5+ with Islands Architecture and modern web performance._
 _Focus on minimal JavaScript, optimal hydration, and type-safe content management._
-_Last updated: January 2025_
+_Last updated: January 2026_
