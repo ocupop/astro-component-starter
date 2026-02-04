@@ -5,6 +5,7 @@ import Button from "@core-elements/button/Button.astro";
 import Segments from "@forms/segments/Segments.astro";
 import { Code } from "astro:components";
 import "./styles.css";
+import { pascalToKebab } from "../../shared/caseUtils";
 import { formatBlocksAstro } from "./utils/astroFormatter";
 import { getBodyPadding } from "./utils/spacing";
 import { formatBlocksYaml } from "./utils/yamlFormatter";
@@ -13,14 +14,6 @@ const components: Record<string, Function> = {};
 const componentImports = import.meta.glob("../../../components/**/*.astro", {
   eager: true,
 });
-
-// Helper to convert PascalCase to kebab-case
-function pascalToKebab(pascal: string): string {
-  return pascal
-    .replace(/([A-Z])/g, "-$1")
-    .toLowerCase()
-    .replace(/^-/, "");
-}
 
 Object.entries(componentImports).forEach(([path, obj]) => {
   const relativePath = path.replace("../../../components/", "").replace(/\.astro$/, "");

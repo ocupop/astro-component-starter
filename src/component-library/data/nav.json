@@ -8,6 +8,10 @@
     "path": "/component-library/getting-started/"
   },
   {
+    "name": "Component Builder",
+    "path": "/component-library/component-builder/"
+  },
+  {
     "group": "Building Blocks",
     "subcategoryOrder": ["core-elements", "wrappers", "forms"]
   },
