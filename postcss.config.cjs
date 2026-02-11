@@ -3,8 +3,9 @@ const path = require("path");
 module.exports = {
   plugins: [
     require("postcss-import"),
+    require("@tailwindcss/postcss"), // Add Tailwind after postcss-import
     require("@csstools/postcss-global-data")({
-      files: [path.resolve(__dirname, "@styles/variables/_media.pcss")],
+      files: [path.resolve(__dirname, "src/styles/variables/_media.pcss")],
     }),
     require("postcss-custom-media")(),
     require("postcss-nested")({
