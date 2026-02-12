@@ -128,6 +128,7 @@ export function scanPageBuilderComponents(log: Logger = () => {}): ComponentInfo
 
     components.push({
       path: componentPath,
+      fileName: mainComponentFile,
       category: "page-builders",
       name: entry.name,
       displayName: structureValue?.label || kebabToTitleCase(entry.name),

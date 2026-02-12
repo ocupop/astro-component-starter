@@ -1,8 +1,51 @@
-import { formatComponentWithSlots } from "./componentFormatter";
-import { getComponentMetadataMap, getNestedBlockProperties } from "../../../shared/metadata";
-import { getComponentDisplayName } from "./componentUtils";
 import { removeStyleField } from "../../../shared/blockDataUtils";
 import { getChildComponentPath } from "../../../shared/componentPath";
+import { getComponentMetadataMap, getNestedBlockProperties } from "../../../shared/metadata";
+import { formatComponentWithSlots } from "./componentFormatter";
+import { getComponentDisplayName } from "./componentUtils";
+
+function getImportAliasPath(componentPath: string): string {
+  const aliasMappings: Array<{ prefix: string; alias: string }> = [
+    { prefix: "building-blocks/core-elements/", alias: "@core-elements/" },
+    { prefix: "building-blocks/forms/", alias: "@forms/" },
+    { prefix: "building-blocks/wrappers/", alias: "@wrappers/" },
+    { prefix: "page-sections/builders/", alias: "@builders/" },
+    { prefix: "page-sections/features/", alias: "@features/" },
+    { prefix: "page-sections/", alias: "@page-sections/" },
+    { prefix: "navigation/", alias: "@navigation/" },
+    { prefix: "sections/", alias: "@sections/" },
+  ];
+
+  for (const { prefix, alias } of aliasMappings) {
+    if (componentPath.startsWith(prefix)) {
+      return `${alias}${componentPath.slice(prefix.length)}`;
+    }
+  }
+
+  return `@components/${componentPath}`;
+}
+
+function isMainComponentPath(componentPath: string): boolean {
+  const parts = componentPath.split("/");
+
+  if (componentPath.startsWith("building-blocks/")) {
+    return parts.length === 3;
+  }
+
+  if (componentPath.startsWith("page-sections/")) {
+    return parts.length === 3;
+  }
+
+  if (componentPath.startsWith("navigation/")) {
+    return parts.length === 2;
+  }
+
+  if (componentPath.startsWith("sections/")) {
+    return parts.length === 2;
+  }
+
+  return parts.length <= 2;
+}
 
 export async function formatBlocksAstro(blocks: any): Promise<string> {
   const metadataMap = await getComponentMetadataMap();
@@ -79,25 +122,16 @@ export async function formatBlocksAstro(blocks: any): Promise<string> {
 
     // Generate import statements
     const imports = Array.from(uniqueComponents)
+      .sort((a, b) => a.localeCompare(b))
       .map((componentPath) => {
-        // Generate import path - most components follow the pattern: category/component-name/component-name.astro
-        // Exception: sub-components like list-item are just category/component-name.astro
-        const parts = componentPath.split("/");
-        const lastPart = parts[parts.length - 1];
-        // Sub-components are components where the component name doesn't match the folder name
-        // For paths with only 2 parts (e.g., "typography/text"), it's always a main component
-        const isSubComponent = parts.length > 2 && lastPart !== parts[parts.length - 2];
+        const fileName = getComponentDisplayName(componentPath);
+        const aliasedPath = getImportAliasPath(componentPath);
+        const pathParts = aliasedPath.split("/");
+        const importDirectory = isMainComponentPath(componentPath)
+          ? aliasedPath
+          : pathParts.slice(0, -1).join("/");
 
-        let importPath = componentPath;
-
-        if (!isSubComponent) {
-          // For main components, add the component name again: category/component-name/component-name
-          const lastPart = parts[parts.length - 1];
-
-          importPath = `${componentPath}/${lastPart}`;
-        }
-
-        return `import ${getComponentDisplayName(componentPath)} from "@components/${importPath}.astro";`;
+        return `import ${fileName} from "${importDirectory}/${fileName}.astro";`;
       })
       .join("\n");
 

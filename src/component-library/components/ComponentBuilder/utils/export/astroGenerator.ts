@@ -4,6 +4,48 @@ import type { ComponentInfo, ComponentMetadata, ComponentNode } from '../../type
 import { shouldUseMapPattern, type BuilderNode } from '../shared';
 import { getChildComponentPropInfo } from './treeHelpers';
 
+function getAliasedImportDirectory(componentPath: string): string {
+  if (componentPath.startsWith('building-blocks/core-elements/')) {
+    return `@core-elements/${componentPath.slice('building-blocks/core-elements/'.length)}`;
+  }
+  if (componentPath.startsWith('building-blocks/forms/')) {
+    return `@forms/${componentPath.slice('building-blocks/forms/'.length)}`;
+  }
+  if (componentPath.startsWith('building-blocks/wrappers/')) {
+    return `@wrappers/${componentPath.slice('building-blocks/wrappers/'.length)}`;
+  }
+  if (componentPath.startsWith('building-blocks/')) {
+    return `@building-blocks/${componentPath.slice('building-blocks/'.length)}`;
+  }
+  if (componentPath.startsWith('page-sections/builders/')) {
+    return `@builders/${componentPath.slice('page-sections/builders/'.length)}`;
+  }
+  if (componentPath.startsWith('page-sections/')) {
+    return `@page-sections/${componentPath.slice('page-sections/'.length)}`;
+  }
+  return `@components/${componentPath}`;
+}
+
+function getImportInfo(
+  componentPath: string,
+  components: ComponentInfo[]
+): { componentName: string; importPath: string } {
+  const parts = componentPath.split('/');
+  const lastPart = parts[parts.length - 1] || componentPath;
+  const componentInfo = components.find((c) => c.path === componentPath);
+  const componentName = toPascalCase(componentInfo?.name || lastPart);
+  const astroFileName = componentInfo?.fileName || `${componentName}.astro`;
+
+  // Virtual child components (e.g. accordion-item) live in the parent's folder.
+  const sourceDirectory = componentInfo?.isVirtual ? parts.slice(0, -1).join('/') : componentPath;
+  const aliasedDirectory = getAliasedImportDirectory(sourceDirectory);
+
+  return {
+    componentName,
+    importPath: `${aliasedDirectory}/${astroFileName}`,
+  };
+}
+
 /** Generate the Astro component file. */
 export function generateAstroFile(
   blocks: ComponentNode[],
@@ -93,21 +135,8 @@ export function generateAstroFile(
 
   const imports = Array.from(uniqueComponents)
     .map((componentPath) => {
-      const parts = componentPath.split('/');
-      const lastPart = parts[parts.length - 1];
-      const isSubComponent = parts.length > 2 && lastPart !== parts[parts.length - 2];
-
-      let importPath = componentPath;
-      if (!isSubComponent) {
-        importPath = `${componentPath}/${lastPart}`;
-      }
-
-      if (importPath.startsWith('building-blocks/')) {
-        importPath = importPath.substring('building-blocks/'.length);
-      }
-
-      const displayName = toPascalCase(lastPart);
-      return `import ${displayName} from "@components/${importPath}.astro";`;
+      const { componentName, importPath } = getImportInfo(componentPath, components);
+      return `import ${componentName} from "${importPath}";`;
     })
     .join('\n');
 

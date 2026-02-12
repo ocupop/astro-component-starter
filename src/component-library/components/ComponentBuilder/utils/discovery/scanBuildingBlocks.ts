@@ -126,6 +126,7 @@ export function scanBuildingBlocksComponents(
 
         components.push({
           path: componentPath,
+          fileName: mainComponentFile,
           category,
           name: entry.name,
           displayName: kebabToTitleCase(entry.name),

@@ -41,6 +41,8 @@ export interface SlotDefinition {
 export interface ComponentInfo {
   /** Unique path identifier, e.g. `"building-blocks/core-elements/button"`. */
   path: string;
+  /** Actual Astro component file name (e.g. `"Button.astro"` or `"count.astro"`). */
+  fileName?: string;
   /** Category key (e.g. `"wrappers"`, `"core-elements"`). */
   category: string;
   /** Kebab-case name derived from the directory (e.g. `"button"`). */

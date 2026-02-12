@@ -1,7 +1,7 @@
 import { existsSync, readdirSync, statSync } from 'fs';
 import { join } from 'path';
 
-import { toKebabCase } from '../../../../shared/caseUtils';
+import { toKebabCase, toPascalCase } from '../../../../shared/caseUtils';
 import type { ComponentMetadata as SharedComponentMetadata } from '../../../../shared/metadata';
 import type { ComponentInfo, InputConfig, NestingRules, SlotDefinition } from '../../types';
 import { getAllowedComponentsForStructure } from './structureMatching';
@@ -98,6 +98,9 @@ export function registerVirtualComponents(
             category: component.category,
             name: virtualPath.split('/').pop() || virtualPath,
             displayName: virtualDisplayName,
+            fileName: parentMetadata?.childComponent?.name
+              ? `${parentMetadata.childComponent.name}.astro`
+              : `${toPascalCase(virtualPath.split('/').pop() || virtualPath)}.astro`,
             inputs: mergedInputs,
             structureValue: null,
             supportsSlots: virtualSlots.length > 0,
