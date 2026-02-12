@@ -17,14 +17,15 @@ const { contentSections, class: className, _component, ...htmlAttributes } = Ast
 <style lang="pcss" is:global>
   @layer components {
     .grid-item {
+      height: 100%;
       container-type: inline-size;
 
-      editable-array-item:only-child > *:only-child,
+      > editable-array > editable-array-item:only-child > *:only-child,
       > :not(editable-array):only-child {
         height: 100%;
       }
 
-      editable-array-item:first-child > *:first-child,
+      > editable-array > editable-array-item:first-child > *:first-child,
       > :not(editable-array):first-child {
         margin-top: 0 !important;
       }
