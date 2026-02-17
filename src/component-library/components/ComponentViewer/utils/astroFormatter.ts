@@ -13,7 +13,6 @@ function getImportAliasPath(componentPath: string): string {
     { prefix: "page-sections/features/", alias: "@features/" },
     { prefix: "page-sections/", alias: "@page-sections/" },
     { prefix: "navigation/", alias: "@navigation/" },
-    { prefix: "sections/", alias: "@sections/" },
   ];
 
   for (const { prefix, alias } of aliasMappings) {
