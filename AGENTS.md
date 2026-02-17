@@ -217,6 +217,193 @@ CloudCannon's visual editor uses data attributes on HTML elements for inline edi
 
 The `live-editing.js` file at the project root registers all Astro components with CloudCannon's editable regions system. It auto-discovers every `.astro` file under `src/components/` and registers them by their kebab-case path. You should not normally need to modify this file.
 
+## Collections and Content Types
+
+Collections are how CloudCannon organizes content files. This project ships with three collections (`pages`, `blog`, `data`). New projects built from this starter will frequently need to add or remove collections and content type schemas.
+
+Reference: [Collections](https://cloudcannon.com/documentation/articles/configure-your-collections/), [Schemas](https://cloudcannon.com/documentation/articles/schemas-reference/), [Add Button](https://cloudcannon.com/documentation/articles/configure-the-add-button-in-collections/), [Create Paths](https://cloudcannon.com/documentation/articles/set-the-path-for-new-files/).
+
+### Existing Collections
+
+| Collection | Path | Format | Editor | Description |
+|---|---|---|---|---|
+| `pages` | `src/content/pages` | `.md` | Visual | Frontmatter-driven pages using `pageSections` array |
+| `blog` | `src/content/blog` | `.mdx` | Content | MDX blog posts with title, description, date, author, image, tags |
+| `data` | `src/data` | `.json` | Data | Site-wide data files (navigation, SEO, etc.) |
+
+### Adding a New Collection
+
+Follow these steps in order. All collection configuration lives in `cloudcannon.config.yml`.
+
+**Step 1: Create the content directory**
+
+Create the directory where content files will live (e.g. `src/content/projects/`).
+
+**Step 2: Create a schema file**
+
+Place it in `.cloudcannon/schemas/`. The schema is a template file (`.md`, `.mdx`, or `.yml`) containing frontmatter with all fields and sensible defaults. This file populates new content when editors click +Add.
+
+```yaml
+# .cloudcannon/schemas/project.md
+---
+title:
+description: ""
+image: ""
+featured: false
+pageSections: []
+---
+```
+
+For collections using the Content Editor (MDX/Markdown body), use `.md` or `.mdx` as appropriate. For data-only collections, use `.yml` or `.json`.
+
+**Step 3: Add the collection to `collections_config`**
+
+Add a new entry under `collections_config` in `cloudcannon.config.yml`. Required and recommended keys:
+
+```yaml
+collections_config:
+  projects:
+    # --- Required ---
+    path: src/content/projects          # Where files live (relative to repo root)
+
+    # --- Recommended ---
+    glob:
+      - "**/*.md"                       # File pattern to match
+    url: /projects/[full_slug]/         # Output URL pattern
+    icon: work                          # Material icon for sidebar (https://fonts.google.com/icons)
+    _enabled_editors:
+      - visual                          # Which editors: visual, content, data
+    schemas:
+      default:
+        name: New Project
+        path: .cloudcannon/schemas/project.md
+        remove_extra_inputs: false      # Keep old inputs when schema evolves
+    add_options:
+      - name: Add New Project
+        schema: default
+        icon: work
+    create:
+      path: "[relative_base_path]/{filename|slugify|lowercase}.md"
+    new_preview_url: /projects/
+
+    # --- Optional: collection-level inputs ---
+    _inputs:
+      title:
+        type: text
+        comment: The project title.
+      description:
+        type: text
+        comment: A brief project summary.
+      image:
+        type: image
+        comment: Project cover image.
+        options:
+          paths:
+            uploads: src/assets/images
+```
+
+Key points:
+- `path` is relative to the repository root, **not** the `source` folder.
+- `glob` filters which files in the path belong to this collection.
+- `url` uses `[full_slug]` for the output URL — CloudCannon uses this to open the Visual Editor on the correct page.
+- `_enabled_editors` controls which editing interfaces are available. Use `visual` for page-builder pages, `content` for rich-text/MDX content, `data` for structured data files.
+- `schemas` populates the +Add dropdown. Each schema key is an arbitrary name; `path` points to the schema template file. Set `remove_extra_inputs: false` so existing content retains fields if the schema later changes.
+- `add_options` customizes the +Add button. Each entry needs `name` and either `schema` (to create from a schema) or `href` (to link externally). You can also use `collection` to add items to a different collection.
+- `create.path` uses CloudCannon placeholders: `[relative_base_path]` (preserves subfolder), `{filename|slugify|lowercase}` (user-provided filename, slugified), `{title|slugify}` (from frontmatter), `[ext]` (inferred extension). You can also use `extra_data` for computed values like date-prefixed filenames.
+
+**Step 4: Add to `collection_groups`**
+
+Add the collection key to the appropriate group in `collection_groups` so it appears in the sidebar:
+
+```yaml
+collection_groups:
+  - heading: Content
+    collections:
+      - pages
+      - blog
+      - projects          # <-- Add here
+  - heading: Data
+    collections:
+      - data
+```
+
+If `collection_groups` is not defined, CloudCannon shows collections in the order they appear in `collections_config`. Once defined, only collections listed in a group appear in the sidebar.
+
+**Step 5: Create Astro page routes**
+
+If the collection produces pages (not just data), create the corresponding route files in `src/pages/`:
+
+- For a page-builder collection (like `pages`): create a dynamic route that reads frontmatter and renders `pageSections` via `renderBlock.astro`.
+- For a content collection (like `blog`): create a dynamic route that renders the MDX body.
+
+Look at the existing `src/pages/` routes for the pattern to follow.
+
+**Step 6: (If applicable) Define Astro content collection**
+
+If you're using Astro content collections (the `src/content/` directory), ensure a matching collection is defined in `src/content.config.ts` or `src/content/config.ts` with the appropriate schema/zod validation for the frontmatter fields.
+
+### Adding a New Schema to an Existing Collection
+
+To offer multiple content templates within a single collection (e.g. "Blog Post" and "Guest Post" in the blog collection):
+
+1. Create a new schema file in `.cloudcannon/schemas/` with the template frontmatter.
+2. Add a new key under the collection's `schemas`:
+
+```yaml
+collections_config:
+  blog:
+    schemas:
+      default:
+        name: New Blog Post
+        path: .cloudcannon/schemas/blog-post.mdx
+        remove_extra_inputs: false
+      guest_post:                          # <-- New schema
+        name: Guest Post
+        path: .cloudcannon/schemas/guest-post.mdx
+        remove_extra_inputs: false
+```
+
+3. Optionally add a matching `add_options` entry if you want a separate +Add button item for it.
+
+CloudCannon tracks which schema a file was created with via the `_schema` frontmatter key (e.g. `_schema: default`). If you need a custom key name instead, set `schema_key` on the collection.
+
+### Removing a Collection
+
+1. Remove the collection entry from `collections_config` in `cloudcannon.config.yml`.
+2. Remove the collection key from `collection_groups`.
+3. Remove the schema file(s) from `.cloudcannon/schemas/` if no other collection uses them.
+4. Remove the corresponding Astro page routes from `src/pages/` if they exist.
+5. Optionally remove the content directory (e.g. `src/content/projects/`) and any Astro content collection config for it.
+6. Remove any collection-level `_inputs`, `_select_data`, or `_structures` that were only used by this collection.
+
+### Collection Best Practices
+
+- **Always define at least one schema.** Without schemas, CloudCannon clones the last file in the collection when editors click +Add, which can lead to unexpected defaults.
+- **Use `remove_extra_inputs: false` on schemas.** This prevents CloudCannon from stripping frontmatter fields that exist in content files but were later removed from the schema, protecting against data loss during schema evolution.
+- **Set `_enabled_editors` explicitly.** Don't rely on the default (all editors). Page-builder pages should use `visual`; rich-text content should use `content`; JSON/YAML data should use `data`.
+- **Use `create.path` for consistent file naming.** This prevents editors from creating files with arbitrary names. For date-prefixed posts, use `extra_data`:
+
+```yaml
+create:
+  extra_data:
+    dated_filename: "{date|year}-{date|month}-{date|day}-{title}"
+  path: "[relative_base_path]/{dated_filename|slugify|lowercase}.mdx"
+```
+
+- **Configure `paths.uploads` for image inputs** at the collection level to keep assets organized:
+
+```yaml
+_inputs:
+  image:
+    type: image
+    options:
+      paths:
+        uploads: src/assets/images
+```
+
+- **Keep schema files minimal.** Include all required fields with empty/default values. Don't put sample content in schemas — that becomes boilerplate editors have to delete.
+- **Match the file extension in schemas to the collection's `glob`.** If the collection uses `**/*.mdx`, the schema file should be `.mdx`. If it uses `**/*.md`, use `.md`.
+
 ## CloudCannon Structures (Deep Dive)
 
 Global structures in `.cloudcannon/structures/*.cloudcannon.structures.yml`:
