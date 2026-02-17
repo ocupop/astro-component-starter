@@ -32,6 +32,10 @@ _structures:
           path:
             type: url
             comment: "URL path for the navigation item."
+            options:
+              hide_link_to_file: true
+              hide_link_to_email_address: true
+              hide_link_to_telephone: true
           children:
             type: array
             comment: "Child navigation items for dropdown menus."
@@ -52,6 +56,10 @@ _structures:
           path:
             type: url
             comment: "URL path for the child navigation item."
+            options:
+              hide_link_to_file: true
+              hide_link_to_email_address: true
+              hide_link_to_telephone: true
           children:
             type: array
             comment: "Grandchild navigation items for nested dropdowns."
@@ -71,4 +79,8 @@ _structures:
           path:
             type: url
             comment: "URL path for the grandchild navigation item."
+            options:
+              hide_link_to_file: true
+              hide_link_to_email_address: true
+              hide_link_to_telephone: true
 

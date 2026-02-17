@@ -25,3 +25,7 @@ links:
         path:
           type: url
           comment: URL path for the footer link.
+          options:
+            hide_link_to_file: true
+            hide_link_to_email_address: true
+            hide_link_to_telephone: true

@@ -18,8 +18,12 @@ _structures:
             type: text
             comment: The display text for the navigation item.
           path:
-            type: text
+            type: url
             comment: The URL/path for the navigation item.
+            options:
+              hide_link_to_file: true
+              hide_link_to_email_address: true
+              hide_link_to_telephone: true
           children:
             type: array
             comment: Optional nested navigation items (level 2).
@@ -38,8 +42,12 @@ _structures:
             type: text
             comment: The display text for the navigation item.
           path:
-            type: text
+            type: url
             comment: The URL/path for the navigation item.
+            options:
+              hide_link_to_file: true
+              hide_link_to_email_address: true
+              hide_link_to_telephone: true
           children:
             type: array
             comment: Optional nested navigation items (level 3, final level).
@@ -57,6 +65,10 @@ _structures:
             type: text
             comment: The display text for the navigation item.
           path:
-            type: text
+            type: url
             comment: The URL/path for the navigation item.
+            options:
+              hide_link_to_file: true
+              hide_link_to_email_address: true
+              hide_link_to_telephone: true
 
