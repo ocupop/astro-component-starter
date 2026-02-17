@@ -23,5 +23,5 @@ links:
           type: text
           comment: Display text for the footer link.
         path:
-          type: text
+          type: url
           comment: URL path for the footer link.
